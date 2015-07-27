@@ -1,0 +1,623 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="peakzartModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="peakzartModelStoreContainer">
+          <EntitySet Name="Artists" EntityType="peakzartModel.Store.Artists" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Cart" EntityType="peakzartModel.Store.Cart" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Category" EntityType="peakzartModel.Store.Category" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Group" EntityType="peakzartModel.Store.Group" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ImageDetail" EntityType="peakzartModel.Store.ImageDetail" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Order" EntityType="peakzartModel.Store.Order" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="OrderDetail" EntityType="peakzartModel.Store.OrderDetail" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PayPalTransaction" EntityType="peakzartModel.Store.PayPalTransaction" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SHIPDETAILS" EntityType="peakzartModel.Store.SHIPDETAILS" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="User" EntityType="peakzartModel.Store.User" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UserRole" EntityType="peakzartModel.Store.UserRole" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK__InvoiceLi__Invoi__2F10007B" Association="peakzartModel.Store.FK__InvoiceLi__Invoi__2F10007B">
+            <End Role="Order" EntitySet="Order" />
+            <End Role="OrderDetail" EntitySet="OrderDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cart_Album" Association="peakzartModel.Store.FK_Cart_Album">
+            <End Role="ImageDetail" EntitySet="ImageDetail" />
+            <End Role="Cart" EntitySet="Cart" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InvoiceLine_Album" Association="peakzartModel.Store.FK_InvoiceLine_Album">
+            <End Role="ImageDetail" EntitySet="ImageDetail" />
+            <End Role="OrderDetail" EntitySet="OrderDetail" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Artists">
+          <Key>
+            <PropertyRef Name="ArtistsId" />
+          </Key>
+          <Property Name="ArtistsId" Type="int" Nullable="false" />
+          <Property Name="ArtistsName" Type="nvarchar" MaxLength="300" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="ModifieBy" Type="int" />
+          <Property Name="ModifiedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Cart">
+          <Key>
+            <PropertyRef Name="RecordId" />
+          </Key>
+          <Property Name="RecordId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CartId" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="ImageId" Type="int" Nullable="false" />
+          <Property Name="Count" Type="int" Nullable="false" />
+          <Property Name="DateCreated" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="CategoryId" />
+          </Key>
+          <Property Name="CategoryId" Type="int" Nullable="false" />
+          <Property Name="GroupID" Type="int" Nullable="false" />
+          <Property Name="CategoryName" Type="nvarchar" MaxLength="300" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="ModifieBy" Type="int" />
+          <Property Name="ModifiedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Group">
+          <Key>
+            <PropertyRef Name="GroupId" />
+          </Key>
+          <Property Name="GroupId" Type="int" Nullable="false" />
+          <Property Name="GroupName" Type="nvarchar" MaxLength="300" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="ModifieBy" Type="int" />
+          <Property Name="ModifiedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="ImageDetail">
+          <Key>
+            <PropertyRef Name="ImageId" />
+          </Key>
+          <Property Name="ImageId" Type="int" Nullable="false" />
+          <Property Name="CategoryId" Type="int" Nullable="false" />
+          <Property Name="ArtistId" Type="int" />
+          <Property Name="ImageTitle" Type="nvarchar" MaxLength="300" />
+          <Property Name="ImageDescription" Type="nvarchar" MaxLength="2000" />
+          <Property Name="ImagePath" Type="nvarchar" MaxLength="2000" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="ModifieBy" Type="int" />
+          <Property Name="ModifiedDate" Type="datetime" />
+          <Property Name="Price" Type="numeric" Precision="10" Scale="2" />
+        </EntityType>
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="OrderId" />
+          </Key>
+          <Property Name="OrderId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="OrderDate" Type="datetime" Nullable="false" />
+          <Property Name="Username" Type="nvarchar" MaxLength="256" />
+          <Property Name="Tracking_REF_ID" Type="nvarchar(max)" />
+          <Property Name="Currency" Type="nvarchar" MaxLength="160" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="Total" Type="numeric" Nullable="false" Precision="10" Scale="2" />
+        </EntityType>
+        <EntityType Name="OrderDetail">
+          <Key>
+            <PropertyRef Name="OrderDetailId" />
+          </Key>
+          <Property Name="OrderDetailId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="OrderId" Type="int" Nullable="false" />
+          <Property Name="ImageId" Type="int" Nullable="false" />
+          <Property Name="Quantity" Type="int" Nullable="false" />
+          <Property Name="UnitPrice" Type="numeric" Nullable="false" Precision="10" Scale="2" />
+        </EntityType>
+        <EntityType Name="PayPalTransaction">
+          <Key>
+            <PropertyRef Name="SeqNo" />
+          </Key>
+          <Property Name="SeqNo" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RequestId" Type="varchar(max)" Nullable="false" />
+          <Property Name="TrackingReference" Type="nvarchar(max)" />
+          <Property Name="RequestTime" Type="datetime" />
+          <Property Name="RequestStatus" Type="nvarchar(max)" />
+          <Property Name="TimeStamp" Type="nvarchar(max)" />
+          <Property Name="RequestError" Type="nvarchar(max)" />
+          <Property Name="Token" Type="nvarchar(max)" />
+          <Property Name="PayerId" Type="nvarchar(max)" />
+          <Property Name="RequestData" Type="nvarchar(max)" />
+          <Property Name="PaymentTransactionId" Type="nvarchar(max)" />
+          <Property Name="PaymentError" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="SHIPDETAILS">
+          <Key>
+            <PropertyRef Name="SHIPID" />
+          </Key>
+          <Property Name="SHIPID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SHIPTONAME" Type="nvarchar(max)" />
+          <Property Name="SHIPTOSTREET" Type="nvarchar(max)" />
+          <Property Name="SHIPTOCITY" Type="nvarchar(max)" />
+          <Property Name="SHIPTOSTATE" Type="nvarchar(max)" />
+          <Property Name="SHIPTOCOUNTRYCODE" Type="nvarchar(max)" />
+          <Property Name="SHIPTOZIP" Type="nvarchar(max)" />
+          <Property Name="SHIPTOCONTACTNO" Type="nvarchar(max)" />
+          <Property Name="NOTESTOSELLER" Type="nvarchar(max)" />
+          <Property Name="TrackingReference" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="RoleId" Type="int" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="300" />
+          <Property Name="UserPassword" Type="nvarchar" MaxLength="2000" />
+          <Property Name="EmailID" Type="nvarchar" MaxLength="1000" />
+          <Property Name="MobileNo" Type="nvarchar" MaxLength="10" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="ModifieBy" Type="int" />
+          <Property Name="ModifiedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="UserRole">
+          <Key>
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="RoleId" Type="int" Nullable="false" />
+          <Property Name="RoleName" Type="nvarchar" MaxLength="300" />
+          <Property Name="RoleDescription" Type="nvarchar" MaxLength="2000" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="ModifieBy" Type="int" />
+          <Property Name="ModifiedDate" Type="datetime" />
+        </EntityType>
+        <Association Name="FK__InvoiceLi__Invoi__2F10007B">
+          <End Role="Order" Type="peakzartModel.Store.Order" Multiplicity="1" />
+          <End Role="OrderDetail" Type="peakzartModel.Store.OrderDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Order">
+              <PropertyRef Name="OrderId" />
+            </Principal>
+            <Dependent Role="OrderDetail">
+              <PropertyRef Name="OrderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cart_Album">
+          <End Role="ImageDetail" Type="peakzartModel.Store.ImageDetail" Multiplicity="1" />
+          <End Role="Cart" Type="peakzartModel.Store.Cart" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ImageDetail">
+              <PropertyRef Name="ImageId" />
+            </Principal>
+            <Dependent Role="Cart">
+              <PropertyRef Name="ImageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_InvoiceLine_Album">
+          <End Role="ImageDetail" Type="peakzartModel.Store.ImageDetail" Multiplicity="1" />
+          <End Role="OrderDetail" Type="peakzartModel.Store.OrderDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ImageDetail">
+              <PropertyRef Name="ImageId" />
+            </Principal>
+            <Dependent Role="OrderDetail">
+              <PropertyRef Name="ImageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="peakzartModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="peakzartEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="Categories" EntityType="peakzartModel.Category" />
+          <EntitySet Name="Groups" EntityType="peakzartModel.Group" />
+          <EntitySet Name="ImageDetails" EntityType="peakzartModel.ImageDetail" />
+          <EntitySet Name="Users" EntityType="peakzartModel.User" />
+          <EntitySet Name="UserRoles" EntityType="peakzartModel.UserRole" />
+          <EntitySet Name="Artists" EntityType="peakzartModel.Artist" />
+          <EntitySet Name="Carts" EntityType="peakzartModel.Cart" />
+          <AssociationSet Name="FK_Cart_Album" Association="peakzartModel.FK_Cart_Album">
+            <End Role="ImageDetail" EntitySet="ImageDetails" />
+            <End Role="Cart" EntitySet="Carts" />
+          </AssociationSet>
+          <EntitySet Name="PayPalTransactions" EntityType="peakzartModel.PayPalTransaction" />
+          <EntitySet Name="Orders" EntityType="peakzartModel.Order" />
+          <EntitySet Name="OrderDetails" EntityType="peakzartModel.OrderDetail" />
+          <AssociationSet Name="FK_InvoiceLine_Album" Association="peakzartModel.FK_InvoiceLine_Album">
+            <End Role="ImageDetail" EntitySet="ImageDetails" />
+            <End Role="OrderDetail" EntitySet="OrderDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK__InvoiceLi__Invoi__2F10007B" Association="peakzartModel.FK__InvoiceLi__Invoi__2F10007B">
+            <End Role="Order" EntitySet="Orders" />
+            <End Role="OrderDetail" EntitySet="OrderDetails" />
+          </AssociationSet>
+          <EntitySet Name="SHIPDETAILS" EntityType="peakzartModel.SHIPDETAIL" />
+        </EntityContainer>
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="CategoryId" />
+          </Key>
+          <Property Name="CategoryId" Type="Int32" Nullable="false" />
+          <Property Name="GroupID" Type="Int32" Nullable="false" />
+          <Property Name="CategoryName" Type="String" MaxLength="300" Unicode="true" FixedLength="false" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="ModifieBy" Type="Int32" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Group">
+          <Key>
+            <PropertyRef Name="GroupId" />
+          </Key>
+          <Property Name="GroupId" Type="Int32" Nullable="false" />
+          <Property Name="GroupName" Type="String" MaxLength="300" Unicode="true" FixedLength="false" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="ModifieBy" Type="Int32" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="ImageDetail">
+          <Key>
+            <PropertyRef Name="ImageId" />
+          </Key>
+          <Property Name="ImageId" Type="Int32" Nullable="false" />
+          <Property Name="CategoryId" Type="Int32" Nullable="false" />
+          <Property Name="ImageTitle" Type="String" MaxLength="300" Unicode="true" FixedLength="false" />
+          <Property Name="ImageDescription" Type="String" MaxLength="2000" Unicode="true" FixedLength="false" />
+          <Property Name="ImagePath" Type="String" MaxLength="2000" Unicode="true" FixedLength="false" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="ModifieBy" Type="Int32" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+          <Property Type="Int32" Name="ArtistId" />
+          <NavigationProperty Name="Carts" Relationship="peakzartModel.FK_Cart_Album" FromRole="ImageDetail" ToRole="Cart" />
+          <Property Type="Decimal" Name="Price" Precision="10" Scale="2" />
+          <NavigationProperty Name="OrderDetails" Relationship="peakzartModel.FK_InvoiceLine_Album" FromRole="ImageDetail" ToRole="OrderDetail" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="RoleId" Type="Int32" Nullable="false" />
+          <Property Name="UserName" Type="String" MaxLength="300" Unicode="true" FixedLength="false" />
+          <Property Name="UserPassword" Type="String" MaxLength="2000" Unicode="true" FixedLength="false" />
+          <Property Name="EmailID" Type="String" MaxLength="1000" Unicode="true" FixedLength="false" />
+          <Property Name="MobileNo" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="ModifieBy" Type="Int32" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="UserRole">
+          <Key>
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="RoleId" Type="Int32" Nullable="false" />
+          <Property Name="RoleName" Type="String" MaxLength="300" Unicode="true" FixedLength="false" />
+          <Property Name="RoleDescription" Type="String" MaxLength="2000" Unicode="true" FixedLength="false" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="ModifieBy" Type="Int32" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Artist">
+          <Key>
+            <PropertyRef Name="ArtistsId" />
+          </Key>
+          <Property Type="Int32" Name="ArtistsId" Nullable="false" />
+          <Property Type="String" Name="ArtistsName" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsActive" />
+          <Property Type="Int32" Name="CreatedBy" />
+          <Property Type="DateTime" Name="CreatedDate" Precision="3" />
+          <Property Type="Int32" Name="ModifieBy" />
+          <Property Type="DateTime" Name="ModifiedDate" Precision="3" />
+        </EntityType>
+        <EntityType Name="Cart">
+          <Key>
+            <PropertyRef Name="RecordId" />
+          </Key>
+          <Property Type="Int32" Name="RecordId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="CartId" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="ImageId" Nullable="false" />
+          <Property Type="Int32" Name="Count" Nullable="false" />
+          <Property Type="DateTime" Name="DateCreated" Nullable="false" Precision="3" />
+          <NavigationProperty Name="ImageDetail" Relationship="peakzartModel.FK_Cart_Album" FromRole="Cart" ToRole="ImageDetail" />
+        </EntityType>
+        <Association Name="FK_Cart_Album">
+          <End Type="peakzartModel.ImageDetail" Role="ImageDetail" Multiplicity="1" />
+          <End Type="peakzartModel.Cart" Role="Cart" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ImageDetail">
+              <PropertyRef Name="ImageId" />
+            </Principal>
+            <Dependent Role="Cart">
+              <PropertyRef Name="ImageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="PayPalTransaction">
+          <Key>
+            <PropertyRef Name="SeqNo" />
+          </Key>
+          <Property Type="Int32" Name="SeqNo" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="RequestId" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="TrackingReference" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="RequestTime" Precision="3" />
+          <Property Type="String" Name="RequestStatus" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="TimeStamp" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="RequestError" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Token" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PayerId" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="RequestData" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PaymentTransactionId" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PaymentError" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="OrderId" />
+          </Key>
+          <Property Type="Int32" Name="OrderId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="OrderDate" Nullable="false" Precision="3" />
+          <Property Type="String" Name="Username" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Tracking_REF_ID" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Currency" MaxLength="160" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Name" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="Total" Nullable="false" Precision="10" Scale="2" />
+          <NavigationProperty Name="OrderDetails" Relationship="peakzartModel.FK__InvoiceLi__Invoi__2F10007B" FromRole="Order" ToRole="OrderDetail" />
+        </EntityType>
+        <EntityType Name="OrderDetail">
+          <Key>
+            <PropertyRef Name="OrderDetailId" />
+          </Key>
+          <Property Type="Int32" Name="OrderDetailId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="OrderId" Nullable="false" />
+          <Property Type="Int32" Name="ImageId" Nullable="false" />
+          <Property Type="Int32" Name="Quantity" Nullable="false" />
+          <Property Type="Decimal" Name="UnitPrice" Nullable="false" Precision="10" Scale="2" />
+          <NavigationProperty Name="ImageDetail" Relationship="peakzartModel.FK_InvoiceLine_Album" FromRole="OrderDetail" ToRole="ImageDetail" />
+          <NavigationProperty Name="Order" Relationship="peakzartModel.FK__InvoiceLi__Invoi__2F10007B" FromRole="OrderDetail" ToRole="Order" />
+        </EntityType>
+        <Association Name="FK_InvoiceLine_Album">
+          <End Type="peakzartModel.ImageDetail" Role="ImageDetail" Multiplicity="1" />
+          <End Type="peakzartModel.OrderDetail" Role="OrderDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ImageDetail">
+              <PropertyRef Name="ImageId" />
+            </Principal>
+            <Dependent Role="OrderDetail">
+              <PropertyRef Name="ImageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__InvoiceLi__Invoi__2F10007B">
+          <End Type="peakzartModel.Order" Role="Order" Multiplicity="1" />
+          <End Type="peakzartModel.OrderDetail" Role="OrderDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Order">
+              <PropertyRef Name="OrderId" />
+            </Principal>
+            <Dependent Role="OrderDetail">
+              <PropertyRef Name="OrderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="SHIPDETAIL">
+          <Key>
+            <PropertyRef Name="SHIPID" />
+          </Key>
+          <Property Type="Int32" Name="SHIPID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="SHIPTONAME" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SHIPTOSTREET" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SHIPTOCITY" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SHIPTOSTATE" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SHIPTOCOUNTRYCODE" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SHIPTOZIP" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SHIPTOCONTACTNO" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="NOTESTOSELLER" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="TrackingReference" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="peakzartModelStoreContainer" CdmEntityContainer="peakzartEntities">
+          <EntitySetMapping Name="Categories">
+            <EntityTypeMapping TypeName="peakzartModel.Category">
+              <MappingFragment StoreEntitySet="Category">
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+                <ScalarProperty Name="GroupID" ColumnName="GroupID" />
+                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifieBy" ColumnName="ModifieBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Groups">
+            <EntityTypeMapping TypeName="peakzartModel.Group">
+              <MappingFragment StoreEntitySet="Group">
+                <ScalarProperty Name="GroupId" ColumnName="GroupId" />
+                <ScalarProperty Name="GroupName" ColumnName="GroupName" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifieBy" ColumnName="ModifieBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ImageDetails">
+            <EntityTypeMapping TypeName="peakzartModel.ImageDetail">
+              <MappingFragment StoreEntitySet="ImageDetail">
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="ArtistId" ColumnName="ArtistId" />
+                <ScalarProperty Name="ImageId" ColumnName="ImageId" />
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+                <ScalarProperty Name="ImageTitle" ColumnName="ImageTitle" />
+                <ScalarProperty Name="ImageDescription" ColumnName="ImageDescription" />
+                <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifieBy" ColumnName="ModifieBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="peakzartModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UserPassword" ColumnName="UserPassword" />
+                <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+                <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifieBy" ColumnName="ModifieBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserRoles">
+            <EntityTypeMapping TypeName="peakzartModel.UserRole">
+              <MappingFragment StoreEntitySet="UserRole">
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+                <ScalarProperty Name="RoleDescription" ColumnName="RoleDescription" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifieBy" ColumnName="ModifieBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Artists">
+            <EntityTypeMapping TypeName="peakzartModel.Artist">
+              <MappingFragment StoreEntitySet="Artists">
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="ModifieBy" ColumnName="ModifieBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="ArtistsName" ColumnName="ArtistsName" />
+                <ScalarProperty Name="ArtistsId" ColumnName="ArtistsId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Carts">
+            <EntityTypeMapping TypeName="peakzartModel.Cart">
+              <MappingFragment StoreEntitySet="Cart">
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="Count" ColumnName="Count" />
+                <ScalarProperty Name="ImageId" ColumnName="ImageId" />
+                <ScalarProperty Name="CartId" ColumnName="CartId" />
+                <ScalarProperty Name="RecordId" ColumnName="RecordId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PayPalTransactions">
+            <EntityTypeMapping TypeName="peakzartModel.PayPalTransaction">
+              <MappingFragment StoreEntitySet="PayPalTransaction">
+                <ScalarProperty Name="PaymentError" ColumnName="PaymentError" />
+                <ScalarProperty Name="PaymentTransactionId" ColumnName="PaymentTransactionId" />
+                <ScalarProperty Name="RequestData" ColumnName="RequestData" />
+                <ScalarProperty Name="PayerId" ColumnName="PayerId" />
+                <ScalarProperty Name="Token" ColumnName="Token" />
+                <ScalarProperty Name="RequestError" ColumnName="RequestError" />
+                <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+                <ScalarProperty Name="RequestStatus" ColumnName="RequestStatus" />
+                <ScalarProperty Name="RequestTime" ColumnName="RequestTime" />
+                <ScalarProperty Name="TrackingReference" ColumnName="TrackingReference" />
+                <ScalarProperty Name="RequestId" ColumnName="RequestId" />
+                <ScalarProperty Name="SeqNo" ColumnName="SeqNo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Orders">
+            <EntityTypeMapping TypeName="peakzartModel.Order">
+              <MappingFragment StoreEntitySet="Order">
+                <ScalarProperty Name="Total" ColumnName="Total" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Currency" ColumnName="Currency" />
+                <ScalarProperty Name="Tracking_REF_ID" ColumnName="Tracking_REF_ID" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+                <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OrderDetails">
+            <EntityTypeMapping TypeName="peakzartModel.OrderDetail">
+              <MappingFragment StoreEntitySet="OrderDetail">
+                <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="ImageId" ColumnName="ImageId" />
+                <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+                <ScalarProperty Name="OrderDetailId" ColumnName="OrderDetailId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SHIPDETAILS">
+            <EntityTypeMapping TypeName="peakzartModel.SHIPDETAIL">
+              <MappingFragment StoreEntitySet="SHIPDETAILS">
+                <ScalarProperty Name="TrackingReference" ColumnName="TrackingReference" />
+                <ScalarProperty Name="NOTESTOSELLER" ColumnName="NOTESTOSELLER" />
+                <ScalarProperty Name="SHIPTOCONTACTNO" ColumnName="SHIPTOCONTACTNO" />
+                <ScalarProperty Name="SHIPTOZIP" ColumnName="SHIPTOZIP" />
+                <ScalarProperty Name="SHIPTOCOUNTRYCODE" ColumnName="SHIPTOCOUNTRYCODE" />
+                <ScalarProperty Name="SHIPTOSTATE" ColumnName="SHIPTOSTATE" />
+                <ScalarProperty Name="SHIPTOCITY" ColumnName="SHIPTOCITY" />
+                <ScalarProperty Name="SHIPTOSTREET" ColumnName="SHIPTOSTREET" />
+                <ScalarProperty Name="SHIPTONAME" ColumnName="SHIPTONAME" />
+                <ScalarProperty Name="SHIPID" ColumnName="SHIPID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

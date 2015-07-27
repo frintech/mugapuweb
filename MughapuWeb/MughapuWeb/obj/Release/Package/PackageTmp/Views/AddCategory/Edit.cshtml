@@ -1,0 +1,62 @@
+﻿@model MughapuWeb.DAL.Category
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+     <div class="content aligncenter ">
+            <div class="contant_contactus  grdOuter">
+    <fieldset>
+        <legend>Edit Category</legend>
+
+        @Html.HiddenFor(model => model.CategoryId)
+
+       
+        <div class="dispBlock">
+            @Html.LabelFor(model => model.CategoryName)
+        </div>
+        <div class="dispBlock">         
+             @Html.TextBoxFor(model => model.CategoryName,null, new { @class = "txtContact" })
+            @Html.ValidationMessageFor(model => model.CategoryName)
+        </div>
+         <br />
+         <div class="dispBlock">
+            @Html.Label("Group")
+        </div>
+        <div class="dispBlock">
+           
+
+               @Html.DropDownListFor(m => m.GroupID ,new SelectList(ViewBag.GroupsList, "Value", "Text")) 
+                                  @Html.ValidationMessageFor(m => m.GroupID)
+        </div>
+
+         <br />
+        <div class="dispBlock">
+            @Html.LabelFor(model => model.IsActive)
+        </div>
+        <div class="dispBlock">
+            @Html.EditorFor(model => model.IsActive)
+            @Html.ValidationMessageFor(model => model.IsActive)
+        </div>
+
+
+        <p>
+            <input type="submit" class="btnBlue" value="Save" />
+        </p>
+    </fieldset>
+
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+   </div>
+        </div>
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

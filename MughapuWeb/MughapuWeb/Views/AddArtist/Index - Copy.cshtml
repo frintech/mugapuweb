@@ -1,0 +1,84 @@
+﻿@using PagedList
+@using PagedList.Mvc
+@using GridMvc.Html
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+@model IPagedList<MughapuWeb.DAL.Artists>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+ <div class="content aligncenter">
+                  <div class="floatleft margintop">
+                        @Html.ActionLink("Add Artist", "Create")
+<div class="PagedList">
+        @Html.PagedListPager(Model, page => Url.Action("Index", new { page }), PagedListRenderOptions.PageNumbersOnly)    
+</div>
+<div class="datagrid">
+<table>
+<thead>
+    <tr>
+        <th>Artists Id</th>
+        <th>Artists Name</th> 
+        <th>Active</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+</thead>
+<tbody>
+ @{        
+var i=0;        
+foreach (var item in Model) {
+    
+    if (i % 2 == 0)
+    {
+           <tr>
+         <td>
+            @Html.DisplayFor(modelItem => item.ArtistsId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ArtistsName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsActive)
+        </td>
+       
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ArtistsId }) 
+            </td>
+            <td>
+            @Html.ActionLink("Delete", "Delete", new { id=item.ArtistsId })
+        </td>
+    </tr>
+    }
+    else{
+        <tr class="alt">
+         <td>
+            @Html.DisplayFor(modelItem => item.ArtistsId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ArtistsName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsActive)
+        </td>
+       
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ArtistsId }) 
+            </td>
+            <td>
+            @Html.ActionLink("Delete", "Delete", new { id=item.ArtistsId })
+        </td>
+    </tr>
+        
+    }
+
+    i += 1;
+}
+}
+</tbody>
+</table>
+</div>   
+</div>
+ </div>

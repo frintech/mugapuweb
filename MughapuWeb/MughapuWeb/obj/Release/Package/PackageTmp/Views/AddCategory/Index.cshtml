@@ -1,0 +1,97 @@
+﻿@using PagedList
+@using PagedList.Mvc
+@using GridMvc.Html
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+@model IPagedList<MughapuWeb.Models.CategoryViewDetailsModel>
+
+@{
+    ViewBag.Title = "Category";
+}
+
+   
+  <div class="content aligncenter">
+                  <div class="floatleft margintop">
+                        <h5>@Html.ActionLink("Add Category", "Create")</h5>
+<div class="PagedList">
+        @Html.PagedListPager(Model, page => Url.Action("Index", new { page }), PagedListRenderOptions.PageNumbersOnly)    
+</div>
+<div class="datagrid">
+<table border="1">
+<thead>
+    <tr>
+        <th>Category Id</th>
+        <th>Category Name</th>        
+        <th>Group Name</th>        
+        <th>Active</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+</thead>
+<tbody>
+
+
+@{        
+var i=0;        
+foreach (var item in Model) {
+    
+    if (i % 2 == 0)
+    {
+        <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.catid)
+          
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.CategoryName)
+        </td>
+         <td>
+            @Html.DisplayFor(modelItem => item.GroupName)
+          
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Active)
+
+        </td>       
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.catid })
+          </td>
+            <td>
+            @Html.ActionLink("Delete", "Delete", new { id=item.catid })
+        </td>
+    </tr>    
+    }
+    else{
+        <tr class="alt">
+        <td>
+            @Html.DisplayFor(modelItem => item.catid)
+          
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.CategoryName)
+        </td>
+         <td>
+            @Html.DisplayFor(modelItem => item.GroupName)
+          
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Active)
+
+        </td>       
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.catid })
+          </td>
+            <td>
+            @Html.ActionLink("Delete", "Delete", new { id=item.catid })
+        </td>
+    </tr>
+    }
+    i += 1;
+}
+}
+</tbody>
+</table>
+</div>   
+</div>
+                </div>

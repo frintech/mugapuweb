@@ -1,0 +1,36 @@
+﻿@model MughapuWeb.DAL.Artists
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<div class="content aligncenter ">
+      <div class="contant_contactus  grdOuter">
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Delete</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ArtistsName)
+    </div>
+    <div class="display-field">
+      @Html.TextBoxFor(model => model.ArtistsName,null, new { @class = "txtContact" })
+    </div>
+    <br />
+    <div class="display-label">
+         @Html.Label("Active")
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IsActive)
+    </div>
+
+       <br />
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" class="btnBlue" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}
+ </div>
+     </div>

@@ -1,0 +1,41 @@
+﻿@model MughapuWeb.DAL.Artists
+
+@{
+    ViewBag.Title = "Create";
+}
+
+
+
+@using (Html.BeginForm()) {
+     <div class="content aligncenter ">
+            <div class="contant_contactus  grdOuter">
+
+    <fieldset>
+        <legend>Add Artist</legend>
+
+         <div class="dispBlock">
+            @Html.Label("Artist Name")
+        </div>
+        <div class="dispBlock">
+              @Html.TextBoxFor(m => m.ArtistsName,null,new { @class = "txtContact"}) 
+            @Html.ValidationMessageFor(m=>m.ArtistsName)<br /><br />
+        </div>
+
+        
+       
+        <p>
+            <input type="submit" value="Create"  class="btnBlue" />
+        </p>
+    </fieldset>
+                <div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+   </div>
+ </div>
+}
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
