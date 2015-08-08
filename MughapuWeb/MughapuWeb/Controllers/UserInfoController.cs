@@ -47,7 +47,7 @@ namespace MughapuWeb.Controllers
         }
 
 
-       [Authorize]
+       [AllowAnonymous]
         public ActionResult Create()
         {
            var list = new SelectList(new[] { new { ID = "M", Name = "Male" }, new { ID = "F", Name = "FeMale" }, new { ID = "O", Name = "Others" } }, "ID", "Name", 1); 
