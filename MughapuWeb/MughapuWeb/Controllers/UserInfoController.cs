@@ -47,7 +47,7 @@ namespace MughapuWeb.Controllers
         }
 
 
-       [AllowAnonymous]
+        [AllowAnonymous]
         public ActionResult Create()
         {
            var list = new SelectList(new[] { new { ID = "M", Name = "Male" }, new { ID = "F", Name = "FeMale" }, new { ID = "O", Name = "Others" } }, "ID", "Name", 1); 
@@ -132,6 +132,7 @@ namespace MughapuWeb.Controllers
                 }
                 else
                 {
+                    
                     ModelState.AddModelError("", "Login data is incorrect!");
                 }
             }
@@ -151,16 +152,24 @@ namespace MughapuWeb.Controllers
         [AllowAnonymous]
         public ActionResult Create(AddUserModel User)
         {
-
+           
             //  var errors = ModelState
             //.Where(x => x.Value.Errors.Count > 0)
             //.Select(x => new { x.Key, x.Value.Errors })
             //.ToArray();
+            
+            var chkemailid = ChkValidEmailID(User.Email_id);
+            if (chkemailid.Data != "false")
+            {
+                ModelState.AddModelError("Email_id" ,"This Email id has already Registered");
+            }
+
             if (ModelState.IsValid)
             {
 
                 try
                 {
+                   
                    // string usrpwd = Encode(User.Usr_pwd);
                     // Insert Product
                     User_Info objnewUser = new User_Info();
@@ -178,13 +187,13 @@ namespace MughapuWeb.Controllers
                     db.SaveChanges();
                     TempData["Usr_Message"] = ConfigurationManager.AppSettings["INS_SUC"];
                     ModelState.Clear();
-                    return RedirectToAction("Index", "checkout");
+                    return RedirectToAction("UserLogin", "UserInfo");
 
                 }
 
                 catch (Exception exception)
                 {
-
+                  
                 }
 
                 return RedirectToAction("Create", "UserInfo");
@@ -192,7 +201,8 @@ namespace MughapuWeb.Controllers
             }
 
 
-
+            var list = new SelectList(new[] { new { ID = "M", Name = "Male" }, new { ID = "F", Name = "FeMale" }, new { ID = "O", Name = "Others" } }, "ID", "Name", 1);
+            ViewBag.Genders = list;
             return View(User);
         }
 
@@ -375,20 +385,23 @@ namespace MughapuWeb.Controllers
             //ViewBag.ReturnUrl = Url.Action("Manage");
             return View();
         }
-
-        //
-        // POST: /Account/Manage
-         [AllowAnonymous]
+        [AllowAnonymous]
+        public ActionResult ForgotPassword()
+        {
+            
+            return View();
+        }
+        [AllowAnonymous]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult ChangePassword(UserPasswordModel model)
+        public ActionResult ForgotPassword(ForgotPasswordModel model)
         {
             bool hasLocalAccount = false;
             if (!string.IsNullOrEmpty(User.Identity.Name))
             {
                 hasLocalAccount = true;
             }
-           
+
             if (hasLocalAccount)
             {
                 if (ModelState.IsValid)
@@ -397,7 +410,7 @@ namespace MughapuWeb.Controllers
                     bool changePasswordSucceeded;
                     try
                     {
-                        changePasswordSucceeded = WebSecurity.ChangePassword(User.Identity.Name, model.OldPassword, model.NewPassword);
+                        changePasswordSucceeded = WebSecurity.ResetPassword(User.Identity.Name, model.NewPassword);
                     }
                     catch (Exception)
                     {
@@ -416,6 +429,76 @@ namespace MughapuWeb.Controllers
             }
             else
             {
+
+
+                if (ModelState.IsValid)
+                {
+                    try
+                    {
+                        
+                        var userToUpdate = db.User_Info.Where(u => u.E_mail_id == model.userName).Where(u => u.Mobile_number == model.MobileNo).SingleOrDefault();
+                        if (userToUpdate != null)
+                        {
+
+                            userToUpdate.Usr_pwd = Encode(model.NewPassword);
+
+                            db.SaveChanges();
+                        }
+                        TempData["CHNG_PWD"] = ConfigurationManager.AppSettings["RAV_SUC"];
+                        return RedirectToAction("Index", "Home");
+                    }
+                    catch (Exception)
+                    {
+                        ModelState.AddModelError("", String.Format("Unable to create local account. An account with the name \"{0}\" may already exist.", User.Identity.Name));
+                    }
+                }
+            }
+
+            // If we got this far, something failed, redisplay form
+            return View(model);
+        }
+        //
+        // POST: /Account/Manage
+         [AllowAnonymous]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult ChangePassword(UserPasswordModel model)
+        {
+            bool hasLocalAccount = false;
+            if (!string.IsNullOrEmpty(User.Identity.Name))
+            {
+                hasLocalAccount = true;
+            }
+           
+            //if (hasLocalAccount)
+            //{
+            //    if (ModelState.IsValid)
+            //    {
+            //        // ChangePassword will throw an exception rather than return false in certain failure scenarios.
+            //        bool changePasswordSucceeded;
+            //        try
+            //        {
+            //            string oldpassword = Encode(model.OldPassword);
+            //            string NewPassword = Encode(model.NewPassword);
+            //            changePasswordSucceeded = WebSecurity.ChangePassword(User.Identity.Name, oldpassword, NewPassword);
+            //        }
+            //        catch (Exception ex)
+            //        {
+            //            changePasswordSucceeded = false;
+            //        }
+
+            //        if (changePasswordSucceeded)
+            //        {
+            //            return RedirectToAction("Manage", new { Message = MughapuWeb.Controllers.AccountController.ManageMessageId.ChangePasswordSuccess });
+            //        }
+            //        else
+            //        {
+            //            ModelState.AddModelError("", "The current password is incorrect or the new password is invalid.");
+            //        }
+            //    }
+            //}
+            //else
+            //{
                 
 
                 if (ModelState.IsValid)
@@ -439,7 +522,7 @@ namespace MughapuWeb.Controllers
                         ModelState.AddModelError("", String.Format("Unable to create local account. An account with the name \"{0}\" may already exist.", User.Identity.Name));
                     }
                 }
-            }
+            //}
 
             // If we got this far, something failed, redisplay form
             return View(model);
@@ -454,6 +537,23 @@ namespace MughapuWeb.Controllers
             
 
              return RedirectToAction("Index", "Home");
+         }
+
+         public JsonResult ChkValidEmailID(string emailid)
+         {
+
+
+             var chkemailidexists = from a in db.User_Info
+                                  where a.Isactive == true && (a.E_mail_id == emailid)
+                                  select a;
+             foreach (var d in chkemailidexists)
+             {
+                 return Json("true");
+             }
+             return Json("false");
+
+
+
          }
     }
 }

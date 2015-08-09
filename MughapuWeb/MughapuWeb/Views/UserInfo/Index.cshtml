@@ -87,7 +87,7 @@
                                         <td>@item.Email_id</td>                                         
                                           <td>@item.Address</td>
                                          <td>@item.DOB</td>  
-                                         @if (item.Isactive == false)
+                                         @*@if (item.Isactive == false)
                                          {
                                              <td></td>   
                                            <td>@Html.ActionLink("ReActivate", "ReActivate", new { id = item.Uidno }, new { @class = "reactivate-link" })</td>
@@ -96,7 +96,7 @@
                                          {
                                             <td>@Html.ActionLink("Edit", "Edit", new { id = item.Uidno }, new { @class = "edit-link" })</td>  
                                             <td>@Html.ActionLink("Delete", "Delete", new { id = item.Uidno }, new { @class = "delete-link" })</td>
-                                         }
+                                         }*@
                                     </tr>
         }
         else
@@ -110,7 +110,7 @@
                                         <td>@item.Email_id</td>                                         
                                           <td>@item.Address</td>
                                          <td>@item.DOB</td>    
-                                         @if (item.Isactive == false)
+                                        @* @if (item.Isactive == false)
                                          {
                                              <td></td>   
                                            <td>@Html.ActionLink("ReActivate", "ReActivate", new { id = item.Uidno }, new { @class = "reactivate-link" })</td>
@@ -119,7 +119,7 @@
                                          {
                                             <td>@Html.ActionLink("Edit", "Edit", new { id = item.Uidno }, new { @class = "edit-link" })</td>  
                                             <td>@Html.ActionLink("Delete", "Delete", new { id = item.Uidno }, new { @class = "delete-link" })</td>
-                                         }
+                                         }*@
                                     </tr>
         }
 

@@ -17,6 +17,7 @@
 
 @using (Html.BeginForm("Create", "UserInfo", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
+      
    <div class="container">      
 
 
@@ -76,6 +77,7 @@
            </div>
            <div class="col-md-3">
                @Html.ValidationMessageFor(model => model.Email_id)
+               <div class="validate"  style=visibility:hidden  id="divChkexist">EMail Id has already registered.</div>
            </div>
 
        </div> 
@@ -89,7 +91,7 @@
            <div class="col-md-3">
                @Html.ValidationMessageFor(model => model.DOB)
                
-               <div class="validate"  style=visibility:hidden  id="divStartDate">Start date should be either  current date or Future date</div>
+               <div class="validate"  style=visibility:hidden  id="divDOBDate">DOB date should be less than  current date</div>
            </div>
        </div>  
 
@@ -116,20 +118,31 @@
                <span class="mandatory">*</span>          
            </div>           
            <div class="col-md-5">
-                @Html.TextBoxFor(model => model.Usr_pwd,null, new { @class="pName", @data_animation="slide",@data_label="User Password" ,@type="Password"})
+                @Html.TextBoxFor(model => model.Usr_pwd,null, new { @class="pName", @data_animation="slide",@data_label="Password" ,@type="Password"})
            </div>
            <div class="col-md-3">
                @Html.ValidationMessageFor(model => model.Usr_pwd)
            </div>
        </div> 
        <div class="row mrg-top-20">
+           <div class="col-md-3">     
+               <span class="mandatory">*</span>          
+           </div>           
+           <div class="col-md-5">
+                @Html.TextBoxFor(model => model.ConfirmPassword,null, new { @class="pName", @data_animation="slide",@data_label="Confirm Password" ,@type="Password"})
+           </div>
+           <div class="col-md-3">
+               @Html.ValidationMessageFor(model => model.ConfirmPassword)
+           </div>
+       </div> 
+       <div class="row mrg-top-20">
            <div class="col-md-3">               
            </div>           
            <div class="col-md-2">
-                 <button type="submit" class="btnBlue sub-reset">Submit</button>
+                 <button type="submit" id="btnSubmit" class="btnBlue sub-reset" >Submit</button>
            </div>
            <div class="col-md-2">
-                 <h5 class="btnBlue sub-reset-cancel"> @Html.ActionLink("Cancel", "Index")</h5>
+                 <h5 class="btnBlue sub-reset-cancel"> @Html.ActionLink("Cancel", "UserLogin")</h5>
            </div>
            <div class="col-md-2">
                  <h5 class="btnBlue sub-reset-cancel"> @Html.ActionLink("Reset", "Create")</h5>
@@ -212,7 +225,7 @@
 
     $(document).ready(function () {
        
-
+       
         $('#First_name').keypress(function (event) {
             var keyCode = event.keyCode == 0 ? event.charCode : e.keyCode;
             if ((keyCode >= 48 && keyCode <= 57) || (keyCode >= 65 && keyCode <= 90) || (keyCode >= 97 && keyCode <= 122) || (specialKeys.indexOf(e.keyCode) != -1 && e.charCode != e.keyCode)) {
@@ -226,10 +239,52 @@
                 event.preventDefault();
             }
         })
+       
+
+        
+
+        
 
     });
+    $(document).on('click', '#btnSubmit', function () {
+       
+        var emailid = $("#Email_id").val();
+        var from = $("#DOB").val();
+        var fullDate = new Date();
 
+        var twoDigitMonth = fullDate.getMonth() + 1 + "";
 
+        if (twoDigitMonth.length == 1) twoDigitMonth = "0" + twoDigitMonth;
+        var twoDigitDate = fullDate.getDate() + "";
+        if (twoDigitDate.length == 1) twoDigitDate = "0" + twoDigitDate;
+        var currentDate = fullDate.getFullYear() + "-" + twoDigitMonth + "-" + twoDigitDate;
+
+        if (Date.parse(from) > Date.parse(currentDate)) {
+            document.getElementById("divDOBDate").style.visibility = "visible";
+            $("input[type=text]").first().focus();
+            return false;
+        }
+        else {
+            document.getElementById("divDOBDate").style.visibility = "hidden";
+        }
+
+        $.post('@Url.Action("ChkValidEmailID", "UserInfo")', { "emailid": emailid },
+          function (data) {
+              
+              if (data == "true") {
+                 
+                  document.getElementById("divChkexist").style.visibility = "visible";
+                  $("input[type=text]").first().focus();
+                  event.preventDefault();
+                  //return false;
+              }
+              else {
+                  document.getElementById("divChkexist").style.visibility = "hidden";
+                  return true
+              }
+              return false;
+          });
+    });
 </script>
 
 

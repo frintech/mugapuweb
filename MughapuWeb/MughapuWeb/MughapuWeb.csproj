@@ -1269,6 +1269,7 @@
     <Content Include="Views\Report\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Menu.cshtml" />
     <Content Include="Views\FindResult\Index.cshtml" />
+    <Content Include="Views\UserInfo\ForgotPassword.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\ContactUS\AboutUS\" />

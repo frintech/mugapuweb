@@ -4,6 +4,14 @@
     ViewBag.Title = "Log in";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+ @if (TempData["Usr_Message"] != null)
+{
+<script>
+    alert('@TempData["Usr_Message"]');
+       
+ 
+</script>
+}
 
 
 
@@ -29,7 +37,8 @@
                    User Name
                </div>*@
                <div class="col-md-3">
-                     @Html.TextBoxFor(m => m.UserName,new { @placeholder="Email Id"})
+                     
+                    @Html.TextBoxFor(model => model.UserName,null, new { @class="pName", @data_animation="slide",@data_label="EmailId" })
                </div>
                <div class="col-md-3">
                      @Html.ValidationMessageFor(m => m.UserName)
@@ -43,7 +52,8 @@
                    Password
                </div>*@
                <div class="col-md-3">
-                      @Html.PasswordFor(m => m.Password, new { @placeholder = "Password" })
+                   
+                   @Html.TextBoxFor(model => model.Password,null, new { @class="pName", @data_animation="slide",@data_label="Password",@type="Password" })
                </div>
                <div class="col-md-3">
                       @Html.ValidationMessageFor(m => m.Password)
@@ -71,19 +81,14 @@
                </div>
 
                  <div class="col-md-3">
-                 @Html.ActionLink("Change  Password", "ChangePassword", "UserInfo",  new { @class = "btnBlue" })
+            
+<input type='submit' class="btnBlue" formaction='/UserInfo/Create' value='Register'>
+                     &nbsp;&nbsp;&nbsp;&nbsp;
+                   <input type='submit' class="btnBlue" formaction='/UserInfo/ForgotPassword' value='Forgot  Password'>
+              
                   </div>
-                 <div class="col-md-3">
-                 @Html.ActionLink("Signup", "Create", "UserInfo", new { @class = "btnBlue" })
-                  </div>
-                 @*<div class="col-md-2">
-              <h5 class="btnBlue sub-reset-cancel">
-                     @Html.ActionLink("Signup", "Create", "UserInfo",null,new {  
-@class = "openDialog",  
-data_dialog_id = "aboutDialog",  
-data_dialog_title = "Signup"  
-}) </h5>
-               </div>*@
+                
+               
                <div class="col-md-3">
                    
                </div>

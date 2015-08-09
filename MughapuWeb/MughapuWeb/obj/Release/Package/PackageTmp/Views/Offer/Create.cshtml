@@ -75,6 +75,7 @@
            </div>
            <div class="col-md-3">
                @Html.ValidationMessageFor(model => model.Type)
+                  <div class="validate"  style=visibility:hidden  id="divChkexist">Offer has already exists in this date range</div>
            </div>
        </div>   @*           
        <div class="row mrg-top-20">
@@ -278,8 +279,16 @@
        
       
         var from = $("#StartDate").val();
-        var to = $("#EndDate").val();
-        var currentDate = new Date()
+        var to = $("#EndDate").val();     
+        var fullDate = new Date();
+       
+        var twoDigitMonth = fullDate.getMonth()+1 + "";
+      
+        if (twoDigitMonth.length == 1) twoDigitMonth = "0" + twoDigitMonth;
+        var twoDigitDate = fullDate.getDate() + "";
+        if (twoDigitDate.length == 1) twoDigitDate = "0" + twoDigitDate;
+        var currentDate = fullDate.getFullYear() + "-" + twoDigitMonth + "-" + twoDigitDate;
+      
         if (Date.parse(from) < Date.parse(currentDate)) {
             document.getElementById("divStartDate").style.visibility = "visible";
             $("input[type=text]").first().focus();
@@ -304,6 +313,19 @@
         else {
             document.getElementById("divMaxqty").style.visibility = "hidden";
         }
+
+        $.post('@Url.Action("ChkOfferValid", "Offer")', { "fromdate": from,"todate": to },
+                  function (data) {
+                      if (data == true) {                        
+                          document.getElementById("divChkexist").style.visibility = "visible";
+                          $("input[type=text]").first().focus();
+                          return false;
+                      }
+                      else {
+                          document.getElementById("divChkexist").style.visibility = "hidden";
+                          
+                      }
+                  });
         
         var checked_PDT_names = [];
         var checked_PDT_Discount_Value = [];

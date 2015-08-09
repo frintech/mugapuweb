@@ -42,7 +42,7 @@
               
              </div>
 <div  style="float: right;" class="col-md-1">
-                <b>Sort By: </b>  @Html.DropDownList("Sortby", new SelectListItem[] { new SelectListItem() { Text = "Newest to Oldest", Value = "1" }, new SelectListItem() { Text = "Oldest to Newest", Value = "6" }, new SelectListItem() { Text = "price:Low to high", Value = "3" }, new SelectListItem() { Text = "price:High to Low", Value = "2" }, new SelectListItem() { Text = "Name:A=>Z", Value = "4" }, new SelectListItem() { Text = "Name:Z=>A", Value = "5" }},new {  @class = "dropdown dropdown-large" , onchange = "document.location.href = '/Home/Index?sortby=' + this.options[this.selectedIndex].value;" })
+                <b>Sort By: </b>  @Html.DropDownList("Sortby", new SelectListItem[] { new SelectListItem() { Text = "Newest to Oldest", Value = "1" }, new SelectListItem() { Text = "Oldest to Newest", Value = "6" }, new SelectListItem() { Text = "price:Low to high", Value = "3" }, new SelectListItem() { Text = "price:High to Low", Value = "2" }, new SelectListItem() { Text = "Name:A=>Z", Value = "4" }, new SelectListItem() { Text = "Name:Z=>A", Value = "5" }},new {  @class = "dropdown dropdown-large"  })
                  </div> 
                     <div class="row" id="Container">
                          @{  
@@ -104,32 +104,15 @@
 </div>
       <script type="text/javascript">
           $(document).ready(function () {
-             
-       
-              $("#Category_id").change(function () {
-                
-                  if ($("#Category_id").val() != "") {
-                      var menuid = $("#Category_id").val();
-                  $.post('@Url.Action("LoadSubCategory", "Admin")', { "menuid": menuid },
-                        function (data) {
-                            $("#Sub_Category_id").empty();
-                            $.each(data, function (id, option) {
-                                $("#Sub_Category_id").append($('<option></option>').val(option.Mnu_id).html(option.Mnu_Name));
-                            });
-                            $("#Sub_Category_id").prop("disabled", false);
-                            // if subcategory is empty load brands for selected category
-                       
-                            var subcatid = $("#Sub_Category_id").val();
-                            if (subcatid == "" || subcatid == null) {
-                                //alert("SubCatid: empty");
-                                //alert(subcatid)
-                                subcatid = 0;
-                            }
+              $("#Sortby").change(function () {
 
-                   
-                            LoadBrand(subcatid, menuid);
-                        });
+                  if ($("#Sortby").val() != "") {
+                      var menuid = $("#Sortby").val();
+
+                      window.location.href = '@Url.Content("~/Home/Index")' + '?sortby=' + $('#Sortby').val();
+
+
                   }
               })
-              }
+          });
  </script>

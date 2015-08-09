@@ -15,18 +15,27 @@ namespace MughapuWeb.Models
         [Required(ErrorMessage = "Please enter your Mobile No")]
         public string Mobile_number { get; set; } 
         [EmailAddress]
-            [Required(ErrorMessage = "Please enter your Emial ID ")]
+        [Required(ErrorMessage = "Please enter your Emial ID ")]
         public string Email_id { get; set; }
         [Required(ErrorMessage = "Please select DOB")]
         public DateTime DOB { get; set; }
          [Required(ErrorMessage = "Please enter your Address ")]
         public string Address_Communication { get; set; }
-        [Required(ErrorMessage = "Please enter your Password ")]
-         public string Usr_pwd { get; set; }          
+       
+               
          [Required(ErrorMessage = "Please select your Gender ")]
         public string Gender { get; set; }
-        
 
+         [Required(ErrorMessage = "Please enter your Password ")]
+         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
+         [DataType(DataType.Password)]
+         [Display(Name = "New password")]
+         public string Usr_pwd { get; set; }
+
+         [DataType(DataType.Password)]
+         [Display(Name = "Confirm new password")]
+         [Compare("Usr_pwd", ErrorMessage = "The new password and confirmation password do not match.")]
+         public string ConfirmPassword { get; set; }
 
 
 
