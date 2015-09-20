@@ -1,0 +1,52 @@
+﻿@using PagedList
+@using PagedList.Mvc
+@using GridMvc.Html
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+@model IPagedList<NatchathraWeb.DAL.Artists>
+
+@{
+    ViewBag.Title = "Artist";
+}
+
+
+ <div class="content aligncenter">
+                  <div class="floatleft margintop">
+                       <h5> @Html.ActionLink("Add Artist", "Create")</h5>
+<div class="PagedList">
+        @Html.PagedListPager(Model, page => Url.Action("Index", new { page }), PagedListRenderOptions.PageNumbersOnly)    
+</div>
+<div class="CSSTableGenerator">
+<table style="width:450px">
+    <tr>
+        <td>Artists Id</td>
+        <td>Artists Name</td> 
+        <td>Active</td>
+        <td>Edit</td>
+        <td>Delete</td>
+    </tr>
+ @{        
+foreach (var item in Model) {
+        <tr>
+         <td>@Html.DisplayFor(modelItem => item.ArtistsId)</td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ArtistsName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsActive)
+        </td>
+       
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ArtistsId }) 
+            </td>
+            <td>
+            @Html.ActionLink("Delete", "Delete", new { id=item.ArtistsId })
+        </td>
+    </tr>
+    
+}
+}
+
+</table>
+</div>   
+</div>
+ </div>

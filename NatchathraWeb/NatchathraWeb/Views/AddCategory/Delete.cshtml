@@ -1,0 +1,39 @@
+﻿@model NatchathraWeb.DAL.Category
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+
+
+<div class="content aligncenter ">
+      <div class="contant_contactus  grdOuter">
+          <h3>Are you sure you want to delete this?</h3>
+
+<fieldset>
+    <legend>Delete</legend>
+
+   
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CategoryName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CategoryName)
+    </div>
+
+   
+
+   
+</fieldset>
+          
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete"  class="btnBlue"/> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}
+
+ </div>
+     </div>

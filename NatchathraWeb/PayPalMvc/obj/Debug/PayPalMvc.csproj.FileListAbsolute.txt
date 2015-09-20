@@ -1,0 +1,10 @@
+D:\MVC\SourceCode\jhelmink-paypalexpresscheckoutmvc-8dd91567a7e3\jhelmink-paypalexpresscheckoutmvc-8dd91567a7e3\PayPalMvc\bin\Debug\PayPalMvc.dll
+D:\MVC\SourceCode\jhelmink-paypalexpresscheckoutmvc-8dd91567a7e3\jhelmink-paypalexpresscheckoutmvc-8dd91567a7e3\PayPalMvc\bin\Debug\PayPalMvc.pdb
+D:\MVC\SourceCode\jhelmink-paypalexpresscheckoutmvc-8dd91567a7e3\jhelmink-paypalexpresscheckoutmvc-8dd91567a7e3\PayPalMvc\obj\Debug\PayPalMvc.csprojResolveAssemblyReference.cache
+D:\MVC\SourceCode\jhelmink-paypalexpresscheckoutmvc-8dd91567a7e3\jhelmink-paypalexpresscheckoutmvc-8dd91567a7e3\PayPalMvc\obj\Debug\PayPalMvc.dll
+D:\MVC\SourceCode\jhelmink-paypalexpresscheckoutmvc-8dd91567a7e3\jhelmink-paypalexpresscheckoutmvc-8dd91567a7e3\PayPalMvc\obj\Debug\PayPalMvc.pdb
+F:\Webs\KjfashionWeb\PayPalMvc\bin\Debug\PayPalMvc.dll
+F:\Webs\KjfashionWeb\PayPalMvc\bin\Debug\PayPalMvc.pdb
+F:\Webs\KjfashionWeb\PayPalMvc\obj\Debug\PayPalMvc.dll
+F:\Webs\KjfashionWeb\PayPalMvc\obj\Debug\PayPalMvc.pdb
+F:\Webs\KjfashionWeb\PayPalMvc\obj\Debug\PayPalMvc.csprojResolveAssemblyReference.cache
