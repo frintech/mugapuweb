@@ -8,7 +8,7 @@ namespace NatchathraWeb.Controllers
 {
     public class AboutUSController : Controller
     {
-        //
+        
         // GET: /AboutUS/
 
         public ActionResult Index()
