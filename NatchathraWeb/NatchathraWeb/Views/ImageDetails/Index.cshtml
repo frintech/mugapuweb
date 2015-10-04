@@ -5,560 +5,292 @@
 
 }
 
-
-<div id="heading">
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="heading-content">
-                <h2>Product Detail</h2>
-                @*<span>Home / <a href="contact-us.html">Contact Us</a></span>*@
-            </div>
-        </div>
-    </div>
-</div>
-</div>
-
-<script src="~/Scripts/js/jquery-1.8.3.min.js"></script>
-	<script src="~/Scripts/js/jquery.elevatezoom.js"></script>
- <style>
-        /*set a border on the images to prevent shifting*/ 
-        #gallery_01 img{border:2px solid white;} 
-        /*Change the colour*/ 
-        .active img{border:2px solid #333 !important;} 
-        /*- See more at: http://www.elevateweb.co.uk/image-zoom/examples#sthash.M35qJfgq.dpuf*/
-
-        #gallery_01 {
-            width:500px;
-            max-width:500px;
-            /*border:1px solid red;*/
-        }
-     /*#showing {
-         position:absolute;
-     }*/
-     .detail-img {
-         width:500px;
-         height:400px;
-         /*vertical-align:central;*/
-         /*border:1px solid;*/
-     }
-     .detail-img img {
-         max-width:496px;
-         max-height:396px;
-         /*display:inline-block;*/
-         /*border:1px solid red;*/
-     }
-    </style>
-
-   @using (Html.BeginForm("AddToCart", "ShoppingCart", FormMethod.Post, new { enctype = "multipart/form-data" }))
+@using (Html.BeginForm("AddToCart", "ShoppingCart", FormMethod.Post, new { enctype = "multipart/form-data" }))
    {
          @Html.ValidationSummary(true) 
-<div id="contact-us">
-    <div class="container">
-        <div class="row">
-    <div class="col-md-12">
-        <div class="heading-section">
-            <h2>Prouct Information</h2>
-            <img src="~/images/under-heading.png" alt="" >
-        </div>
-    </div>
-</div>
-         @{  
+
+   
                                                
        System.Globalization.CultureInfo Indian = new System.Globalization.CultureInfo("hi-IN");
-         }
+         
 
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-6">
-            <div class="row">
-                <div class="col-md-6 detail-img">
-                    <!-- Lets make a simple image magnifier -->
-                    @*<img id="zoom_01" src="~/Images/Logo.png" data-zoom-image="@Url.Content("~/Images/Original/" + @Model.Imagepath)"/>*@
-                    <img id="showimg" src="@Url.Content("~/Images/RESZIMGS/" + @Model.Imagepath)" data-zoom-image="@Url.Content("~/Images/Original/" + @Model.Imagepath)" alt="" />
-                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                     <div id="gallery_01">
-                         <a href="#" data-image="@Url.Content("~/Images/RESZIMGS/" + @Model.Imagepath)" data-zoom-image="@Url.Content("~/Images/Original/" + @Model.Imagepath)"> 
-                                    <img id="thumb2" src="@Url.Content("~/Images/RESZIMGS/" + @Model.Imagepath)" alt="" width="75" height="75" /> 
-                                </a>             
-                        @{var count = 2;
+
+    <div class="col-lg-12 zeropad">
+
+        <div class="col-lg-6 col-xs-12 zeropad">
+
+            <!-- Jssor Slider Begin -->
+            <!-- To move inline styles to css file/block, please specify a class name for each element. -->
+            <div id="slider1_container" style="position: relative; top: 0px; left: 0px; width: 500px; height: 456px; background: #191919; overflow: hidden;">
+
+                <!-- Loading Screen -->
+                <div u="loading" style="position: absolute; top: 0px; left: 0px;">
+                    <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block; background-color: #000000; top: 0px; left: 0px; width: 100%; height: 100%;">
+                    </div>
+                    <div style="position: absolute; display: block; background: url(../../images/page3/loading.gif) no-repeat center center; top: 0px; left: 0px; width: 100%; height: 100%;">
+                    </div>
+                </div>
+
+                <!-- Slides Container -->
+                <div u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 500px; height: 356px; overflow: hidden;">
+
+                    @{var count = 2;
                           foreach (var item in Model.ImageList)
                           {          
-                                <a href="#" data-image="@Url.Content("~/Images/RESZIMGS/" + item)" data-zoom-image="@Url.Content("~/Images/Original/" + item)"> 
-                                    <img id="@string.Format("thumb{0}", count)" src="@Url.Content("~/Images/RESZIMGS/" + item)" alt="" width="75" height="75" /> 
-                                </a> 
-                                @*<img id="@string.Format("thumb{0}", count)" src="@Url.Content("~/Images/RESZIMGS/" + item)" data-zoom-image="@Url.Content("~/Images/Original/" + item)" alt="" width="75" height="75">*@
-                              count += 1;
+                               <div>
+                                    <img u="image" src="@Url.Content("~/Images/Original/" + item)"  class="img-responsive"/>
+                                    <img u="thumb" id="@string.Format("thumb{0}", count)" src="@Url.Content("~/Images/RESZIMGS/" + item)" class="img-responsive"/>
+                                </div>                        
+                               count += 1;
                           } 
                          }
-                      </div>
+
+                   
+                    @*<div>
+                        <img u="image" src="~/images/page3/PRODUCT IMG.jpg" class="img-responsive"/>
+                        <img u="thumb" src="~/images/page3/PRODUCT IMG.jpg" class="img-responsive"/>
+                    </div>
+                    <div>
+                        <img u="image" src="~/images/page3/PRODUCT IMG.jpg" class="img-responsive"/>
+                        <img u="thumb" src="~/images/page3/PRODUCT IMG.jpg" class="img-responsive"/>
+                    </div>
+                    <div>
+                        <img u="image" src="~/images/page3/PRODUCT IMG.jpg" class="img-responsive"/>
+                        <img u="thumb" src="~/images/page3/PRODUCT IMG.jpg" class="img-responsive"/>
+                    </div>   *@              
                 </div>
+
+                <!--#region Arrow Navigator Skin Begin -->
+                
+
+                <!-- Arrow Left -->
+                <span u="arrowleft" class="jssora05l" style="top: 158px; left: 8px;"></span>
+                <!-- Arrow Right -->
+                <span u="arrowright" class="jssora05r" style="top: 158px; right: 8px"></span>
+                <!--#endregion Arrow Navigator Skin End -->
+                <!--#region Thumbnail Navigator Skin Begin -->
+
+                
+
+                <!-- thumbnail navigator container -->
+                <div u="thumbnavigator" class="jssort01" style="left: 0px; bottom: 0px;">
+                    <!-- Thumbnail Item Skin Begin -->
+                    <div u="slides" style="cursor: default;">
+                        <div u="prototype" class="p">
+                            <div class="w">
+                                <div u="thumbnailtemplate" class="t"></div>
+                            </div>
+                            <div class="c"></div>
+                        </div>
+                    </div>
+                    <!-- Thumbnail Item Skin End -->
+                </div>
+                <!--#endregion Thumbnail Navigator Skin End -->
+
+            </div>
+            <!-- Jssor Slider End -->
+
+        </div>
+
+        <div class="col-lg-6">
+            <img src="~/images/page3/pg3_heading.jpg" class="img-responsive" />@Html.DisplayFor(model => model.Product_Name)<hr />
+            <div class="table-responsive">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>Code</td>
+                            <td>:@Html.DisplayFor(model => model.Product_Code)</td>
+                        </tr>
+                        <tr>
+                            <td>In Stock</td>
+                            <td>:Yes</td>
+                        </tr>
+                         @{
+                             if (!string.IsNullOrEmpty(Model.Product_offer.ToString()) && (Model.Product_offer != 0))
+                             {
+                                 <tr>
+                                    <td>M.R.P</td>
+                                    <td>:@System.Configuration.ConfigurationManager.AppSettings["currency_code"]@(String.Format(Indian, "{0:N}", @Model.Product_Price))</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Discount</td>
+                                    <td>:@Model.Product_offer.ToString() @Model.offer_type</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Selling Price &nbsp;</td>
+                                    <td>: @System.Configuration.ConfigurationManager.AppSettings["currency_code"]@(String.Format(Indian, "{0:N}", @Model.discount_price))</td>
+                                </tr>
+                             }
+                             else { 
+                                  <tr>
+                                    <td>Selling Price &nbsp;</td>
+                                    <td>: @System.Configuration.ConfigurationManager.AppSettings["currency_code"]@(String.Format(Indian, "{0:N}", @Model.Product_Price))</td>
+                                </tr>
+                             }
+                          }
+
+                            <tr>
+                                <td>Quantity</td>
+                                <td>
+                                    <button id="qtyminus" onclick="return false">-</button>
+                                    <input name="qty" id="qty" type="text" value="1" maxlength="2"/>
+                                    <button id="qtyplus" onclick="return false">+</button>                                
+                                 </td>
+                            </tr>                        
+                         @if (!string.IsNullOrEmpty(Model.Product_offer.ToString()) && (Model.Product_offer == 0))
+                         { 
+                           <tr>
+                                <td>Coupon</td>
+                                <td>: <input type="text" name="CuponCode" id="CuponCode" placeholder="Enter Code" style="margin-top:0px; width:100px;" /></td>
+                               <div class="validate"  style=visibility:hidden  id="divCupnCode">It is invalid Coupon Code.Please enter valid Coupon Code.</div>
+                            </tr>  
+                         }
+
+                    </tbody>
+                </table>
+                @*<input id='btnSubmit' type="button" class="btn btn-default btn-lg cartbtn"  value="ADD TO CART"/><br />*@
+                <button id='btnSubmit' type="submit" class="btn btn-default btn-lg cartbtn">+ Cart</button>
+                <input type="hidden" name="id" value="@Model.Pid"/>
+                @*<input type="button" class="btn btn-default btn-lg buybtn" value="BUY NOW"/>*@
             </div>
         </div>
-        <div class="col-md-6">
-            <div class="row">
-                <div class="col-md-2">
-                   <h4><b>Product</b></h4>
-                </div>
-                <div class="col-md-4">
-                   <h5> @Html.DisplayFor(model => model.Product_Name)</h5>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-2">
-                    <h4><b>Code</b></h4>
-                </div>
-                <div class="col-md-2">
-                   <h5> @Html.DisplayFor(model => model.Product_Code)</h5>
-                </div>
-            </div>
-             @{
-       if (!string.IsNullOrEmpty(Model.Product_offer.ToString()) && (Model.Product_offer!=0))
-                {      
-            <div class="row">
-               <div class="col-md-2">
-                   <h4><b>Price</b></h4>
-                </div>
-                <div class="col-md-3">
-                    
-                  <h4 class="price strik">@System.Configuration.ConfigurationManager.AppSettings["currency_code"]@(String.Format(Indian, "{0:N}", @Model.Product_Price))</h4>
-                                  
-                </div>
-                
-            </div>
-                  <div class="row">
-                   <div class="col-md-2">
-                   <h4><b>Discount Price</b></h4>
-                   </div> 
-                <div class="col-md-3">
-                         <h4 class="price">@System.Configuration.ConfigurationManager.AppSettings["currency_code"]@(String.Format(Indian, "{0:N}", @Model.discount_price))</h4> 
-                 </div> 
-                      </div>
-                  <div class="row">
-               <div class="col-md-2">
-                   <h4><b>Discount</b></h4>
-                </div>
-                <div class="col-md-1">
-                    
-                   <div class="circleBase type2"> @Model.Product_offer.ToString() @Model.offer_type</div>  
-                                  
-                </div></div>
-                 }
-                    else
-                    {
-                          <div class="row">
-               <div class="col-md-2">
-                   <h4><b>Price</b></h4>
-                </div>
-                <div class="col-md-3">
-                    
-                  <h4 class="price">@System.Configuration.ConfigurationManager.AppSettings["currency_code"]@(String.Format(Indian, "{0:N}", @Model.Product_Price))</h4>
-                      </div>
-                                  
-                </div>
-                     }
-                  }  
-            
-            <div class="row">
-                <div class="col-md-2">
-                   <h4><b>Quantity</b></h4>
-                </div>
-                <div class="col-md-5">
-                <h5>  <button class="button-small" id="qtyminus" onclick="return false">-</button>
-                    <input class="txt-small" name="qty" id="qty" type="text" value="1" maxlength="2"/ style="margin-top:0px;">
-                    <button class="button-small" id="qtyplus" onclick="return false">+</button>
-                </h5>
-                </div>
-                
-            </div>
 
-                 @if (!string.IsNullOrEmpty(Model.Product_offer.ToString()) && (Model.Product_offer==0))
-                { 
-            <div class="row">
-                <div class="col-md-2">
-                   <h4><b>Coupon Code</b></h4>
-                </div>
-                <div class="col-md-3" >                 
-                    @* @Html.TextBoxFor(model => model.Coupon_Code,null, new { @placeholder="Enter Code" })*@
-                    <input type="text" name="CuponCode" id="CuponCode" placeholder="Enter Code" style="margin-top:0px; width:100px;" />
-                </div>
-                  
-                <div class="col-md-3">
-                <div class="validate"  style=visibility:hidden  id="divCupnCode">It is invalid Coupon Code.Please enter valid Coupon Code.</div>
-           </div>
-            </div>
-                 }
-            <div class="row">
-                <div class="col-md-1">
+        <div class="col-lg-12 zeropad" style="padding: 5% 0% 5%;">
+            <!-- Jssor Slider Begin -->
+            <!-- To move inline styles to css file/block, please specify a class name for each element. -->
+            <div id="slider2_container" style="position: relative; top: 0px; left: 0px; width: 602px; height: 331px; background: #d2cfcf; overflow: hidden;">
+
+                <!-- Slides Container -->
+                <div u="slides" style="cursor: move; position: absolute; left: 0px; top: 29px; width: 600px; height: 300px; -webkit-filter: blur(0px); background-color: #e7e7e7; overflow: hidden;">
+                    <div>
+                        <div style="padding: 10px; overflow: hidden; color: #000;background-color:#e7e7e7">
+                            <p><b>Product Description</b><br />Diamond Neclace with red flower bead design</p>
+                            <p>&nbsp;</p>
+                            <table style="font-size:smaller">
+                                <tr>
+                                    <td><b>Product ID</b></td>
+                                    <td>:ID476</td>
+                                </tr>
+                                <tr>
+                                    <td><b>Type</b></td>
+                                    <td>:Neclace</td>
+                                </tr>
+                                <tr>
+                                    <td><b>Returns</b></td>
+                                    <td>:Refunf within 10 Days</td>
+                                </tr>
+                                <tr>
+                                    <td><b>Shipping</b></td>
+                                    <td>:India</td>
+                                </tr>
+                                <tr>
+                                    <td><b>Package Details&nbsp;</b></td>
+                                    <td>:Gift Wrap</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div u="thumb">Specifications</div>
+                    </div>
+                    <div>
+                        <div style="margin: 10px; overflow: hidden; color: #000;">Slide 2 content, place any html here.</div>
+                        <div u="thumb">Shipping</div>
+                    </div>
+                    <div>
+                        <div style="margin: 10px; overflow: hidden; color: #000;">Slide 3 content, place any html here.</div>
+                        <div u="thumb">Payments</div>
+                    </div>
+                    <div>
+                        <div style="margin: 10px; overflow: hidden; color: #000;">Slide 4 content, place any html here.</div>
+                        <div u="thumb">Returns</div>
+                    </div>
                    
                 </div>
-                <div class="col-md-4">
-                    <div class="send">
-                    @*<input type="submit" value="+ Cart"/>*@
-                        <button id='btnSubmit' type="submit" class="btnBlue">+ Cart</button>
-                        <input type="hidden" name="id" value="@Model.Pid"/>
+
+                <!--#region ThumbnailNavigator Skin Begin -->
+
+
+                <div u="thumbnavigator" class="jssort12" style="left: 0px; top: 0px;">
+                    <!-- Thumbnail Item Skin Begin -->
+                    <div u="slides" style="cursor: default; top: 0px; left: 0px; border-left: 1px solid gray;">
+                        <div u="prototype" class="p">
+                            <div class="w">
+                                <div u="thumbnailtemplate" class="c"></div>
+                            </div>
+                        </div>
                     </div>
+                    <!-- Thumbnail Item Skin End -->
                 </div>
-                
+                <!--#endregion ThumbnailNavigator Skin End -->
+
+
             </div>
+            <!-- Jssor Slider End -->
         </div>
-           </div>
 
-    <div class="row">
-        <div class="col-md-12">
-            <div class="row">
-                <div class="col-md-2">
-                    <h3 class="bold">Specification</h3>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-2 heading-color">
-                    <h4 class="bold">General</h4>
-                </div>
-            </div>
-            <div class="row mrg-xs">
-                <div class="col-md-2">
-                    <h5 class="bold">Brand</h5>
-                </div>
-                <div class="col-md-2">
-                    <h5>@Html.DisplayFor(model => model.Brand)</h5>
-                </div>
-            </div>
-            @if(Model.Category_id==1)
-            {
-               <div id="divwatches">
-            <div class="row mrg-xs">
-                <div class="col-md-2">
-                    <h5 class="bold">Model</h5>
-                </div>
-                <div class="col-md-2">
-                    <h5>@Html.DisplayFor(model => model.Model)</h5>
-                </div>
-            </div>
-            <div class="row mrg-xs">
-                <div class="col-md-2">
-                    <h5 class="bold">Movement</h5>
-                </div>
-                <div class="col-md-2">
-                    <h5>@Html.DisplayFor(model => model.Movement)</h5>
-                </div>
-            </div>
-            <div class="row mrg-xs">
-                <div class="col-md-2">
-                    <h5 class="bold">Features</h5>
-                </div>
-                <div class="col-md-2">
-                    <h5>@Html.DisplayFor(model => model.Features)</h5>
-                </div>
-            </div>
-            <div class="row mrg-xs">
-                <div class="col-md-2">
-                    <h5 class="bold">Water Resistance</h5>
-                </div>
-                <div class="col-md-2">
-                    <h5>@Html.DisplayFor(model => model.Water_Resistance)</h5>
-                </div>
-            </div>
-            <div class="row mrg-xs">
-                <div class="col-md-2">
-                    <h5 class="bold">Box</h5>
-                </div>
-                <div class="col-md-2">
-                    <h5>@Html.DisplayFor(model => model.Box)</h5>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-2  heading-color">
-                    <h4 class="bold">Body Features</h4>
-                </div>
-            </div>
-            <div class="row mrg-xs">
-                <div class="col-md-2">
-                    <h5 class="bold">Case Material</h5>
-                </div>
-                <div class="col-md-2">
-                    <h5>@Html.DisplayFor(model => model.Case_Material)</h5>
-                </div>
-            </div>
-            <div class="row mrg-xs">
-                <div class="col-md-2">
-                    <h5 class="bold">Case Back</h5>
-                </div>
-                <div class="col-md-2">
-                    <h5>@Html.DisplayFor(model => model.Case_Back)</h5>
-                </div>
-            </div>
-            <div class="row mrg-xs">
-                <div class="col-md-2">
-                    <h5 class="bold">Case Size</h5>
-                </div>
-                <div class="col-md-2">
-                    <h5>@Html.DisplayFor(model => model.Case_Size)</h5>
-                </div>
-            </div>
-            <div class="row mrg-xs">
-                <div class="col-md-2">
-                    <h5 class="bold">Glass</h5>
-                </div>
-                <div class="col-md-2">
-                    <h5>@Html.DisplayFor(model => model.Glass)</h5>
-                </div>
-            </div>
-            <div class="row mrg-xs">
-                <div class="col-md-2">
-                    <h5 class="bold">Dial Colour</h5>
-                </div>
-                <div class="col-md-2">
-                    <h5>@Html.DisplayFor(model => model.Dial_Colour)</h5>
-                </div>
-            </div>
-            <div class="row mrg-xs">
-                <div class="col-md-2">
-                    <h5 class="bold">Strap Type</h5>
-                </div>
-                <div class="col-md-2">
-                    <h5>@Html.DisplayFor(model => model.Strap_Type)</h5>
-                </div>
-            </div>
-</div>
-            }
-             @if(Model.Category_id==4)
-            {
-            <div id="divSunglasses" >
-                  <div class="row mrg-xs">
-                <div class="col-md-2">
-                    <h5 class="bold">Lens Type</h5>
-                </div>
-                <div class="col-md-2">
-                    <h5>@Html.DisplayFor(model => model.Lens_Type)</h5>
-                </div>
-            </div>
-                  <div class="row mrg-xs">
-                <div class="col-md-2">
-                    <h5 class="bold">Lens Colour</h5>
-                </div>
-                <div class="col-md-2">
-                    <h5>@Html.DisplayFor(model => model.Lens_Colour)</h5>
-                </div>
-            </div>
-                  <div class="row mrg-xs">
-                <div class="col-md-2">
-                    <h5 class="bold">Frame Colour</h5>
-                </div>
-                <div class="col-md-2">
-                    <h5>@Html.DisplayFor(model => model.Frame_Colour)</h5>
-                </div>
-            </div>
-      </div>
-             }
-             @if(Model.Category_id==5)
-             {
-            <div id="divLuxuryPens" >
-                  <div class="row mrg-xs">
-                <div class="col-md-2">
-                    <h5 class="bold">Model</h5>
-                </div>
-                <div class="col-md-2">
-                    <h5>@Html.DisplayFor(model => model.Model)</h5>
-                </div>
-            </div>
-                  <div class="row mrg-xs">
-                <div class="col-md-2">
-                    <h5 class="bold">Product Type</h5>
-                </div>
-                <div class="col-md-2">
-                    <h5>@Html.DisplayFor(model => model.Product_Type)</h5>
-                </div>
-            </div>
-                  <div class="row mrg-xs">
-                <div class="col-md-2">
-                    <h5 class="bold">Pen Colour</h5>
-                </div>
-                <div class="col-md-2">
-                    <h5>@Html.DisplayFor(model => model.Pen_Colour)</h5>
-                </div>
-            </div>
-      </div>
-             }
-             @if(Model.Category_id==6)
-             {
-             <div id="divBelts">
-                   <div class="row mrg-xs">
-                <div class="col-md-2">
-                    <h5 class="bold">Belt Size</h5>
-                </div>
-                <div class="col-md-2">
-                    <h5>@Html.DisplayFor(model => model.Belt_Size)</h5>
-                </div>
-            </div>
-                  <div class="row mrg-xs">
-                <div class="col-md-2">
-                    <h5 class="bold">Buckle Colour</h5>
-                </div>
-                <div class="col-md-2">
-                    <h5>@Html.DisplayFor(model => model.Buckle_Colour)</h5>
-                </div>
-            </div>
-                  <div class="row mrg-xs">
-                <div class="col-md-2">
-                    <h5 class="bold">Belt Colour</h5>
-                </div>
-                <div class="col-md-2">
-                    <h5>@Html.DisplayFor(model => model.Belt_Colour)</h5>
-                </div>
-            </div>
-                 </div>
-             }
-             @if(Model.Category_id==7)
-             {
-                <div id="divWallets" style="display:none">
-                   <div class="row mrg-xs">
-                <div class="col-md-2">
-                    <h5 class="bold">Wallet Colour</h5>
-                </div>
-                <div class="col-md-2">
-                    <h5>@Html.DisplayFor(model => model.Wallet_Colour)</h5>
-                </div>
-            </div>
-                    </div>
-             }
-
-            <div class="row">
-                <div class="col-md-2  heading-color">
-                    <h4 class="bold">Warranty</h4>
-                </div>
-            </div>
-            <div class="row mrg-xs">
-                <div class="col-md-2">
-                    <h5 class="bold">Warranty</h5>
-                </div>
-                <div class="col-md-2">
-                    <h5>@Html.DisplayFor(model => model.Warranty)</h5>
-                </div>
-            </div>
-            <div class="row mrg-xs">
-                <div class="col-md-2">
-                    <h5 class="bold">Shipping</h5>
-                </div>
-                <div class="col-md-2">
-                    <h5>@Html.DisplayFor(model => model.Shipping)</h5>
-                </div>
-            </div>
-            <div class="row mrg-xs">
-                <div class="col-md-2">
-                    <h5 class="bold">Payment Method</h5>
-                </div>
-                <div class="col-md-2">
-                    <h5>@Html.DisplayFor(model => model.Payment_Method)</h5>
-                </div>
-            </div>         
-        </div>
     </div>
-</div> 
-</div>
-</div>
-   }
+
+        <div class="col-lg-12">
+            <div class="col-lg-3 zeropad" style="background-color:#757378">
+               <div style="padding-bottom: 22%;">
+                    <p class="ftrhdr2">Help</p>
+                    <a href="#"><span class="ftrpdng">How To Buy</span></a><br />
+                    <a href="#"><span class="ftrpdng">Track Order</span></a><br />
+                    <a href="#"><span class="ftrpdng">Payment</span></a><br />
+                    <a href="#"><span class="ftrpdng">Shipping</span></a><br />
+                    <a href="#"><span class="ftrpdng">Cancellations</span></a><br />
+                    <a href="#"><span class="ftrpdng">FAQ</span></a><br />
+                    <a href="#"><span class="ftrpdng">Helpdesk</span></a><br />
+                    <a href="#"><span class="ftrpdng">Coupons</span></a>
+               </div>
+            </div>
+
+            <div class="col-lg-3 zeropad" style="background-color:#757378">
+               <div style="padding-bottom: 22%;">
+                    <p class="ftrhdr2">Company</p>
+                    <a href="#"><span class="ftrpdng">About Us</span></a><br />
+                    <a href="#"><span class="ftrpdng">Contact Us</span></a><br />
+                    <a href="#"><span class="ftrpdng">Carrers</span></a><br />
+                    <a href="#"><span class="ftrpdng">Blog</span></a><br />
+                    <a href="#"><span class="ftrpdng">Facbook</span></a><br />
+                    <a href="#"><span class="ftrpdng">Google Plus</span></a><br />
+                    <a href="#"><span class="ftrpdng">Terms</span></a><br />
+                    <a href="#"><span class="ftrpdng">Privacy</span></a><br />
+               </div>
+            </div>
+
+            <div class="col-lg-3 zeropad" style="background-color:#757378">
+               <div style="padding-bottom: 22%;">
+                    <p class="ftrhdr2">Business</p>
+                    <a href="#"><span class="ftrpdng">Wholesale Order</span></a><br />
+                    <a href="#"><span class="ftrpdng">International Buyers</span></a><br />
+                    <a href="#"><span class="ftrpdng">Sell on Natchathra</span></a><br />
+                    <a href="#"> <span class="ftrpdng">Designer Login</span></a><br />
+                    <a href="#"><span class="ftrpdng">&nbsp;</span></a><br />
+                    <span class="ftrpdng">&nbsp;</span><br />
+                    <span class="ftrpdng">&nbsp;</span><br />
+                   <span class="ftrpdng">&nbsp;</span><br />
+               </div>
+            </div>
 
 
-
-<script type="text/javascript">
-
-    $(function () {
-        $("#qtyplus").click(function () {
-            $(":text[name='qty']").val(Number($(":text[name='qty']").val()) + 1);
-        });
-        $("#qtyminus").click(function () {
-            if ($(':text[name="qty"]').val() > 1) {
-                $(":text[name='qty']").val(Number($(":text[name='qty']").val()) - 1);
-            }
-        });
-
-    });
-
-    $('#CuponCode').keyup(function (event) {
-      
-        if ((document.getElementById("CuponCode").value).length != 0) {
-            var pdt_name = document.getElementById("CuponCode").value
-            $.post('@Url.Action("CheckValidpromoCode", "ImageDetails")', { "pdt_code": pdt_name },
-                       function (data) {
-                           if (data == false) {
-                               document.getElementById("divCupnCode").style.visibility = "visible";
-                               return false;
-
-                           }
-                           else {
-                               document.getElementById("divCupnCode").style.visibility = "hidden";
-                               
-                           }
-
-
-
-                       });
-        }
-        else {
-            document.getElementById("divCupnCode").style.visibility = "hidden";
-
-        }
-       
-    })
-
- 
-
-@*    $(document).on('click', '#btnSubmit', function () {
-        alert('test');
-        if ((document.getElementById("CuponCode").value).length != 0) {
-            var pdt_name = document.getElementById("CuponCode").value
-            $.post('@Url.Action("CheckValidpromoCode", "ImageDetails")', { "pdt_code": pdt_name },
-                       function (data) {
-
-                           if (data == false) {
-
-                               document.getElementById("divCupnCode").style.visibility = "visible";
-                               return false;
-
-                           }
-                           else {
-                               //document.getElementById("divCupnCode").style.visibility = "hidden";
-                               document.getElementById("divCupnCode").style.visibility = "visible";
-                               return false;
-                           }
-
-
-
-                       });
-            }
-     });*@
-    function RegainFocus() {
-        if ((document.getElementById("qty").value).length == 0 || document.getElementById("qty").value == 0) {
-            document.getElementById("qty").focus();
-            alert("Quantity cannot be empty or zero(0)");
-            document.getElementById("qty").value = document.getElementById("qty").defaultValue;
-            return false;
-        }
-    }
-    $(document).ready(function () {
-        //called when key is pressed in textbox
-        $("#qty").keypress(function (e) {
-            //if the letter is not digit then display error and don't type anything
-            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-                //display error message
-                $("#errmsg").html("Please enter Digits Only").show().fadeOut("slow");
-                return false;
-            }
-        });
-       
-        //initiate the plugin and pass the id of the div containing gallery images 
-        $("#showimg").elevateZoom({ gallery: 'gallery_01', cursor: 'pointer', galleryActiveClass: 'active', imageCrossfade: true, loadingIcon: 'http://www.elevateweb.co.uk/spinner.gif' });
-        //pass the images to Fancybox 
-        $("#showimg").bind("click", function (e) {
-            var ez = $('#showimg').data('elevateZoom');
-            $.fancybox(ez.getGalleryList()); return false;
-        });
-
-    });
-</script>
+            <div class="col-lg-3 zeropad" style="background-color:#757378">
+               <div style="padding-bottom: 22%;">
+                    <p class="ftrhdr2">Coupen Partners</p>
+                    <a href="#"><span class="ftrpdng">Coupon Rani</span></a><br />
+                    <a href="#"><span class="ftrpdng">Coupon Dunia</span></a><br />
+                    <span class="ftrpdng">&nbsp;</span><br />
+                    <span class="ftrpdng">&nbsp;</span><br />
+                    <span class="ftrpdng">&nbsp;</span><br />
+                    <span class="ftrpdng">&nbsp;</span><br />
+                    <span class="ftrpdng">&nbsp;</span><br />
+                    <span class="ftrpdng">&nbsp;</span>
+                   <span class="ftrpdng">&nbsp;</span>
+                   <span class="ftrpdng">&nbsp;</span>
+                   <span class="ftrpdng">&nbsp;</span>
+               </div>
+            </div>
+        </div>
+}
