@@ -25,7 +25,7 @@ namespace NatchathraWeb.Controllers
         {
             if (string.IsNullOrEmpty(returnUrl) && Request.UrlReferrer != null)
                 returnUrl = Server.UrlEncode(Request.UrlReferrer.PathAndQuery);
-
+  
             if (Url.IsLocalUrl(returnUrl) && !string.IsNullOrEmpty(returnUrl))
             {
                 ViewBag.ReturnURL = returnUrl;
