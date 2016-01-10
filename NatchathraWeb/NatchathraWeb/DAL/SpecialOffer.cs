@@ -15,6 +15,8 @@ namespace NatchathraWeb.DAL
     public partial class SpecialOffer
     {
         public int SpecialOfferID { get; set; }
+        public string offer_Code { get; set; }
+        public string offer_Name { get; set; }
         public string Description { get; set; }
         public string Type { get; set; }
         public string usr_Category { get; set; }
@@ -22,13 +24,11 @@ namespace NatchathraWeb.DAL
         public System.DateTime EndDate { get; set; }
         public int MinQty { get; set; }
         public Nullable<int> MaxQty { get; set; }
-        public System.DateTime ModifiedDate { get; set; }
-        public string offer_Code { get; set; }
-        public string offer_Name { get; set; }
         public Nullable<bool> Active { get; set; }
         public string Image_Path_Name { get; set; }
         public int Adduser { get; set; }
         public System.DateTime AddDatetime { get; set; }
         public int ModifiedUser { get; set; }
+        public System.DateTime ModifiedDate { get; set; }
     }
 }

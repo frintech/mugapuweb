@@ -1,0 +1,120 @@
+﻿@using PagedList
+@using PagedList.Mvc
+@using GridMvc.Html
+@model IPagedList<NatchathraWeb.Models.MnuSubcatProductDetails>
+@{
+    ViewBag.Title = "Home Page";
+  //  Layout = null;
+}
+       @* <div id="slider" class="row">*@
+  <div id="slider" style="max-height:350px">
+        <div  class="col-lg-12">
+                        <ul class="slides">
+             @{
+                           List<NatchathraWeb.Models.BannerImagedetails> BannerImgList = (List<NatchathraWeb.Models.BannerImagedetails>)ViewBag.BannerImage;
+                              foreach (var item in BannerImgList)
+                               {
+                                        <li>                            
+                                      <img src="@Url.Content(System.Configuration.ConfigurationManager.AppSettings["BNR_IMG_Path"] + item.Imagepath)" style="padding-top: 12px;" class="img-responsive" />
+                                    </li>
+                               }
+                          }
+                </ul>
+             </div>
+       
+        </div>
+
+        <div class="row">
+        <div class="  col-lg-12 ">
+             <a href="/Home/category"><img src="~/images/page1/page1_17.png" class="gallaryimg" /></a>
+           <a href="/Home/category"> <img src="~/images/page1/page1_23.png" class="gallaryimg" /></a>
+            <a href="/Home/category"><img src="~/images/page1/page1_24.png" class="gallaryimg" /></a>
+            <a href="/Home/category"><img src="~/images/page1/page1_25.png" class="gallaryimg" /></a>
+        </div>
+        </div>
+
+        <div class="row">
+        <div class="col-lg-12">
+           <a href="/Home/category"> <img src="~/images/page1/page1_17.png" class="gallaryimg" /></a>
+           <a href="/Home/category"> <img src="~/images/page1/page1_23.png" class="gallaryimg" /></a>
+           <a href="/Home/category"> <img src="~/images/page1/page1_24.png" class="gallaryimg" /></a>
+            <a href="/Home/category"><img src="~/images/page1/page1_25.png" class="gallaryimg" /></a>
+        </div>
+        </div>
+
+        
+        <div class="col-lg-12">
+           <img src="~/images/page1/page1_32.png" class="imagestyl" />
+             <span class="styleheading"><span style="font-size:xx-large">F</span>EATURED <span style="font-size:xx-large">P</span>RODUCTS</span>
+        </div>
+           
+        <div class="col-lg-12">
+            <a href="/Home/category"><img src="~/images/page1/page1_36.png" class="gallaryimg1" /></a>
+            <a href="/Home/category"><img src="~/images/page1/page1_39.png" class="gallaryimg1" /></a>
+           <a href="/Home/category"> <img src="~/images/page1/page1_41.png" class="gallaryimg1" /></a>
+            <a href="/Home/category"><img src="~/images/page1/page1_43.png" class="gallaryimg1" /></a>
+        </div>
+
+        <div class="col-lg-12">
+            <div class="col-lg-3 zeropad" style="background-color:#a26caa">
+               <div style="padding-bottom: 22%;">
+                    <p class="ftrhdr">Help</p>
+                    <a href="#"><span class="ftrpdng">How To Buy</span></a><br />
+                    <a href="#"><span class="ftrpdng">Track Order</span></a><br />
+                    <a href="#"><span class="ftrpdng">Payment</span></a><br />
+                    <a href="#"><span class="ftrpdng">Shipping</span></a><br />
+                    <a href="#"><span class="ftrpdng">Cancellations</span></a><br />
+                    <a href="#"><span class="ftrpdng">FAQ</span></a><br />
+                    <a href="#"><span class="ftrpdng">Helpdesk</span></a><br />
+                    <a href="#"><span class="ftrpdng">Coupons</span></a>
+               </div>
+            </div>
+
+            <div class="col-lg-3 zeropad" style="background-color:#a26caa">
+               <div style="padding-bottom: 22%;">
+                    <p class="ftrhdr">Company</p>
+                    <a href="#"><span class="ftrpdng">About Us</span></a><br />
+                    <a href="#"><span class="ftrpdng">Contact Us</span></a><br />
+                    <a href="#"><span class="ftrpdng">Carrers</span></a><br />
+                    <a href="#"><span class="ftrpdng">Blog</span></a><br />
+                    <a href="#"><span class="ftrpdng">Facbook</span></a><br />
+                    <a href="#"><span class="ftrpdng">Google Plus</span></a><br />
+                    <a href="#"><span class="ftrpdng">Terms</span></a><br />
+                    <a href="#"><span class="ftrpdng">Privacy</span></a><br />
+               </div>
+            </div>
+
+            <div class="col-lg-3 zeropad" style="background-color:#a26caa">
+               <div style="padding-bottom: 22%;">
+                    <p class="ftrhdr">Business</p>
+                    <a href="#"><span class="ftrpdng">Wholesale Order</span></a><br />
+                    <a href="#"><span class="ftrpdng">International Buyers</span></a><br />
+                    <a href="#"><span class="ftrpdng">Sell on Natchathra</span></a><br />
+                    <a href="#"> <span class="ftrpdng">Designer Login</span></a><br />
+                    <a href="#"><span class="ftrpdng">&nbsp;</span></a><br />
+                    <span class="ftrpdng">&nbsp;</span><br />
+                    <span class="ftrpdng">&nbsp;</span><br />
+                   <span class="ftrpdng">&nbsp;</span><br />
+               </div>
+            </div>
+
+
+            <div class="col-lg-3 zeropad" style="background-color:#a26caa">
+               <div style="padding-bottom: 22%;">
+                    <p class="ftrhdr">Coupen Partners</p>
+                    <a href="#"><span class="ftrpdng">Coupon Rani</span></a><br />
+                    <a href="#"><span class="ftrpdng">Coupon Dunia</span></a><br />
+                    <span class="ftrpdng">&nbsp;</span><br />
+                    <span class="ftrpdng">&nbsp;</span><br />
+                    <span class="ftrpdng">&nbsp;</span><br />
+                    <span class="ftrpdng">&nbsp;</span><br />
+                    <span class="ftrpdng">&nbsp;</span><br />
+                    <span class="ftrpdng">&nbsp;</span>
+                   <span class="ftrpdng">&nbsp;</span>
+                   <span class="ftrpdng">&nbsp;</span>
+                   <span class="ftrpdng">&nbsp;</span>
+               </div>
+            </div>
+        </div>
+
+        

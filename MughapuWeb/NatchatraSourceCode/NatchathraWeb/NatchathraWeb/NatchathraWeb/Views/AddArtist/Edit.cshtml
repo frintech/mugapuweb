@@ -1,0 +1,50 @@
+﻿@model NatchathraWeb.DAL.Artists
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+     <div class="content aligncenter ">
+            <div class="contant_contactus  grdOuter">
+    <fieldset>
+        <legend>Artists</legend>
+
+        @Html.HiddenFor(model => model.ArtistsId)
+
+        <div class="dispBlock">
+             @Html.Label("Artist Name")
+        </div>
+        <div class="dispBlock">
+              @Html.TextBoxFor(model => model.ArtistsName,null, new { @class = "txtContact" })
+            @Html.ValidationMessageFor(model => model.ArtistsName)
+        </div>
+              <br />
+        <div class="dispBlock">
+            @Html.Label("Active")
+        </div>
+        <div class="dispBlock">
+            @Html.EditorFor(model => model.IsActive)
+            @Html.ValidationMessageFor(model => model.IsActive)
+        </div>
+
+      <br />
+        <p>
+            <input type="submit" value="Save" class="btnBlue" />
+        </p>
+    </fieldset>
+                <div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+                 </div>
+        </div>
+}
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

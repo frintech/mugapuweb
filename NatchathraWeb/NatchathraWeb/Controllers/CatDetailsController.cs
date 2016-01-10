@@ -15,10 +15,10 @@ namespace NatchathraWeb.Controllers
     public class CatDetailsController : Controller
     {
         private NatchathraEntities db = new NatchathraEntities();
-
+  
         //
         // GET: /CatDetails/
-        
+
         public ActionResult Index(int brandid, int sub_cat_id, int cat_id = 0, int page = 1)
         {
             IEnumerable<MnuSubcatProductDetails> catlist = null;

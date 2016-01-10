@@ -1,0 +1,1069 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DB_77377_natchathraModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Account">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="AccountType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="EnvironmentIds" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="JSON" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ActionTemplate">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Version" Type="Int32" Nullable="false" />
+    <Property Name="ActionType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="JSON" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ActivityLog">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Format" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="JSON" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ApiKey">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UserId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ApiKeyHashed" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Created" Type="DateTimeOffset" Nullable="false" Precision="7" />
+    <Property Name="JSON" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Artifact">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Filename" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="RelatedDocumentIds" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Created" Type="DateTimeOffset" Nullable="false" Precision="7" />
+    <Property Name="ProjectId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EnvironmentId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="JSON" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Artist">
+    <Key>
+      <PropertyRef Name="ArtistsId" />
+    </Key>
+    <Property Name="ArtistsId" Type="Int32" Nullable="false" />
+    <Property Name="ArtistsName" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifieBy" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Banner_Image_Dtl">
+    <Key>
+      <PropertyRef Name="BNR_Img_Id" />
+    </Key>
+    <Property Name="BNR_Img_Id" Type="Int64" Nullable="false" />
+    <Property Name="BNR_Image_Path" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="Add_user" Type="Int32" Nullable="false" />
+    <Property Name="Add_DateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Mod_User" Type="Int32" Nullable="false" />
+    <Property Name="Mod_DateTime" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="Brand">
+    <Key>
+      <PropertyRef Name="BRND_id" />
+    </Key>
+    <Property Name="BRND_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BRND_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="BRND_Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="BRND_Img_Path" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Is_Add_img" Type="Boolean" Nullable="false" />
+    <Property Name="Add_User_id" Type="Int32" Nullable="false" />
+    <Property Name="Add_Datetime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Mod_User_Id" Type="Int32" Nullable="false" />
+    <Property Name="Modify_Datetime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="cat_id" Type="Int32" />
+    <Property Name="sub_cat_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Cart">
+    <Key>
+      <PropertyRef Name="RecordId" />
+    </Key>
+    <Property Name="RecordId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CartId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ImageId" Type="Int32" Nullable="false" />
+    <Property Name="Count" Type="Int32" Nullable="false" />
+    <Property Name="DateCreated" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="ImageDetail" Relationship="Self.FK_Cart_Album" FromRole="Cart" ToRole="ImageDetail" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="CategoryId" />
+    </Key>
+    <Property Name="CategoryId" Type="Int32" Nullable="false" />
+    <Property Name="GroupID" Type="Int32" Nullable="false" />
+    <Property Name="CategoryName" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifieBy" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Certificate">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Thumbprint" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="JSON" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Configuration">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="JSON" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Coupon">
+    <Key>
+      <PropertyRef Name="cupn_id" />
+    </Key>
+    <Property Name="cupn_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="cupn_Code" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="cupn_Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="cupn_value" Type="Int64" Nullable="false" />
+    <Property Name="Add_User_id" Type="Int32" Nullable="false" />
+    <Property Name="Add_Datetime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Mod_User_Id" Type="Int32" Nullable="false" />
+    <Property Name="Modify_Datetime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="OFR_Value_type" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Coupon_Code">
+    <Key>
+      <PropertyRef Name="Cupn_Id" />
+    </Key>
+    <Property Name="Cupn_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Cupn_Code" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Cupn_Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="StartDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="EndDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="MinQty" Type="Int32" Nullable="false" />
+    <Property Name="MaxQty" Type="Int32" />
+    <Property Name="Active" Type="Boolean" />
+    <Property Name="user_id" Type="Int32" Nullable="false" />
+    <Property Name="Adduser" Type="Int32" Nullable="false" />
+    <Property Name="AddDatetime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedUser" Type="Int32" Nullable="false" />
+    <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="CouponProduct">
+    <Key>
+      <PropertyRef Name="cupn_No" />
+    </Key>
+    <Property Name="cupn_No" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CupnID" Type="Int32" Nullable="false" />
+    <Property Name="ProductID" Type="Int32" Nullable="false" />
+    <Property Name="PDT_TYPE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="DiscountPct" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="OFR_VAL_TYPE" Type="Int32" />
+    <Property Name="Adduser" Type="Int32" Nullable="false" />
+    <Property Name="AddDatetime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedUser" Type="Int32" Nullable="false" />
+    <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="DashboardConfiguration">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="IncludedEnvironmentIds" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="IncludedProjectIds" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="JSON" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Deployment">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Created" Type="DateTimeOffset" Nullable="false" Precision="7" />
+    <Property Name="EnvironmentId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ProjectId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ReleaseId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ProjectGroupId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TaskId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="JSON" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DeploymentEnvironment">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SortOrder" Type="Int32" Nullable="false" />
+    <Property Name="JSON" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DeploymentProcess">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="OwnerId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="IsFrozen" Type="Boolean" Nullable="false" />
+    <Property Name="Version" Type="Int32" Nullable="false" />
+    <Property Name="JSON" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Event">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="RelatedDocumentIds" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ProjectId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EnvironmentId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Category" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UserId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Username" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Occurred" Type="DateTimeOffset" Nullable="false" Precision="7" />
+    <Property Name="Message" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="JSON" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Feed">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FeedUri" Type="String" MaxLength="512" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="JSON" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Group">
+    <Key>
+      <PropertyRef Name="GroupId" />
+    </Key>
+    <Property Name="GroupId" Type="Int32" Nullable="false" />
+    <Property Name="GroupName" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifieBy" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="ImageDetail">
+    <Key>
+      <PropertyRef Name="ImageId" />
+    </Key>
+    <Property Name="ImageId" Type="Int32" Nullable="false" />
+    <Property Name="CategoryId" Type="Int32" Nullable="false" />
+    <Property Name="ArtistId" Type="Int32" />
+    <Property Name="ImageTitle" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="ImageDescription" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="ImagePath" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifieBy" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="Price" Type="Decimal" Precision="10" Scale="2" />
+    <NavigationProperty Name="Carts" Relationship="Self.FK_Cart_Album" FromRole="ImageDetail" ToRole="Cart" />
+    <NavigationProperty Name="OrderDetails" Relationship="Self.FK_InvoiceLine_Album" FromRole="ImageDetail" ToRole="OrderDetail" />
+  </EntityType>
+  <EntityType Name="Interruption">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Created" Type="DateTimeOffset" Nullable="false" Precision="7" />
+    <Property Name="Title" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="RelatedDocumentIds" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ResponsibleTeamIds" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ProjectId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="EnvironmentId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TaskId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="JSON" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Invitation">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="InvitationCode" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="JSON" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="KEY_Specifications">
+    <Key>
+      <PropertyRef Name="spec_col_id" />
+    </Key>
+    <Property Name="spec_col_id" Type="Int32" Nullable="false" />
+    <Property Name="spec_col_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="spec_cate_id" Type="Int32" Nullable="false" />
+    <Property Name="Add_User_id" Type="Int32" Nullable="false" />
+    <Property Name="Add_Datetime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Mod_User_Id" Type="Int32" Nullable="false" />
+    <Property Name="Modify_Datetime" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Value_Specification" Relationship="Self.FK_Value_Specification_KEY_Specifications" FromRole="KEY_Specifications" ToRole="Value_Specification" />
+  </EntityType>
+  <EntityType Name="LibraryVariableSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="VariableSetId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ContentType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="JSON" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Lifecycle">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="JSON" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Machine">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="IsDisabled" Type="Boolean" Nullable="false" />
+    <Property Name="Roles" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="EnvironmentIds" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="JSON" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Menu">
+    <Key>
+      <PropertyRef Name="Mnu_id" />
+    </Key>
+    <Property Name="Mnu_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Mnu_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Mnu_Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Add_User_id" Type="Int32" Nullable="false" />
+    <Property Name="Add_Datetime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Mod_User_Id" Type="Int32" Nullable="false" />
+    <Property Name="Modify_Datetime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="menuTrees" Relationship="Self.FK_menuTree_Menu" FromRole="Menu" ToRole="menuTree" />
+  </EntityType>
+  <EntityType Name="menuTree">
+    <Key>
+      <PropertyRef Name="Tree_id" />
+    </Key>
+    <Property Name="Tree_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Menu_id" Type="Int32" Nullable="false" />
+    <Property Name="Parent_Menuid" Type="Int32" Nullable="false" />
+    <Property Name="Comments" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Add_User_id" Type="Int32" Nullable="false" />
+    <Property Name="Add_Datetime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Mod_User_Id" Type="Int32" Nullable="false" />
+    <Property Name="Modify_Datetime" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Menu" Relationship="Self.FK_menuTree_Menu" FromRole="menuTree" ToRole="Menu" />
+  </EntityType>
+  <EntityType Name="NuGetPackage">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PackageId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Version" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="VersionMajor" Type="Int32" Nullable="false" />
+    <Property Name="VersionMinor" Type="Int32" Nullable="false" />
+    <Property Name="VersionBuild" Type="Int32" Nullable="false" />
+    <Property Name="VersionRevision" Type="Int32" Nullable="false" />
+    <Property Name="VersionSpecial" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="JSON" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OctopusServerNode">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LastSeen" Type="DateTimeOffset" Nullable="false" Precision="7" />
+    <Property Name="Rank" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="JSON" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="offer">
+    <Key>
+      <PropertyRef Name="offer_id" />
+    </Key>
+    <Property Name="offer_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="offer_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="offer_Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Add_User_id" Type="Int32" Nullable="false" />
+    <Property Name="Add_Datetime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Mod_User_Id" Type="Int32" Nullable="false" />
+    <Property Name="Modify_Datetime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="OFR_Value_type" Type="Int32" />
+    <NavigationProperty Name="Offer_Mapping" Relationship="Self.FK_Offer_Mapping_offer" FromRole="offer" ToRole="Offer_Mapping" />
+  </EntityType>
+  <EntityType Name="Offer_Mapping">
+    <Key>
+      <PropertyRef Name="OMP_id" />
+    </Key>
+    <Property Name="OMP_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Type" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Mappid" Type="Int32" Nullable="false" />
+    <Property Name="Offer_id" Type="Int32" Nullable="false" />
+    <Property Name="offer_type_id" Type="Int32" Nullable="false" />
+    <Property Name="Add_User_id" Type="Int32" Nullable="false" />
+    <Property Name="Add_Datetime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Mod_User_Id" Type="Int32" Nullable="false" />
+    <Property Name="Modify_Datetime" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="offer" Relationship="Self.FK_Offer_Mapping_offer" FromRole="Offer_Mapping" ToRole="offer" />
+    <NavigationProperty Name="Offer_type" Relationship="Self.FK_Offer_Mapping_Offer_type" FromRole="Offer_Mapping" ToRole="Offer_type" />
+  </EntityType>
+  <EntityType Name="Offer_type">
+    <Key>
+      <PropertyRef Name="OFT_id" />
+    </Key>
+    <Property Name="OFT_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OFT_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="OFT_Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Add_User_id" Type="Int32" Nullable="false" />
+    <Property Name="Add_Datetime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Mod_User_Id" Type="Int32" Nullable="false" />
+    <Property Name="Modify_Datetime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Offer_Mapping" Relationship="Self.FK_Offer_Mapping_Offer_type" FromRole="Offer_type" ToRole="Offer_Mapping" />
+  </EntityType>
+  <EntityType Name="OFFER_VALUE_TYPE">
+    <Key>
+      <PropertyRef Name="OFR_VAl_Type_Id" />
+    </Key>
+    <Property Name="OFR_VAl_Type_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ofr_Value_type" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Ofr_Value_description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Add_User_id" Type="Int32" Nullable="false" />
+    <Property Name="Add_Datetime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Mod_User_Id" Type="Int32" Nullable="false" />
+    <Property Name="Modify_Datetime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="OrderId" />
+    </Key>
+    <Property Name="OrderId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OrderDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Username" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="Tracking_REF_ID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Currency" Type="String" MaxLength="160" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Total" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <NavigationProperty Name="OrderDetails" Relationship="Self.FK__InvoiceLi__Invoi__2F10007B" FromRole="Order" ToRole="OrderDetail" />
+  </EntityType>
+  <EntityType Name="OrderDetail">
+    <Key>
+      <PropertyRef Name="OrderDetailId" />
+    </Key>
+    <Property Name="OrderDetailId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OrderId" Type="Int32" Nullable="false" />
+    <Property Name="ImageId" Type="Int32" Nullable="false" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <Property Name="UnitPrice" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <NavigationProperty Name="ImageDetail" Relationship="Self.FK_InvoiceLine_Album" FromRole="OrderDetail" ToRole="ImageDetail" />
+    <NavigationProperty Name="Order" Relationship="Self.FK__InvoiceLi__Invoi__2F10007B" FromRole="OrderDetail" ToRole="Order" />
+  </EntityType>
+  <EntityType Name="PayPalTransaction">
+    <Key>
+      <PropertyRef Name="SeqNo" />
+    </Key>
+    <Property Name="SeqNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RequestId" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TrackingReference" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RequestTime" Type="DateTime" Precision="3" />
+    <Property Name="RequestStatus" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TimeStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RequestError" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Token" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PayerId" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RequestData" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PaymentTransactionId" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PaymentError" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="PDT_IMAGE_PATH">
+    <Key>
+      <PropertyRef Name="img_id" />
+    </Key>
+    <Property Name="img_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PDT_ID" Type="Int32" Nullable="false" />
+    <Property Name="Image_Path" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Home_Flag" Type="Boolean" Nullable="false" />
+    <Property Name="Banner_Flag" Type="Boolean" Nullable="false" />
+    <Property Name="First_Flag" Type="Boolean" Nullable="false" />
+    <Property Name="User_id" Type="Int32" Nullable="false" />
+    <Property Name="His_Datetime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Img_type" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="PRODUCT" Relationship="Self.FK_PDT_IMAGE_PATH_PRODUCT" FromRole="PDT_IMAGE_PATH" ToRole="PRODUCT" />
+  </EntityType>
+  <EntityType Name="PRODUCT">
+    <Key>
+      <PropertyRef Name="Pid" />
+    </Key>
+    <Property Name="Pid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PDT_CODE" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PDT_Name" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PDT_Price" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="PDT_Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Category_id" Type="Int32" Nullable="false" />
+    <Property Name="Sub_Category_id" Type="Int32" Nullable="false" />
+    <Property Name="Brand_id" Type="Int32" Nullable="false" />
+    <Property Name="offer_value_type_id" Type="Int32" Nullable="false" />
+    <Property Name="Add_user_Id" Type="Int32" Nullable="false" />
+    <Property Name="Add_Datetime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Mod_user_id" Type="Int32" Nullable="false" />
+    <Property Name="Mod_Datetime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="PDT_offer" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="PDT_Discount_price" Type="Decimal" Precision="18" Scale="0" />
+    <NavigationProperty Name="PDT_IMAGE_PATH" Relationship="Self.FK_PDT_IMAGE_PATH_PRODUCT" FromRole="PRODUCT" ToRole="PDT_IMAGE_PATH" />
+    <NavigationProperty Name="ProductCarts" Relationship="Self.FK_Cart_Album_3" FromRole="PRODUCT" ToRole="ProductCart" />
+    <NavigationProperty Name="ProductOrderDetails" Relationship="Self.FK_InvoiceLine_Album2" FromRole="PRODUCT" ToRole="ProductOrderDetail" />
+    <NavigationProperty Name="Value_Specification" Relationship="Self.FK_Value_Specification_PRODUCT" FromRole="PRODUCT" ToRole="Value_Specification" />
+  </EntityType>
+  <EntityType Name="ProductCart">
+    <Key>
+      <PropertyRef Name="RecordId" />
+    </Key>
+    <Property Name="RecordId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CartId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PDT_Id" Type="Int32" Nullable="false" />
+    <Property Name="Count" Type="Int32" Nullable="false" />
+    <Property Name="DateCreated" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="PRODUCT" Relationship="Self.FK_Cart_Album_3" FromRole="ProductCart" ToRole="PRODUCT" />
+  </EntityType>
+  <EntityType Name="ProductOrder">
+    <Key>
+      <PropertyRef Name="OrderId" />
+    </Key>
+    <Property Name="OrderId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OrderDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Total" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="Customer_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Customer_Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Emailid" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="mobileNo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Currency" Type="String" MaxLength="160" FixedLength="false" Unicode="true" />
+    <Property Name="Cupn_id" Type="Int32" />
+    <NavigationProperty Name="ProductOrderDetails" Relationship="Self.FK__InvoiceLi__Invoi__2F10007B1" FromRole="ProductOrder" ToRole="ProductOrderDetail" />
+  </EntityType>
+  <EntityType Name="ProductOrderDetail">
+    <Key>
+      <PropertyRef Name="OrderDetailId" />
+    </Key>
+    <Property Name="OrderDetailId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OrderId" Type="Int32" Nullable="false" />
+    <Property Name="PDT_Id" Type="Int32" Nullable="false" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <Property Name="UnitPrice" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <NavigationProperty Name="PRODUCT" Relationship="Self.FK_InvoiceLine_Album2" FromRole="ProductOrderDetail" ToRole="PRODUCT" />
+    <NavigationProperty Name="ProductOrder" Relationship="Self.FK__InvoiceLi__Invoi__2F10007B1" FromRole="ProductOrderDetail" ToRole="ProductOrder" />
+  </EntityType>
+  <EntityType Name="Project">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Slug" Type="String" MaxLength="210" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="IsDisabled" Type="Boolean" Nullable="false" />
+    <Property Name="VariableSetId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DeploymentProcessId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ProjectGroupId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LifecycleId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="AutoCreateRelease" Type="Boolean" Nullable="false" />
+    <Property Name="JSON" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProjectGroup">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="JSON" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Release">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Version" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Assembled" Type="DateTimeOffset" Nullable="false" Precision="7" />
+    <Property Name="ProjectId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ProjectVariableSetSnapshotId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ProjectDeploymentProcessSnapshotId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="JSON" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ServerTask">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="QueueTime" Type="DateTimeOffset" Nullable="false" Precision="7" />
+    <Property Name="StartTime" Type="DateTimeOffset" Precision="7" />
+    <Property Name="CompletedTime" Type="DateTimeOffset" Precision="7" />
+    <Property Name="ErrorMessage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ConcurrencyTag" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="State" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="HasPendingInterruptions" Type="Boolean" Nullable="false" />
+    <Property Name="HasWarningsOrErrors" Type="Boolean" Nullable="false" />
+    <Property Name="ServerNode" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ProjectId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EnvironmentId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="JSON" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SHIPDETAIL">
+    <Key>
+      <PropertyRef Name="SHIPID" />
+    </Key>
+    <Property Name="SHIPID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SHIPTONAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SHIPTOSTREET" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SHIPTOCITY" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SHIPTOSTATE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SHIPTOCOUNTRYCODE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SHIPTOZIP" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SHIPTOCONTACTNO" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="NOTESTOSELLER" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TrackingReference" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Spec_category">
+    <Key>
+      <PropertyRef Name="spec_cat_id" />
+    </Key>
+    <Property Name="spec_cat_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="spec_cat_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="spec_cat_Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Add_User_id" Type="Int32" Nullable="false" />
+    <Property Name="Add_Datetime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Mod_User_Id" Type="Int32" Nullable="false" />
+    <Property Name="Modify_Datetime" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="SpecialOffer">
+    <Key>
+      <PropertyRef Name="SpecialOfferID" />
+    </Key>
+    <Property Name="SpecialOfferID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="offer_Code" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="offer_Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="usr_Category" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="StartDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="EndDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="MinQty" Type="Int32" Nullable="false" />
+    <Property Name="MaxQty" Type="Int32" />
+    <Property Name="Active" Type="Boolean" />
+    <Property Name="Image_Path_Name" Type="String" MaxLength="1025" FixedLength="false" Unicode="true" />
+    <Property Name="Adduser" Type="Int32" Nullable="false" />
+    <Property Name="AddDatetime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedUser" Type="Int32" Nullable="false" />
+    <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="SpecialOfferProduct">
+    <Key>
+      <PropertyRef Name="SeqNo" />
+    </Key>
+    <Property Name="SeqNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SpecialOfferID" Type="Int32" Nullable="false" />
+    <Property Name="ProductID" Type="Int32" Nullable="false" />
+    <Property Name="Adduser" Type="Int32" Nullable="false" />
+    <Property Name="AddDatetime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedUser" Type="Int32" Nullable="false" />
+    <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="PDT_TYPE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="DiscountPct" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="OFR_VAL_TYPE" Type="Int32" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Team">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MemberUserIds" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ProjectIds" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="EnvironmentIds" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="JSON" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TreeviewList">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="menu_id" Type="Int32" />
+    <Property Name="Parent_Menuid" Type="Int32" />
+    <Property Name="origin" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Item_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="parent_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="RoleId" Type="Int32" Nullable="false" />
+    <Property Name="UserName" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="UserPassword" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="EmailID" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="MobileNo" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifieBy" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="User_Info">
+    <Key>
+      <PropertyRef Name="UidNo" />
+    </Key>
+    <Property Name="UidNo" Type="Int32" Nullable="false" />
+    <Property Name="First_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Last_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Mobile_number" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="E_mail_id" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DOB" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Address_Communication" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Usr_pwd" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Usr_type" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Gender" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="Isactive" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="UserRole">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="RoleId" Type="Int32" Nullable="false" />
+    <Property Name="RoleName" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="RoleDescription" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifieBy" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Value_Specification">
+    <Key>
+      <PropertyRef Name="Spec_value_id" />
+    </Key>
+    <Property Name="Spec_value_id" Type="Int32" Nullable="false" />
+    <Property Name="Key_spec_id" Type="Int32" Nullable="false" />
+    <Property Name="key_Col_Value" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Product_id" Type="Int32" Nullable="false" />
+    <Property Name="AddUser_id" Type="Int32" />
+    <Property Name="Add_Datetime" Type="DateTime" Precision="3" />
+    <Property Name="mod_user_Id" Type="Int32" />
+    <Property Name="Mod_Datetime" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="KEY_Specifications" Relationship="Self.FK_Value_Specification_KEY_Specifications" FromRole="Value_Specification" ToRole="KEY_Specifications" />
+    <NavigationProperty Name="PRODUCT" Relationship="Self.FK_Value_Specification_PRODUCT" FromRole="Value_Specification" ToRole="PRODUCT" />
+  </EntityType>
+  <EntityType Name="ProductCouponValue">
+    <Key>
+      <PropertyRef Name="Pid" />
+    </Key>
+    <Property Name="Pid" Type="Int32" Nullable="false" />
+    <Property Name="offer" Type="Int32" />
+    <Property Name="offervaltype" Type="Int32" />
+  </EntityType>
+  <EntityType Name="ProductOfferValue">
+    <Key>
+      <PropertyRef Name="Pid" />
+    </Key>
+    <Property Name="Pid" Type="Int32" Nullable="false" />
+    <Property Name="offer" Type="Int32" />
+    <Property Name="OfrValtype" Type="Int32" />
+  </EntityType>
+  <Association Name="FK_Cart_Album">
+    <End Role="ImageDetail" Type="Self.ImageDetail" Multiplicity="1" />
+    <End Role="Cart" Type="Self.Cart" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ImageDetail">
+        <PropertyRef Name="ImageId" />
+      </Principal>
+      <Dependent Role="Cart">
+        <PropertyRef Name="ImageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InvoiceLine_Album">
+    <End Role="ImageDetail" Type="Self.ImageDetail" Multiplicity="1" />
+    <End Role="OrderDetail" Type="Self.OrderDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ImageDetail">
+        <PropertyRef Name="ImageId" />
+      </Principal>
+      <Dependent Role="OrderDetail">
+        <PropertyRef Name="ImageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Value_Specification_KEY_Specifications">
+    <End Role="KEY_Specifications" Type="Self.KEY_Specifications" Multiplicity="1" />
+    <End Role="Value_Specification" Type="Self.Value_Specification" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KEY_Specifications">
+        <PropertyRef Name="spec_col_id" />
+      </Principal>
+      <Dependent Role="Value_Specification">
+        <PropertyRef Name="Key_spec_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_menuTree_Menu">
+    <End Role="Menu" Type="Self.Menu" Multiplicity="1" />
+    <End Role="menuTree" Type="Self.menuTree" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Menu">
+        <PropertyRef Name="Mnu_id" />
+      </Principal>
+      <Dependent Role="menuTree">
+        <PropertyRef Name="Menu_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Offer_Mapping_offer">
+    <End Role="offer" Type="Self.offer" Multiplicity="1" />
+    <End Role="Offer_Mapping" Type="Self.Offer_Mapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="offer">
+        <PropertyRef Name="offer_id" />
+      </Principal>
+      <Dependent Role="Offer_Mapping">
+        <PropertyRef Name="Offer_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Offer_Mapping_Offer_type">
+    <End Role="Offer_type" Type="Self.Offer_type" Multiplicity="1" />
+    <End Role="Offer_Mapping" Type="Self.Offer_Mapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Offer_type">
+        <PropertyRef Name="OFT_id" />
+      </Principal>
+      <Dependent Role="Offer_Mapping">
+        <PropertyRef Name="offer_type_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__InvoiceLi__Invoi__2F10007B">
+    <End Role="Order" Type="Self.Order" Multiplicity="1" />
+    <End Role="OrderDetail" Type="Self.OrderDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Order">
+        <PropertyRef Name="OrderId" />
+      </Principal>
+      <Dependent Role="OrderDetail">
+        <PropertyRef Name="OrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PDT_IMAGE_PATH_PRODUCT">
+    <End Role="PRODUCT" Type="Self.PRODUCT" Multiplicity="1" />
+    <End Role="PDT_IMAGE_PATH" Type="Self.PDT_IMAGE_PATH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PRODUCT">
+        <PropertyRef Name="Pid" />
+      </Principal>
+      <Dependent Role="PDT_IMAGE_PATH">
+        <PropertyRef Name="PDT_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cart_Album_3">
+    <End Role="PRODUCT" Type="Self.PRODUCT" Multiplicity="1" />
+    <End Role="ProductCart" Type="Self.ProductCart" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PRODUCT">
+        <PropertyRef Name="Pid" />
+      </Principal>
+      <Dependent Role="ProductCart">
+        <PropertyRef Name="PDT_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InvoiceLine_Album2">
+    <End Role="PRODUCT" Type="Self.PRODUCT" Multiplicity="1" />
+    <End Role="ProductOrderDetail" Type="Self.ProductOrderDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PRODUCT">
+        <PropertyRef Name="Pid" />
+      </Principal>
+      <Dependent Role="ProductOrderDetail">
+        <PropertyRef Name="PDT_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Value_Specification_PRODUCT">
+    <End Role="PRODUCT" Type="Self.PRODUCT" Multiplicity="1" />
+    <End Role="Value_Specification" Type="Self.Value_Specification" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PRODUCT">
+        <PropertyRef Name="Pid" />
+      </Principal>
+      <Dependent Role="Value_Specification">
+        <PropertyRef Name="Product_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__InvoiceLi__Invoi__2F10007B1">
+    <End Role="ProductOrder" Type="Self.ProductOrder" Multiplicity="1" />
+    <End Role="ProductOrderDetail" Type="Self.ProductOrderDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductOrder">
+        <PropertyRef Name="OrderId" />
+      </Principal>
+      <Dependent Role="ProductOrderDetail">
+        <PropertyRef Name="OrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="NatchathraEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Accounts" EntityType="Self.Account" />
+    <EntitySet Name="ActionTemplates" EntityType="Self.ActionTemplate" />
+    <EntitySet Name="ActivityLogs" EntityType="Self.ActivityLog" />
+    <EntitySet Name="ApiKeys" EntityType="Self.ApiKey" />
+    <EntitySet Name="Artifacts" EntityType="Self.Artifact" />
+    <EntitySet Name="Artists" EntityType="Self.Artist" />
+    <EntitySet Name="Banner_Image_Dtl" EntityType="Self.Banner_Image_Dtl" />
+    <EntitySet Name="Brands" EntityType="Self.Brand" />
+    <EntitySet Name="Carts" EntityType="Self.Cart" />
+    <EntitySet Name="Categories" EntityType="Self.Category" />
+    <EntitySet Name="Certificates" EntityType="Self.Certificate" />
+    <EntitySet Name="Configurations" EntityType="Self.Configuration" />
+    <EntitySet Name="Coupons" EntityType="Self.Coupon" />
+    <EntitySet Name="Coupon_Code" EntityType="Self.Coupon_Code" />
+    <EntitySet Name="CouponProducts" EntityType="Self.CouponProduct" />
+    <EntitySet Name="DashboardConfigurations" EntityType="Self.DashboardConfiguration" />
+    <EntitySet Name="Deployments" EntityType="Self.Deployment" />
+    <EntitySet Name="DeploymentEnvironments" EntityType="Self.DeploymentEnvironment" />
+    <EntitySet Name="DeploymentProcesses" EntityType="Self.DeploymentProcess" />
+    <EntitySet Name="Events" EntityType="Self.Event" />
+    <EntitySet Name="Feeds" EntityType="Self.Feed" />
+    <EntitySet Name="Groups" EntityType="Self.Group" />
+    <EntitySet Name="ImageDetails" EntityType="Self.ImageDetail" />
+    <EntitySet Name="Interruptions" EntityType="Self.Interruption" />
+    <EntitySet Name="Invitations" EntityType="Self.Invitation" />
+    <EntitySet Name="KEY_Specifications" EntityType="Self.KEY_Specifications" />
+    <EntitySet Name="LibraryVariableSets" EntityType="Self.LibraryVariableSet" />
+    <EntitySet Name="Lifecycles" EntityType="Self.Lifecycle" />
+    <EntitySet Name="Machines" EntityType="Self.Machine" />
+    <EntitySet Name="Menus" EntityType="Self.Menu" />
+    <EntitySet Name="menuTrees" EntityType="Self.menuTree" />
+    <EntitySet Name="NuGetPackages" EntityType="Self.NuGetPackage" />
+    <EntitySet Name="OctopusServerNodes" EntityType="Self.OctopusServerNode" />
+    <EntitySet Name="offers" EntityType="Self.offer" />
+    <EntitySet Name="Offer_Mapping" EntityType="Self.Offer_Mapping" />
+    <EntitySet Name="Offer_type" EntityType="Self.Offer_type" />
+    <EntitySet Name="OFFER_VALUE_TYPE" EntityType="Self.OFFER_VALUE_TYPE" />
+    <EntitySet Name="Orders" EntityType="Self.Order" />
+    <EntitySet Name="OrderDetails" EntityType="Self.OrderDetail" />
+    <EntitySet Name="PayPalTransactions" EntityType="Self.PayPalTransaction" />
+    <EntitySet Name="PDT_IMAGE_PATH" EntityType="Self.PDT_IMAGE_PATH" />
+    <EntitySet Name="PRODUCTs" EntityType="Self.PRODUCT" />
+    <EntitySet Name="ProductCarts" EntityType="Self.ProductCart" />
+    <EntitySet Name="ProductOrders" EntityType="Self.ProductOrder" />
+    <EntitySet Name="ProductOrderDetails" EntityType="Self.ProductOrderDetail" />
+    <EntitySet Name="Projects" EntityType="Self.Project" />
+    <EntitySet Name="ProjectGroups" EntityType="Self.ProjectGroup" />
+    <EntitySet Name="Releases" EntityType="Self.Release" />
+    <EntitySet Name="ServerTasks" EntityType="Self.ServerTask" />
+    <EntitySet Name="SHIPDETAILS" EntityType="Self.SHIPDETAIL" />
+    <EntitySet Name="Spec_category" EntityType="Self.Spec_category" />
+    <EntitySet Name="SpecialOffers" EntityType="Self.SpecialOffer" />
+    <EntitySet Name="SpecialOfferProducts" EntityType="Self.SpecialOfferProduct" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="Teams" EntityType="Self.Team" />
+    <EntitySet Name="TreeviewLists" EntityType="Self.TreeviewList" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <EntitySet Name="User_Info" EntityType="Self.User_Info" />
+    <EntitySet Name="UserRoles" EntityType="Self.UserRole" />
+    <EntitySet Name="Value_Specification" EntityType="Self.Value_Specification" />
+    <EntitySet Name="ProductCouponValues" EntityType="Self.ProductCouponValue" />
+    <EntitySet Name="ProductOfferValues" EntityType="Self.ProductOfferValue" />
+    <AssociationSet Name="FK_Cart_Album" Association="Self.FK_Cart_Album">
+      <End Role="ImageDetail" EntitySet="ImageDetails" />
+      <End Role="Cart" EntitySet="Carts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InvoiceLine_Album" Association="Self.FK_InvoiceLine_Album">
+      <End Role="ImageDetail" EntitySet="ImageDetails" />
+      <End Role="OrderDetail" EntitySet="OrderDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Value_Specification_KEY_Specifications" Association="Self.FK_Value_Specification_KEY_Specifications">
+      <End Role="KEY_Specifications" EntitySet="KEY_Specifications" />
+      <End Role="Value_Specification" EntitySet="Value_Specification" />
+    </AssociationSet>
+    <AssociationSet Name="FK_menuTree_Menu" Association="Self.FK_menuTree_Menu">
+      <End Role="Menu" EntitySet="Menus" />
+      <End Role="menuTree" EntitySet="menuTrees" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Offer_Mapping_offer" Association="Self.FK_Offer_Mapping_offer">
+      <End Role="offer" EntitySet="offers" />
+      <End Role="Offer_Mapping" EntitySet="Offer_Mapping" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Offer_Mapping_Offer_type" Association="Self.FK_Offer_Mapping_Offer_type">
+      <End Role="Offer_type" EntitySet="Offer_type" />
+      <End Role="Offer_Mapping" EntitySet="Offer_Mapping" />
+    </AssociationSet>
+    <AssociationSet Name="FK__InvoiceLi__Invoi__2F10007B" Association="Self.FK__InvoiceLi__Invoi__2F10007B">
+      <End Role="Order" EntitySet="Orders" />
+      <End Role="OrderDetail" EntitySet="OrderDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PDT_IMAGE_PATH_PRODUCT" Association="Self.FK_PDT_IMAGE_PATH_PRODUCT">
+      <End Role="PRODUCT" EntitySet="PRODUCTs" />
+      <End Role="PDT_IMAGE_PATH" EntitySet="PDT_IMAGE_PATH" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cart_Album_3" Association="Self.FK_Cart_Album_3">
+      <End Role="PRODUCT" EntitySet="PRODUCTs" />
+      <End Role="ProductCart" EntitySet="ProductCarts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InvoiceLine_Album2" Association="Self.FK_InvoiceLine_Album2">
+      <End Role="PRODUCT" EntitySet="PRODUCTs" />
+      <End Role="ProductOrderDetail" EntitySet="ProductOrderDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Value_Specification_PRODUCT" Association="Self.FK_Value_Specification_PRODUCT">
+      <End Role="PRODUCT" EntitySet="PRODUCTs" />
+      <End Role="Value_Specification" EntitySet="Value_Specification" />
+    </AssociationSet>
+    <AssociationSet Name="FK__InvoiceLi__Invoi__2F10007B1" Association="Self.FK__InvoiceLi__Invoi__2F10007B1">
+      <End Role="ProductOrder" EntitySet="ProductOrders" />
+      <End Role="ProductOrderDetail" EntitySet="ProductOrderDetails" />
+    </AssociationSet>
+    <FunctionImport Name="GetTreeView" ReturnType="Collection(DB_77377_natchathraModel.GetTreeView_Result)" />
+    <FunctionImport Name="Sp_GetCoupon">
+      <Parameter Name="cupnCode" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Sp_GetOffer" />
+  </EntityContainer>
+  <ComplexType Name="GetTreeView_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="Int32" Name="menu_id" Nullable="true" />
+    <Property Type="Int32" Name="Parent_Menuid" Nullable="true" />
+    <Property Type="String" Name="origin" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Item_Name" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="parent_name" Nullable="true" MaxLength="100" />
+  </ComplexType>
+</Schema>

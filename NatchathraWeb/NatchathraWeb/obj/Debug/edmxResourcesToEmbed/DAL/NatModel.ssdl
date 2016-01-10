@@ -1,0 +1,1053 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DB_77377_natchathraModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Account">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="AccountType" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="EnvironmentIds" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="JSON" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ActionTemplate">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="Version" Type="int" Nullable="false" />
+    <Property Name="ActionType" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="JSON" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ActivityLog">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Format" Type="nvarchar" MaxLength="10" />
+    <Property Name="JSON" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ApiKey">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="UserId" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ApiKeyHashed" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="Created" Type="datetimeoffset" Precision="7" Nullable="false" />
+    <Property Name="JSON" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Artifact">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Filename" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="RelatedDocumentIds" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Created" Type="datetimeoffset" Precision="7" Nullable="false" />
+    <Property Name="ProjectId" Type="nvarchar" MaxLength="50" />
+    <Property Name="EnvironmentId" Type="nvarchar" MaxLength="50" />
+    <Property Name="JSON" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Artists">
+    <Key>
+      <PropertyRef Name="ArtistsId" />
+    </Key>
+    <Property Name="ArtistsId" Type="int" Nullable="false" />
+    <Property Name="ArtistsName" Type="nvarchar" MaxLength="300" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifieBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Banner_Image_Dtl">
+    <Key>
+      <PropertyRef Name="BNR_Img_Id" />
+    </Key>
+    <Property Name="BNR_Img_Id" Type="bigint" Nullable="false" />
+    <Property Name="BNR_Image_Path" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="Add_user" Type="int" Nullable="false" />
+    <Property Name="Add_DateTime" Type="datetime" Nullable="false" />
+    <Property Name="Mod_User" Type="int" Nullable="false" />
+    <Property Name="Mod_DateTime" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Brand">
+    <Key>
+      <PropertyRef Name="BRND_id" />
+    </Key>
+    <Property Name="BRND_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BRND_Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="BRND_Description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="BRND_Img_Path" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Is_Add_img" Type="bit" Nullable="false" />
+    <Property Name="Add_User_id" Type="int" Nullable="false" />
+    <Property Name="Add_Datetime" Type="datetime" Nullable="false" />
+    <Property Name="Mod_User_Id" Type="int" Nullable="false" />
+    <Property Name="Modify_Datetime" Type="datetime" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="cat_id" Type="int" />
+    <Property Name="sub_cat_id" Type="int" />
+  </EntityType>
+  <EntityType Name="Cart">
+    <Key>
+      <PropertyRef Name="RecordId" />
+    </Key>
+    <Property Name="RecordId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CartId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ImageId" Type="int" Nullable="false" />
+    <Property Name="Count" Type="int" Nullable="false" />
+    <Property Name="DateCreated" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="CategoryId" />
+    </Key>
+    <Property Name="CategoryId" Type="int" Nullable="false" />
+    <Property Name="GroupID" Type="int" Nullable="false" />
+    <Property Name="CategoryName" Type="nvarchar" MaxLength="300" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifieBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Certificate">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Thumbprint" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="JSON" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Configuration">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="JSON" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Coupon">
+    <Key>
+      <PropertyRef Name="cupn_id" />
+    </Key>
+    <Property Name="cupn_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="cupn_Code" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="cupn_Description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="cupn_value" Type="bigint" Nullable="false" />
+    <Property Name="Add_User_id" Type="int" Nullable="false" />
+    <Property Name="Add_Datetime" Type="datetime" Nullable="false" />
+    <Property Name="Mod_User_Id" Type="int" Nullable="false" />
+    <Property Name="Modify_Datetime" Type="datetime" Nullable="false" />
+    <Property Name="OFR_Value_type" Type="int" />
+  </EntityType>
+  <EntityType Name="Coupon_Code">
+    <Key>
+      <PropertyRef Name="Cupn_Id" />
+    </Key>
+    <Property Name="Cupn_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Cupn_Code" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="Cupn_Name" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="StartDate" Type="datetime" Nullable="false" />
+    <Property Name="EndDate" Type="datetime" Nullable="false" />
+    <Property Name="MinQty" Type="int" Nullable="false" />
+    <Property Name="MaxQty" Type="int" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="user_id" Type="int" Nullable="false" />
+    <Property Name="Adduser" Type="int" Nullable="false" />
+    <Property Name="AddDatetime" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedUser" Type="int" Nullable="false" />
+    <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CouponProduct">
+    <Key>
+      <PropertyRef Name="cupn_No" />
+    </Key>
+    <Property Name="cupn_No" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CupnID" Type="int" Nullable="false" />
+    <Property Name="ProductID" Type="int" Nullable="false" />
+    <Property Name="PDT_TYPE" Type="varchar" MaxLength="100" />
+    <Property Name="DiscountPct" Type="smallmoney" />
+    <Property Name="OFR_VAL_TYPE" Type="int" />
+    <Property Name="Adduser" Type="int" Nullable="false" />
+    <Property Name="AddDatetime" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedUser" Type="int" Nullable="false" />
+    <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DashboardConfiguration">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="IncludedEnvironmentIds" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="IncludedProjectIds" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="JSON" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Deployment">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="Created" Type="datetimeoffset" Precision="7" Nullable="false" />
+    <Property Name="EnvironmentId" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ProjectId" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ReleaseId" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ProjectGroupId" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="TaskId" Type="nvarchar" MaxLength="50" />
+    <Property Name="JSON" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DeploymentEnvironment">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="SortOrder" Type="int" Nullable="false" />
+    <Property Name="JSON" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DeploymentProcess">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="OwnerId" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="IsFrozen" Type="bit" Nullable="false" />
+    <Property Name="Version" Type="int" Nullable="false" />
+    <Property Name="JSON" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Event">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="RelatedDocumentIds" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ProjectId" Type="nvarchar" MaxLength="50" />
+    <Property Name="EnvironmentId" Type="nvarchar" MaxLength="50" />
+    <Property Name="Category" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="UserId" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Username" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="Occurred" Type="datetimeoffset" Precision="7" Nullable="false" />
+    <Property Name="Message" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="JSON" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Feed">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="FeedUri" Type="nvarchar" MaxLength="512" Nullable="false" />
+    <Property Name="JSON" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Group">
+    <Key>
+      <PropertyRef Name="GroupId" />
+    </Key>
+    <Property Name="GroupId" Type="int" Nullable="false" />
+    <Property Name="GroupName" Type="nvarchar" MaxLength="300" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifieBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ImageDetail">
+    <Key>
+      <PropertyRef Name="ImageId" />
+    </Key>
+    <Property Name="ImageId" Type="int" Nullable="false" />
+    <Property Name="CategoryId" Type="int" Nullable="false" />
+    <Property Name="ArtistId" Type="int" />
+    <Property Name="ImageTitle" Type="nvarchar" MaxLength="300" />
+    <Property Name="ImageDescription" Type="nvarchar" MaxLength="2000" />
+    <Property Name="ImagePath" Type="nvarchar" MaxLength="2000" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifieBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="Price" Type="numeric" Precision="10" Scale="2" />
+  </EntityType>
+  <EntityType Name="Interruption">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Created" Type="datetimeoffset" Precision="7" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="Status" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="RelatedDocumentIds" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ResponsibleTeamIds" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ProjectId" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="EnvironmentId" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="TaskId" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="JSON" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Invitation">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="InvitationCode" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="JSON" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="KEY_Specifications">
+    <Key>
+      <PropertyRef Name="spec_col_id" />
+    </Key>
+    <Property Name="spec_col_id" Type="int" Nullable="false" />
+    <Property Name="spec_col_Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="spec_cate_id" Type="int" Nullable="false" />
+    <Property Name="Add_User_id" Type="int" Nullable="false" />
+    <Property Name="Add_Datetime" Type="datetime" Nullable="false" />
+    <Property Name="Mod_User_Id" Type="int" Nullable="false" />
+    <Property Name="Modify_Datetime" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LibraryVariableSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="VariableSetId" Type="nvarchar" MaxLength="50" />
+    <Property Name="ContentType" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="JSON" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Lifecycle">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="JSON" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Machine">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="IsDisabled" Type="bit" Nullable="false" />
+    <Property Name="Roles" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="EnvironmentIds" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="JSON" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Menu">
+    <Key>
+      <PropertyRef Name="Mnu_id" />
+    </Key>
+    <Property Name="Mnu_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Mnu_Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Mnu_Description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Add_User_id" Type="int" Nullable="false" />
+    <Property Name="Add_Datetime" Type="datetime" Nullable="false" />
+    <Property Name="Mod_User_Id" Type="int" Nullable="false" />
+    <Property Name="Modify_Datetime" Type="datetime" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="menuTree">
+    <Key>
+      <PropertyRef Name="Tree_id" />
+    </Key>
+    <Property Name="Tree_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Menu_id" Type="int" Nullable="false" />
+    <Property Name="Parent_Menuid" Type="int" Nullable="false" />
+    <Property Name="Comments" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Add_User_id" Type="int" Nullable="false" />
+    <Property Name="Add_Datetime" Type="datetime" Nullable="false" />
+    <Property Name="Mod_User_Id" Type="int" Nullable="false" />
+    <Property Name="Modify_Datetime" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="NuGetPackage">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="PackageId" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Version" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="VersionMajor" Type="int" Nullable="false" />
+    <Property Name="VersionMinor" Type="int" Nullable="false" />
+    <Property Name="VersionBuild" Type="int" Nullable="false" />
+    <Property Name="VersionRevision" Type="int" Nullable="false" />
+    <Property Name="VersionSpecial" Type="nvarchar" MaxLength="250" />
+    <Property Name="JSON" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OctopusServerNode">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="LastSeen" Type="datetimeoffset" Precision="7" Nullable="false" />
+    <Property Name="Rank" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="JSON" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="offer">
+    <Key>
+      <PropertyRef Name="offer_id" />
+    </Key>
+    <Property Name="offer_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="offer_Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="offer_Description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Add_User_id" Type="int" Nullable="false" />
+    <Property Name="Add_Datetime" Type="datetime" Nullable="false" />
+    <Property Name="Mod_User_Id" Type="int" Nullable="false" />
+    <Property Name="Modify_Datetime" Type="datetime" Nullable="false" />
+    <Property Name="OFR_Value_type" Type="int" />
+  </EntityType>
+  <EntityType Name="Offer_Mapping">
+    <Key>
+      <PropertyRef Name="OMP_id" />
+    </Key>
+    <Property Name="OMP_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Type" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Mappid" Type="int" Nullable="false" />
+    <Property Name="Offer_id" Type="int" Nullable="false" />
+    <Property Name="offer_type_id" Type="int" Nullable="false" />
+    <Property Name="Add_User_id" Type="int" Nullable="false" />
+    <Property Name="Add_Datetime" Type="datetime" Nullable="false" />
+    <Property Name="Mod_User_Id" Type="int" Nullable="false" />
+    <Property Name="Modify_Datetime" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Offer_type">
+    <Key>
+      <PropertyRef Name="OFT_id" />
+    </Key>
+    <Property Name="OFT_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OFT_Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="OFT_Description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Add_User_id" Type="int" Nullable="false" />
+    <Property Name="Add_Datetime" Type="datetime" Nullable="false" />
+    <Property Name="Mod_User_Id" Type="int" Nullable="false" />
+    <Property Name="Modify_Datetime" Type="datetime" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OFFER_VALUE_TYPE">
+    <Key>
+      <PropertyRef Name="OFR_VAl_Type_Id" />
+    </Key>
+    <Property Name="OFR_VAl_Type_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Ofr_Value_type" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Ofr_Value_description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Add_User_id" Type="int" Nullable="false" />
+    <Property Name="Add_Datetime" Type="datetime" Nullable="false" />
+    <Property Name="Mod_User_Id" Type="int" Nullable="false" />
+    <Property Name="Modify_Datetime" Type="datetime" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="OrderId" />
+    </Key>
+    <Property Name="OrderId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OrderDate" Type="datetime" Nullable="false" />
+    <Property Name="Username" Type="nvarchar" MaxLength="256" />
+    <Property Name="Tracking_REF_ID" Type="nvarchar(max)" />
+    <Property Name="Currency" Type="nvarchar" MaxLength="160" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="Name" Type="nvarchar(max)" />
+    <Property Name="Total" Type="numeric" Precision="10" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OrderDetail">
+    <Key>
+      <PropertyRef Name="OrderDetailId" />
+    </Key>
+    <Property Name="OrderDetailId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OrderId" Type="int" Nullable="false" />
+    <Property Name="ImageId" Type="int" Nullable="false" />
+    <Property Name="Quantity" Type="int" Nullable="false" />
+    <Property Name="UnitPrice" Type="numeric" Precision="10" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PayPalTransaction">
+    <Key>
+      <PropertyRef Name="SeqNo" />
+    </Key>
+    <Property Name="SeqNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RequestId" Type="varchar(max)" Nullable="false" />
+    <Property Name="TrackingReference" Type="nvarchar(max)" />
+    <Property Name="RequestTime" Type="datetime" />
+    <Property Name="RequestStatus" Type="nvarchar(max)" />
+    <Property Name="TimeStamp" Type="nvarchar(max)" />
+    <Property Name="RequestError" Type="nvarchar(max)" />
+    <Property Name="Token" Type="nvarchar(max)" />
+    <Property Name="PayerId" Type="nvarchar(max)" />
+    <Property Name="RequestData" Type="nvarchar(max)" />
+    <Property Name="PaymentTransactionId" Type="nvarchar(max)" />
+    <Property Name="PaymentError" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="PDT_IMAGE_PATH">
+    <Key>
+      <PropertyRef Name="img_id" />
+    </Key>
+    <Property Name="img_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PDT_ID" Type="int" Nullable="false" />
+    <Property Name="Image_Path" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Home_Flag" Type="bit" Nullable="false" />
+    <Property Name="Banner_Flag" Type="bit" Nullable="false" />
+    <Property Name="First_Flag" Type="bit" Nullable="false" />
+    <Property Name="User_id" Type="int" Nullable="false" />
+    <Property Name="His_Datetime" Type="datetime" Nullable="false" />
+    <Property Name="Img_type" Type="varchar" MaxLength="2" />
+  </EntityType>
+  <EntityType Name="PRODUCT">
+    <Key>
+      <PropertyRef Name="Pid" />
+    </Key>
+    <Property Name="Pid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PDT_CODE" Type="nvarchar" MaxLength="4000" Nullable="false" />
+    <Property Name="PDT_Name" Type="nvarchar" MaxLength="4000" Nullable="false" />
+    <Property Name="PDT_Price" Type="money" Nullable="false" />
+    <Property Name="PDT_Description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Category_id" Type="int" Nullable="false" />
+    <Property Name="Sub_Category_id" Type="int" Nullable="false" />
+    <Property Name="Brand_id" Type="int" Nullable="false" />
+    <Property Name="offer_value_type_id" Type="int" Nullable="false" />
+    <Property Name="Add_user_Id" Type="int" Nullable="false" />
+    <Property Name="Add_Datetime" Type="datetime" Nullable="false" />
+    <Property Name="Mod_user_id" Type="int" Nullable="false" />
+    <Property Name="Mod_Datetime" Type="datetime" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="PDT_offer" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="PDT_Discount_price" Type="decimal" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="ProductCart">
+    <Key>
+      <PropertyRef Name="RecordId" />
+    </Key>
+    <Property Name="RecordId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CartId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="PDT_Id" Type="int" Nullable="false" />
+    <Property Name="Count" Type="int" Nullable="false" />
+    <Property Name="DateCreated" Type="datetime" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'DB_77377_natchathra.dbo.ProductCouponValue' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ProductCouponValue">
+    <Key>
+      <PropertyRef Name="Pid" />
+    </Key>
+    <Property Name="Pid" Type="int" Nullable="false" />
+    <Property Name="offer" Type="int" />
+    <Property Name="offervaltype" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'DB_77377_natchathra.dbo.ProductOfferValue' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ProductOfferValue">
+    <Key>
+      <PropertyRef Name="Pid" />
+    </Key>
+    <Property Name="Pid" Type="int" Nullable="false" />
+    <Property Name="offer" Type="int" />
+    <Property Name="OfrValtype" Type="int" />
+  </EntityType>
+  <EntityType Name="ProductOrder">
+    <Key>
+      <PropertyRef Name="OrderId" />
+    </Key>
+    <Property Name="OrderId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OrderDate" Type="datetime" Nullable="false" />
+    <Property Name="Total" Type="numeric" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="Customer_name" Type="nvarchar(max)" />
+    <Property Name="Customer_Address" Type="nvarchar(max)" />
+    <Property Name="Emailid" Type="nvarchar(max)" />
+    <Property Name="mobileNo" Type="nvarchar(max)" />
+    <Property Name="Currency" Type="nvarchar" MaxLength="160" />
+    <Property Name="Cupn_id" Type="int" />
+  </EntityType>
+  <EntityType Name="ProductOrderDetail">
+    <Key>
+      <PropertyRef Name="OrderDetailId" />
+    </Key>
+    <Property Name="OrderDetailId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OrderId" Type="int" Nullable="false" />
+    <Property Name="PDT_Id" Type="int" Nullable="false" />
+    <Property Name="Quantity" Type="int" Nullable="false" />
+    <Property Name="UnitPrice" Type="numeric" Precision="10" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Project">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="Slug" Type="nvarchar" MaxLength="210" Nullable="false" />
+    <Property Name="IsDisabled" Type="bit" Nullable="false" />
+    <Property Name="VariableSetId" Type="nvarchar" MaxLength="50" />
+    <Property Name="DeploymentProcessId" Type="nvarchar" MaxLength="50" />
+    <Property Name="ProjectGroupId" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="LifecycleId" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="AutoCreateRelease" Type="bit" Nullable="false" />
+    <Property Name="JSON" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProjectGroup">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="JSON" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Release">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Version" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="Assembled" Type="datetimeoffset" Precision="7" Nullable="false" />
+    <Property Name="ProjectId" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ProjectVariableSetSnapshotId" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ProjectDeploymentProcessSnapshotId" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="JSON" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ServerTask">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="QueueTime" Type="datetimeoffset" Precision="7" Nullable="false" />
+    <Property Name="StartTime" Type="datetimeoffset" Precision="7" />
+    <Property Name="CompletedTime" Type="datetimeoffset" Precision="7" />
+    <Property Name="ErrorMessage" Type="nvarchar(max)" />
+    <Property Name="ConcurrencyTag" Type="nvarchar" MaxLength="100" />
+    <Property Name="State" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="HasPendingInterruptions" Type="bit" Nullable="false" />
+    <Property Name="HasWarningsOrErrors" Type="bit" Nullable="false" />
+    <Property Name="ServerNode" Type="nvarchar" MaxLength="200" />
+    <Property Name="ProjectId" Type="nvarchar" MaxLength="50" />
+    <Property Name="EnvironmentId" Type="nvarchar" MaxLength="50" />
+    <Property Name="JSON" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SHIPDETAILS">
+    <Key>
+      <PropertyRef Name="SHIPID" />
+    </Key>
+    <Property Name="SHIPID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SHIPTONAME" Type="nvarchar(max)" />
+    <Property Name="SHIPTOSTREET" Type="nvarchar(max)" />
+    <Property Name="SHIPTOCITY" Type="nvarchar(max)" />
+    <Property Name="SHIPTOSTATE" Type="nvarchar(max)" />
+    <Property Name="SHIPTOCOUNTRYCODE" Type="nvarchar(max)" />
+    <Property Name="SHIPTOZIP" Type="nvarchar(max)" />
+    <Property Name="SHIPTOCONTACTNO" Type="nvarchar(max)" />
+    <Property Name="NOTESTOSELLER" Type="nvarchar(max)" />
+    <Property Name="TrackingReference" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Spec_category">
+    <Key>
+      <PropertyRef Name="spec_cat_id" />
+    </Key>
+    <Property Name="spec_cat_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="spec_cat_Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="spec_cat_Description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Add_User_id" Type="int" Nullable="false" />
+    <Property Name="Add_Datetime" Type="datetime" Nullable="false" />
+    <Property Name="Mod_User_Id" Type="int" Nullable="false" />
+    <Property Name="Modify_Datetime" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SpecialOffer">
+    <Key>
+      <PropertyRef Name="SpecialOfferID" />
+    </Key>
+    <Property Name="SpecialOfferID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="offer_Code" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="offer_Name" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="Type" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="usr_Category" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="StartDate" Type="datetime" Nullable="false" />
+    <Property Name="EndDate" Type="datetime" Nullable="false" />
+    <Property Name="MinQty" Type="int" Nullable="false" />
+    <Property Name="MaxQty" Type="int" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="Image_Path_Name" Type="nvarchar" MaxLength="1025" />
+    <Property Name="Adduser" Type="int" Nullable="false" />
+    <Property Name="AddDatetime" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedUser" Type="int" Nullable="false" />
+    <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SpecialOfferProduct">
+    <Key>
+      <PropertyRef Name="SeqNo" />
+    </Key>
+    <Property Name="SeqNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SpecialOfferID" Type="int" Nullable="false" />
+    <Property Name="ProductID" Type="int" Nullable="false" />
+    <Property Name="Adduser" Type="int" Nullable="false" />
+    <Property Name="AddDatetime" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedUser" Type="int" Nullable="false" />
+    <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+    <Property Name="PDT_TYPE" Type="varchar" MaxLength="100" />
+    <Property Name="DiscountPct" Type="smallmoney" />
+    <Property Name="OFR_VAL_TYPE" Type="int" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Team">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="MemberUserIds" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ProjectIds" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="EnvironmentIds" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="JSON" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TreeviewList">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="menu_id" Type="int" />
+    <Property Name="Parent_Menuid" Type="int" />
+    <Property Name="origin" Type="varchar" MaxLength="10" />
+    <Property Name="Item_Name" Type="varchar" MaxLength="100" />
+    <Property Name="parent_name" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="RoleId" Type="int" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="300" />
+    <Property Name="UserPassword" Type="nvarchar" MaxLength="2000" />
+    <Property Name="EmailID" Type="nvarchar" MaxLength="1000" />
+    <Property Name="MobileNo" Type="nvarchar" MaxLength="10" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifieBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="User_Info">
+    <Key>
+      <PropertyRef Name="UidNo" />
+    </Key>
+    <Property Name="UidNo" Type="int" Nullable="false" />
+    <Property Name="First_name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Last_name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Mobile_number" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="E-mail_id" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DOB" Type="datetime" Nullable="false" />
+    <Property Name="Address_Communication" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Usr_pwd" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Usr_type" Type="varchar" MaxLength="100" />
+    <Property Name="Gender" Type="varchar" MaxLength="2" />
+    <Property Name="Isactive" Type="bit" />
+  </EntityType>
+  <EntityType Name="UserRole">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="RoleId" Type="int" Nullable="false" />
+    <Property Name="RoleName" Type="nvarchar" MaxLength="300" />
+    <Property Name="RoleDescription" Type="nvarchar" MaxLength="2000" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifieBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Value_Specification">
+    <Key>
+      <PropertyRef Name="Spec_value_id" />
+    </Key>
+    <Property Name="Spec_value_id" Type="int" Nullable="false" />
+    <Property Name="Key_spec_id" Type="int" Nullable="false" />
+    <Property Name="key_Col_Value" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Product_id" Type="int" Nullable="false" />
+    <Property Name="AddUser_id" Type="int" />
+    <Property Name="Add_Datetime" Type="datetime" />
+    <Property Name="mod_user_Id" Type="int" />
+    <Property Name="Mod_Datetime" Type="datetime" />
+  </EntityType>
+  <Association Name="FK__InvoiceLi__Invoi__2F10007B">
+    <End Role="Order" Type="Self.Order" Multiplicity="1" />
+    <End Role="OrderDetail" Type="Self.OrderDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Order">
+        <PropertyRef Name="OrderId" />
+      </Principal>
+      <Dependent Role="OrderDetail">
+        <PropertyRef Name="OrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__InvoiceLi__Invoi__2F10007B1">
+    <End Role="ProductOrder" Type="Self.ProductOrder" Multiplicity="1" />
+    <End Role="ProductOrderDetail" Type="Self.ProductOrderDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductOrder">
+        <PropertyRef Name="OrderId" />
+      </Principal>
+      <Dependent Role="ProductOrderDetail">
+        <PropertyRef Name="OrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cart_Album">
+    <End Role="ImageDetail" Type="Self.ImageDetail" Multiplicity="1" />
+    <End Role="Cart" Type="Self.Cart" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ImageDetail">
+        <PropertyRef Name="ImageId" />
+      </Principal>
+      <Dependent Role="Cart">
+        <PropertyRef Name="ImageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cart_Album_3">
+    <End Role="PRODUCT" Type="Self.PRODUCT" Multiplicity="1" />
+    <End Role="ProductCart" Type="Self.ProductCart" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PRODUCT">
+        <PropertyRef Name="Pid" />
+      </Principal>
+      <Dependent Role="ProductCart">
+        <PropertyRef Name="PDT_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InvoiceLine_Album">
+    <End Role="ImageDetail" Type="Self.ImageDetail" Multiplicity="1" />
+    <End Role="OrderDetail" Type="Self.OrderDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ImageDetail">
+        <PropertyRef Name="ImageId" />
+      </Principal>
+      <Dependent Role="OrderDetail">
+        <PropertyRef Name="ImageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InvoiceLine_Album2">
+    <End Role="PRODUCT" Type="Self.PRODUCT" Multiplicity="1" />
+    <End Role="ProductOrderDetail" Type="Self.ProductOrderDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PRODUCT">
+        <PropertyRef Name="Pid" />
+      </Principal>
+      <Dependent Role="ProductOrderDetail">
+        <PropertyRef Name="PDT_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_menuTree_Menu">
+    <End Role="Menu" Type="Self.Menu" Multiplicity="1" />
+    <End Role="menuTree" Type="Self.menuTree" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Menu">
+        <PropertyRef Name="Mnu_id" />
+      </Principal>
+      <Dependent Role="menuTree">
+        <PropertyRef Name="Menu_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Offer_Mapping_offer">
+    <End Role="offer" Type="Self.offer" Multiplicity="1" />
+    <End Role="Offer_Mapping" Type="Self.Offer_Mapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="offer">
+        <PropertyRef Name="offer_id" />
+      </Principal>
+      <Dependent Role="Offer_Mapping">
+        <PropertyRef Name="Offer_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Offer_Mapping_Offer_type">
+    <End Role="Offer_type" Type="Self.Offer_type" Multiplicity="1" />
+    <End Role="Offer_Mapping" Type="Self.Offer_Mapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Offer_type">
+        <PropertyRef Name="OFT_id" />
+      </Principal>
+      <Dependent Role="Offer_Mapping">
+        <PropertyRef Name="offer_type_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PDT_IMAGE_PATH_PRODUCT">
+    <End Role="PRODUCT" Type="Self.PRODUCT" Multiplicity="1" />
+    <End Role="PDT_IMAGE_PATH" Type="Self.PDT_IMAGE_PATH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PRODUCT">
+        <PropertyRef Name="Pid" />
+      </Principal>
+      <Dependent Role="PDT_IMAGE_PATH">
+        <PropertyRef Name="PDT_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Value_Specification_KEY_Specifications">
+    <End Role="KEY_Specifications" Type="Self.KEY_Specifications" Multiplicity="1" />
+    <End Role="Value_Specification" Type="Self.Value_Specification" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KEY_Specifications">
+        <PropertyRef Name="spec_col_id" />
+      </Principal>
+      <Dependent Role="Value_Specification">
+        <PropertyRef Name="Key_spec_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Value_Specification_PRODUCT">
+    <End Role="PRODUCT" Type="Self.PRODUCT" Multiplicity="1" />
+    <End Role="Value_Specification" Type="Self.Value_Specification" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PRODUCT">
+        <PropertyRef Name="Pid" />
+      </Principal>
+      <Dependent Role="Value_Specification">
+        <PropertyRef Name="Product_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="GetTreeView" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="Sp_GetCoupon" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="cupnCode" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="Sp_GetOffer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="DB_77377_natchathraModelStoreContainer">
+    <EntitySet Name="Account" EntityType="Self.Account" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ActionTemplate" EntityType="Self.ActionTemplate" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ActivityLog" EntityType="Self.ActivityLog" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ApiKey" EntityType="Self.ApiKey" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Artifact" EntityType="Self.Artifact" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Artists" EntityType="Self.Artists" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Banner_Image_Dtl" EntityType="Self.Banner_Image_Dtl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Brand" EntityType="Self.Brand" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Cart" EntityType="Self.Cart" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Certificate" EntityType="Self.Certificate" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Configuration" EntityType="Self.Configuration" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Coupon" EntityType="Self.Coupon" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Coupon_Code" EntityType="Self.Coupon_Code" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CouponProduct" EntityType="Self.CouponProduct" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DashboardConfiguration" EntityType="Self.DashboardConfiguration" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Deployment" EntityType="Self.Deployment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DeploymentEnvironment" EntityType="Self.DeploymentEnvironment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DeploymentProcess" EntityType="Self.DeploymentProcess" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Event" EntityType="Self.Event" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Feed" EntityType="Self.Feed" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Group" EntityType="Self.Group" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ImageDetail" EntityType="Self.ImageDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Interruption" EntityType="Self.Interruption" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Invitation" EntityType="Self.Invitation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KEY_Specifications" EntityType="Self.KEY_Specifications" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LibraryVariableSet" EntityType="Self.LibraryVariableSet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Lifecycle" EntityType="Self.Lifecycle" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Machine" EntityType="Self.Machine" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Menu" EntityType="Self.Menu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="menuTree" EntityType="Self.menuTree" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NuGetPackage" EntityType="Self.NuGetPackage" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OctopusServerNode" EntityType="Self.OctopusServerNode" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="offer" EntityType="Self.offer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Offer_Mapping" EntityType="Self.Offer_Mapping" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Offer_type" EntityType="Self.Offer_type" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OFFER_VALUE_TYPE" EntityType="Self.OFFER_VALUE_TYPE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Order" EntityType="Self.Order" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OrderDetail" EntityType="Self.OrderDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PayPalTransaction" EntityType="Self.PayPalTransaction" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PDT_IMAGE_PATH" EntityType="Self.PDT_IMAGE_PATH" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PRODUCT" EntityType="Self.PRODUCT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProductCart" EntityType="Self.ProductCart" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProductOrder" EntityType="Self.ProductOrder" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProductOrderDetail" EntityType="Self.ProductOrderDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Project" EntityType="Self.Project" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProjectGroup" EntityType="Self.ProjectGroup" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Release" EntityType="Self.Release" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ServerTask" EntityType="Self.ServerTask" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SHIPDETAILS" EntityType="Self.SHIPDETAILS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Spec_category" EntityType="Self.Spec_category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SpecialOffer" EntityType="Self.SpecialOffer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SpecialOfferProduct" EntityType="Self.SpecialOfferProduct" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Team" EntityType="Self.Team" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TreeviewList" EntityType="Self.TreeviewList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User_Info" EntityType="Self.User_Info" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserRole" EntityType="Self.UserRole" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Value_Specification" EntityType="Self.Value_Specification" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProductCouponValue" EntityType="Self.ProductCouponValue" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[ProductCouponValue].[Pid] AS [Pid], 
+[ProductCouponValue].[offer] AS [offer], 
+[ProductCouponValue].[offervaltype] AS [offervaltype]
+FROM [dbo].[ProductCouponValue] AS [ProductCouponValue]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ProductOfferValue" EntityType="Self.ProductOfferValue" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[ProductOfferValue].[Pid] AS [Pid], 
+[ProductOfferValue].[offer] AS [offer], 
+[ProductOfferValue].[OfrValtype] AS [OfrValtype]
+FROM [dbo].[ProductOfferValue] AS [ProductOfferValue]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK__InvoiceLi__Invoi__2F10007B" Association="Self.FK__InvoiceLi__Invoi__2F10007B">
+      <End Role="Order" EntitySet="Order" />
+      <End Role="OrderDetail" EntitySet="OrderDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK__InvoiceLi__Invoi__2F10007B1" Association="Self.FK__InvoiceLi__Invoi__2F10007B1">
+      <End Role="ProductOrder" EntitySet="ProductOrder" />
+      <End Role="ProductOrderDetail" EntitySet="ProductOrderDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cart_Album" Association="Self.FK_Cart_Album">
+      <End Role="ImageDetail" EntitySet="ImageDetail" />
+      <End Role="Cart" EntitySet="Cart" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cart_Album_3" Association="Self.FK_Cart_Album_3">
+      <End Role="PRODUCT" EntitySet="PRODUCT" />
+      <End Role="ProductCart" EntitySet="ProductCart" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InvoiceLine_Album" Association="Self.FK_InvoiceLine_Album">
+      <End Role="ImageDetail" EntitySet="ImageDetail" />
+      <End Role="OrderDetail" EntitySet="OrderDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InvoiceLine_Album2" Association="Self.FK_InvoiceLine_Album2">
+      <End Role="PRODUCT" EntitySet="PRODUCT" />
+      <End Role="ProductOrderDetail" EntitySet="ProductOrderDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_menuTree_Menu" Association="Self.FK_menuTree_Menu">
+      <End Role="Menu" EntitySet="Menu" />
+      <End Role="menuTree" EntitySet="menuTree" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Offer_Mapping_offer" Association="Self.FK_Offer_Mapping_offer">
+      <End Role="offer" EntitySet="offer" />
+      <End Role="Offer_Mapping" EntitySet="Offer_Mapping" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Offer_Mapping_Offer_type" Association="Self.FK_Offer_Mapping_Offer_type">
+      <End Role="Offer_type" EntitySet="Offer_type" />
+      <End Role="Offer_Mapping" EntitySet="Offer_Mapping" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PDT_IMAGE_PATH_PRODUCT" Association="Self.FK_PDT_IMAGE_PATH_PRODUCT">
+      <End Role="PRODUCT" EntitySet="PRODUCT" />
+      <End Role="PDT_IMAGE_PATH" EntitySet="PDT_IMAGE_PATH" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Value_Specification_KEY_Specifications" Association="Self.FK_Value_Specification_KEY_Specifications">
+      <End Role="KEY_Specifications" EntitySet="KEY_Specifications" />
+      <End Role="Value_Specification" EntitySet="Value_Specification" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Value_Specification_PRODUCT" Association="Self.FK_Value_Specification_PRODUCT">
+      <End Role="PRODUCT" EntitySet="PRODUCT" />
+      <End Role="Value_Specification" EntitySet="Value_Specification" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d9c8dc71b0ff447bb9fe04037f5143cb" Name="Diagram1">
+        <EntityTypeShape EntityType="DB_77377_natchathraModel.Account" Width="1.5" PointX="0.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_77377_natchathraModel.ActionTemplate" Width="1.5" PointX="5.75" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_77377_natchathraModel.ActivityLog" Width="1.5" PointX="7.75" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_77377_natchathraModel.ApiKey" Width="1.5" PointX="0.75" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_77377_natchathraModel.Artifact" Width="1.5" PointX="13.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_77377_natchathraModel.Artist" Width="1.5" PointX="5.75" PointY="15" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_77377_natchathraModel.Banner_Image_Dtl" Width="1.5" PointX="7.75" PointY="15" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_77377_natchathraModel.Brand" Width="1.5" PointX="0.75" PointY="16" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_77377_natchathraModel.Cart" Width="1.5" PointX="11" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_77377_natchathraModel.Category" Width="1.5" PointX="9.75" PointY="16" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_77377_natchathraModel.Certificate" Width="1.5" PointX="11.75" PointY="16" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_77377_natchathraModel.Configuration" Width="1.5" PointX="13.75" PointY="16" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_77377_natchathraModel.Coupon" Width="1.5" PointX="15.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_77377_natchathraModel.Coupon_Code" Width="1.5" PointX="15.75" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_77377_natchathraModel.CouponProduct" Width="1.5" PointX="15.75" PointY="16" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_77377_natchathraModel.DashboardConfiguration" Width="1.5" PointX="2.75" PointY="18" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_77377_natchathraModel.Deployment" Width="1.5" PointX="17.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_77377_natchathraModel.DeploymentEnvironment" Width="1.5" PointX="17.75" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_77377_natchathraModel.DeploymentProcess" Width="1.5" PointX="4.75" PointY="19" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_77377_natchathraModel.Event" Width="1.5" PointX="6.75" PointY="19" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_77377_natchathraModel.Feed" Width="1.5" PointX="17.75" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_77377_natchathraModel.Group" Width="1.5" PointX="17.75" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_77377_natchathraModel.ImageDetail" Width="1.5" PointX="8.75" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_77377_natchathraModel.Interruption" Width="1.5" PointX="11.75" PointY="19" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_77377_natchathraModel.Invitation" Width="1.5" PointX="17.75" PointY="16" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_77377_natchathraModel.KEY_Specifications" Width="1.5" PointX="3.75" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_77377_natchathraModel.LibraryVariableSet" Width="1.5" PointX="17.75" PointY="19" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_77377_natchathraModel.Lifecycle" Width="1.5" PointX="8.75" PointY="20" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_77377_natchathraModel.Machine" Width="1.5" PointX="13.75" PointY="20" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_77377_natchathraModel.Menu" Width="1.5" PointX="12.75" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_77377_natchathraModel.menuTree" Width="1.5" PointX="15" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_77377_natchathraModel.NuGetPackage" Width="1.5" PointX="19.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_77377_natchathraModel.OctopusServerNode" Width="1.5" PointX="0.75" PointY="21" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_77377_natchathraModel.offer" Width="1.5" PointX="10.75" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_77377_natchathraModel.Offer_Mapping" Width="1.5" PointX="13" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_77377_natchathraModel.Offer_type" Width="1.5" PointX="10.75" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_77377_natchathraModel.OFFER_VALUE_TYPE" Width="1.5" PointX="19.75" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_77377_natchathraModel.Order" Width="1.5" PointX="8.75" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_77377_natchathraModel.OrderDetail" Width="1.5" PointX="11" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_77377_natchathraModel.PayPalTransaction" Width="1.5" PointX="19.75" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_77377_natchathraModel.PDT_IMAGE_PATH" Width="1.5" PointX="3" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_77377_natchathraModel.PRODUCT" Width="1.5" PointX="0.75" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_77377_natchathraModel.ProductCart" Width="1.5" PointX="3" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_77377_natchathraModel.ProductOrder" Width="1.5" PointX="3.75" PointY="13.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_77377_natchathraModel.ProductOrderDetail" Width="1.5" PointX="6" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_77377_natchathraModel.Project" Width="1.5" PointX="19.75" PointY="15" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_77377_natchathraModel.ProjectGroup" Width="1.5" PointX="19.75" PointY="19" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_77377_natchathraModel.Release" Width="1.5" PointX="2.75" PointY="22" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_77377_natchathraModel.ServerTask" Width="1.5" PointX="15.75" PointY="22" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_77377_natchathraModel.SHIPDETAIL" Width="1.5" PointX="17.75" PointY="22" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_77377_natchathraModel.Spec_category" Width="1.5" PointX="19.75" PointY="22" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_77377_natchathraModel.SpecialOffer" Width="1.5" PointX="21.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_77377_natchathraModel.SpecialOfferProduct" Width="1.5" PointX="4.75" PointY="23" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_77377_natchathraModel.sysdiagram" Width="1.5" PointX="21.75" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_77377_natchathraModel.Team" Width="1.5" PointX="6.75" PointY="23" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_77377_natchathraModel.TreeviewList" Width="1.5" PointX="21.75" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_77377_natchathraModel.User" Width="1.5" PointX="8.75" PointY="23" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_77377_natchathraModel.User_Info" Width="1.5" PointX="10.75" PointY="23" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_77377_natchathraModel.UserRole" Width="1.5" PointX="21.75" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_77377_natchathraModel.Value_Specification" Width="1.5" PointX="6" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_77377_natchathraModel.ProductCouponValue" Width="1.5" PointX="12.75" PointY="23" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_77377_natchathraModel.ProductOfferValue" Width="1.5" PointX="21.75" PointY="17" IsExpanded="true" />
+        <AssociationConnector Association="DB_77377_natchathraModel.FK_Cart_Album" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_77377_natchathraModel.FK_InvoiceLine_Album" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_77377_natchathraModel.FK_Value_Specification_KEY_Specifications" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_77377_natchathraModel.FK_menuTree_Menu" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_77377_natchathraModel.FK_Offer_Mapping_offer" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_77377_natchathraModel.FK_Offer_Mapping_Offer_type" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_77377_natchathraModel.FK__InvoiceLi__Invoi__2F10007B" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_77377_natchathraModel.FK_PDT_IMAGE_PATH_PRODUCT" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_77377_natchathraModel.FK_Cart_Album_3" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_77377_natchathraModel.FK_InvoiceLine_Album2" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_77377_natchathraModel.FK_Value_Specification_PRODUCT" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_77377_natchathraModel.FK__InvoiceLi__Invoi__2F10007B1" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

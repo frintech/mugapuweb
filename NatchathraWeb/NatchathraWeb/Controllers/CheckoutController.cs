@@ -26,8 +26,8 @@ namespace NatchathraWeb.Controllers
         public ActionResult AddressAndPayment()
         {
             ProductOrder objprdorder = new ProductOrder();
-            if (Request.IsAuthenticated)
-            {
+            //if (Request.IsAuthenticated)
+            //{
                 var query = from c in storeDB.User_Info
                             where c.E_mail_id == User.Identity.Name
                             select c;
@@ -40,12 +40,12 @@ namespace NatchathraWeb.Controllers
                     objprdorder.Customer_Address = d.Address_Communication;
                 }
 
-            }
-            else
-            {
-                TempData["PrevURL"] = "/Checkout/AddressAndPayment";
-                return RedirectToAction("UserLogin", "UserInfo");
-            }
+          
+            //else
+            //{
+            //    TempData["PrevURL"] = "/Checkout/AddressAndPayment";
+            //    return RedirectToAction("UserLogin", "UserInfo");
+            //}
             return View(objprdorder);
            
         }

@@ -1,0 +1,42 @@
+﻿@model NatchathraWeb.DAL.Category
+
+@{
+    ViewBag.Title = "Create";
+}
+
+
+
+@using (Html.BeginForm()) {     
+     <div class="content aligncenter ">
+            <div class="contant_contactus  grdOuter">
+    <fieldset>
+        <legend>Category</legend>
+
+       
+        <div class="dispBlock">
+            @Html.Label("CategoryName")
+        </div>
+        <div class="dispBlock">
+            @Html.TextBoxFor(m => m.CategoryName,null,new { @class = "txtContact"}) 
+            @Html.ValidationMessageFor(m=>m.CategoryName)<br /><br />
+        </div>
+         <div class="dispBlock">Group </div> <div > @Html.DropDownListFor(m => m.GroupID ,new SelectList(ViewBag.GroupsList, "Value", "Text"),"- Select Category -") 
+                                  @Html.ValidationMessageFor(m => m.GroupID)<br /><br /> </div> 
+
+
+        <p>
+            <input type="submit" value="Create" class="btnBlue" />
+        </p>
+    </fieldset>
+                <div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+                </div>
+         </div>
+}
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

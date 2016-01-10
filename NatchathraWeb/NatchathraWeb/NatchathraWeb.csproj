@@ -20,6 +20,13 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <MvcProjectUpgradeChecked>true</MvcProjectUpgradeChecked>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -62,6 +69,7 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
@@ -217,101 +225,212 @@
     <Compile Include="Controllers\ShoppingCartController.cs" />
     <Compile Include="Controllers\UserInfoController.cs" />
     <Compile Include="Controllers\ViewOfferController.cs" />
+    <Compile Include="DAL\Account.cs">
+      <DependentUpon>NatModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\ActionTemplate.cs">
+      <DependentUpon>NatModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\ActivityLog.cs">
+      <DependentUpon>NatModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="DAL\AddImage.cs" />
+    <Compile Include="DAL\ApiKey.cs">
+      <DependentUpon>NatModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Artifact.cs">
+      <DependentUpon>NatModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Artist.cs">
+      <DependentUpon>NatModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="DAL\Banner_Image_Dtl.cs">
-      <DependentUpon>MughapuModel.tt</DependentUpon>
+      <DependentUpon>NatModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Brand.cs">
-      <DependentUpon>MughapuModel.tt</DependentUpon>
+      <DependentUpon>NatModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Cart.cs">
+      <DependentUpon>NatModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Category.cs">
+      <DependentUpon>NatModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Certificate.cs">
+      <DependentUpon>NatModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\checkoutModel.cs" />
+    <Compile Include="DAL\Configuration.cs">
+      <DependentUpon>NatModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="DAL\Coupon.cs">
-      <DependentUpon>MughapuModel.tt</DependentUpon>
+      <DependentUpon>NatModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\CouponProduct.cs">
-      <DependentUpon>MughapuModel.tt</DependentUpon>
+      <DependentUpon>NatModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Coupon_Code.cs">
-      <DependentUpon>MughapuModel.tt</DependentUpon>
+      <DependentUpon>NatModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\DashboardConfiguration.cs">
+      <DependentUpon>NatModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Deployment.cs">
+      <DependentUpon>NatModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\DeploymentEnvironment.cs">
+      <DependentUpon>NatModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\DeploymentProcess.cs">
+      <DependentUpon>NatModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Event.cs">
+      <DependentUpon>NatModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Feed.cs">
+      <DependentUpon>NatModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\GetTreeView_Result.cs">
+      <DependentUpon>NatModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Group.cs">
+      <DependentUpon>NatModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\ImageDetail.cs">
+      <DependentUpon>NatModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Interruption.cs">
+      <DependentUpon>NatModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Invitation.cs">
+      <DependentUpon>NatModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\KEY_Specifications.cs">
-      <DependentUpon>MughapuModel.tt</DependentUpon>
+      <DependentUpon>NatModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\LibraryVariableSet.cs">
+      <DependentUpon>NatModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Lifecycle.cs">
+      <DependentUpon>NatModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Machine.cs">
+      <DependentUpon>NatModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\MailModel.cs" />
     <Compile Include="DAL\Menu.cs">
-      <DependentUpon>MughapuModel.tt</DependentUpon>
+      <DependentUpon>NatModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\menuTree.cs">
-      <DependentUpon>MughapuModel.tt</DependentUpon>
+      <DependentUpon>NatModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="DAL\MughapuModel.Context.cs">
+    <Compile Include="DAL\NatModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>MughapuModel.Context.tt</DependentUpon>
+      <DependentUpon>NatModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="DAL\MughapuModel.cs">
+    <Compile Include="DAL\NatModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>MughapuModel.tt</DependentUpon>
+      <DependentUpon>NatModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="DAL\NatchathraModel.Designer.cs">
+    <Compile Include="DAL\NatModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>NatchathraModel.edmx</DependentUpon>
+      <DependentUpon>NatModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\NuGetPackage.cs">
+      <DependentUpon>NatModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\OctopusServerNode.cs">
+      <DependentUpon>NatModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\offer.cs">
-      <DependentUpon>MughapuModel.tt</DependentUpon>
+      <DependentUpon>NatModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Offer_Mapping.cs">
-      <DependentUpon>MughapuModel.tt</DependentUpon>
+      <DependentUpon>NatModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Offer_type.cs">
-      <DependentUpon>MughapuModel.tt</DependentUpon>
+      <DependentUpon>NatModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\OFFER_VALUE_TYPE.cs">
-      <DependentUpon>MughapuModel.tt</DependentUpon>
+      <DependentUpon>NatModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Order.cs">
+      <DependentUpon>NatModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\OrderDetail.cs">
+      <DependentUpon>NatModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\PayPalTransaction.cs">
+      <DependentUpon>NatModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\PDT_IMAGE_PATH.cs">
-      <DependentUpon>MughapuModel.tt</DependentUpon>
+      <DependentUpon>NatModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\PRODUCT.cs">
-      <DependentUpon>MughapuModel.tt</DependentUpon>
+      <DependentUpon>NatModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\ProductCart.cs">
-      <DependentUpon>MughapuModel.tt</DependentUpon>
+      <DependentUpon>NatModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\ProductCouponValue.cs">
-      <DependentUpon>MughapuModel.tt</DependentUpon>
+      <DependentUpon>NatModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\ProductOfferValue.cs">
-      <DependentUpon>MughapuModel.tt</DependentUpon>
+      <DependentUpon>NatModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\ProductOrder.cs">
-      <DependentUpon>MughapuModel.tt</DependentUpon>
+      <DependentUpon>NatModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\ProductOrderDetail.cs">
-      <DependentUpon>MughapuModel.tt</DependentUpon>
+      <DependentUpon>NatModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Project.cs">
+      <DependentUpon>NatModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\ProjectGroup.cs">
+      <DependentUpon>NatModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Release.cs">
+      <DependentUpon>NatModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\ServerTask.cs">
+      <DependentUpon>NatModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SHIPDETAIL.cs">
+      <DependentUpon>NatModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\SpecialOffer.cs">
-      <DependentUpon>MughapuModel.tt</DependentUpon>
+      <DependentUpon>NatModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\SpecialOfferProduct.cs">
-      <DependentUpon>MughapuModel.tt</DependentUpon>
+      <DependentUpon>NatModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Spec_category.cs">
-      <DependentUpon>MughapuModel.tt</DependentUpon>
+      <DependentUpon>NatModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\sysdiagram.cs">
+      <DependentUpon>NatModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Team.cs">
+      <DependentUpon>NatModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\TreeviewList.cs">
-      <DependentUpon>MughapuModel.tt</DependentUpon>
+      <DependentUpon>NatModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\User.cs">
-      <DependentUpon>MughapuModel.tt</DependentUpon>
+      <DependentUpon>NatModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\UserRole.cs">
+      <DependentUpon>NatModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\User_Info.cs">
-      <DependentUpon>MughapuModel.tt</DependentUpon>
+      <DependentUpon>NatModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Value_Specification.cs">
-      <DependentUpon>MughapuModel.tt</DependentUpon>
+      <DependentUpon>NatModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DB_77377_muphase1DataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -461,6 +580,16 @@
     <Content Include="CSS\templatemo_style.css" />
     <Content Include="CSS\testimonails-slider.css" />
     <Content Include="CSS\theme.default.css" />
+    <Content Include="DAL\NatModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>NatModel.edmx</DependentUpon>
+      <LastGenOutput>NatModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DAL\NatModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>NatModel.edmx</DependentUpon>
+      <LastGenOutput>NatModel.cs</LastGenOutput>
+    </Content>
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="Images\ajax-loading.gif" />
@@ -493,25 +622,15 @@
     <Content Include="fonts\fontawesome-webfont.ttf" />
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\FontAwesome.otf" />
-    <EntityDeploy Include="DAL\NatchathraModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>NatchathraModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="DAL\MughapuModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>NatchathraModel.edmx</DependentUpon>
-      <LastGenOutput>MughapuModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="DAL\NatchathraModel.edmx.diagram">
-      <DependentUpon>NatchathraModel.edmx</DependentUpon>
-    </Content>
-    <Content Include="DAL\MughapuModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>NatchathraModel.edmx</DependentUpon>
-      <LastGenOutput>MughapuModel.cs</LastGenOutput>
-    </Content>
     <Content Include="DB_77377_muphase1DataSet.xsc">
       <DependentUpon>DB_77377_muphase1DataSet.xsd</DependentUpon>
+    </Content>
+    <EntityDeploy Include="DAL\NatModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>NatModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="DAL\NatModel.edmx.diagram">
+      <DependentUpon>NatModel.edmx</DependentUpon>
     </Content>
     <None Include="DB_77377_muphase1DataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
@@ -567,234 +686,22 @@
     <Content Include="Images\Menu\rolex.jpg" />
     <Content Include="Images\Menu\tag.png" />
     <Content Include="Images\Menu\ULSYNRDIN.jpg" />
-    <Content Include="Images\ORIGINAL\CARRERA SPACE TAG HEUER 6675 Black_1.jpg" />
-    <Content Include="Images\ORIGINAL\CARRERA SPACE TAG HEUER 6675 Black_2.jpg" />
-    <Content Include="Images\ORIGINAL\CARRERA SPACE TAG HEUER 6675 Black_3.jpg" />
-    <Content Include="Images\ORIGINAL\CARRERA SPACE TAG HEUER 6675 Black_4.jpg" />
-    <Content Include="Images\ORIGINAL\CASIO EDIFICE CHRONOGRAPH EF-558FG GOLD_1.jpg" />
-    <Content Include="Images\ORIGINAL\CASIO EDIFICE CHRONOGRAPH EF-558FG GOLD_2.jpg" />
-    <Content Include="Images\ORIGINAL\CASIO EDIFICE CHRONOGRAPH EF-558FG GOLD_3.jpg" />
-    <Content Include="Images\ORIGINAL\CASIO EDIFICE CHRONOGRAPH EF-558FG GOLD_4.jpg" />
-    <Content Include="Images\ORIGINAL\casio-ef-558d-7avdf-1.jpg" />
-    <Content Include="Images\ORIGINAL\casio-ef-558d-7avdf-2.jpg" />
-    <Content Include="Images\ORIGINAL\casio-ef-558d-7avdf-3.jpg" />
-    <Content Include="Images\ORIGINAL\casio-ef-558d-7avdf-4.jpg" />
-    <Content Include="Images\ORIGINAL\Diesel DZ 6181 Full Black_1.jpg" />
-    <Content Include="Images\ORIGINAL\Diesel DZ 6181 Full Black_2.jpg" />
-    <Content Include="Images\ORIGINAL\Diesel DZ 6181 Full Black_3.jpg" />
-    <Content Include="Images\ORIGINAL\Diesel DZ 6181 Full Black_4.jpg" />
-    <Content Include="Images\ORIGINAL\DIESEL DZ 8367_1.jpg" />
-    <Content Include="Images\ORIGINAL\DIESEL DZ 8367_2.jpg" />
-    <Content Include="Images\ORIGINAL\DIESEL DZ 8367_3.jpg" />
-    <Content Include="Images\ORIGINAL\DIESEL DZ 8367_4.jpg" />
-    <Content Include="Images\ORIGINAL\DZL_034.jpg" />
-    <Content Include="Images\ORIGINAL\DZL_035.jpg" />
-    <Content Include="Images\ORIGINAL\DZL_036.jpg" />
-    <Content Include="Images\ORIGINAL\EMPORIO ARMANI AR 2832_1.jpg" />
-    <Content Include="Images\ORIGINAL\EMPORIO ARMANI AR 2832_2.jpg" />
-    <Content Include="Images\ORIGINAL\EMPORIO ARMANI AR 2832_3.jpg" />
-    <Content Include="Images\ORIGINAL\EMPORIO ARMANI AR 3559 BLUE_1.jpg" />
-    <Content Include="Images\ORIGINAL\EMPORIO ARMANI AR 3559 BLUE_2.JPG" />
-    <Content Include="Images\ORIGINAL\EMPORIO ARMANI AR 3559 BLUE_3.JPG" />
-    <Content Include="Images\ORIGINAL\EMPORIO ARMANI AR 6020 WHITE_1.jpg" />
-    <Content Include="Images\ORIGINAL\EMPORIO ARMANI AR 6020 WHITE_2.jpg" />
-    <Content Include="Images\ORIGINAL\EMPORIO ARMANI AR 6020 WHITE_3.jpg" />
-    <Content Include="Images\ORIGINAL\EMPORIO ARMANI AR 6020 WHITE_4.jpg" />
-    <Content Include="Images\ORIGINAL\EMPORIO ARMANI AR 6901 BROWN_1.jpg" />
-    <Content Include="Images\ORIGINAL\EMPORIO ARMANI AR 6901 BROWN_2.jpg" />
-    <Content Include="Images\ORIGINAL\EMPORIO ARMANI AR 6901 BROWN_3.jpg" />
-    <Content Include="Images\ORIGINAL\EMPORIO ARMANI AR 6901 BROWN_4.jpg" />
-    <Content Include="Images\ORIGINAL\fb3.jpg" />
-    <Content Include="Images\ORIGINAL\fb4.jpg" />
-    <Content Include="Images\ORIGINAL\fb6.jpg" />
-    <Content Include="Images\ORIGINAL\FT_007.jpg" />
-    <Content Include="Images\ORIGINAL\FT_008.jpg" />
-    <Content Include="Images\ORIGINAL\FT_009.jpg" />
-    <Content Include="Images\ORIGINAL\FT_010.jpg" />
-    <Content Include="Images\ORIGINAL\FT_011.jpg" />
-    <Content Include="Images\ORIGINAL\FT_012.jpg" />
-    <Content Include="Images\ORIGINAL\HEL_019.jpg" />
-    <Content Include="Images\ORIGINAL\HEL_020.jpg" />
-    <Content Include="Images\ORIGINAL\HEL_021.jpg" />
-    <Content Include="Images\ORIGINAL\HEL_022.jpg" />
-    <Content Include="Images\ORIGINAL\HEL_023.jpg" />
-    <Content Include="Images\ORIGINAL\HUBLOT CHRONOGRAPH 7890_1.jpg" />
-    <Content Include="Images\ORIGINAL\HUBLOT CHRONOGRAPH 7890_2.jpg" />
-    <Content Include="Images\ORIGINAL\HUBLOT CHRONOGRAPH 7890_3.jpg" />
-    <Content Include="Images\ORIGINAL\MONT BLANC X01D BLUE_1.jpg" />
-    <Content Include="Images\ORIGINAL\MONT BLANC X01D BLUE_2.jpg" />
-    <Content Include="Images\ORIGINAL\MONT BLANC X01D BLUE_3.jpg" />
-    <Content Include="Images\ORIGINAL\OMEGA LIMITED EDITION 007 ORANGE_1.JPG" />
-    <Content Include="Images\ORIGINAL\OMEGA LIMITED EDITION 007 ORANGE_2.JPG" />
-    <Content Include="Images\ORIGINAL\OMEGA LIMITED EDITION 007 ORANGE_3.JPG" />
-    <Content Include="Images\ORIGINAL\OMEGA LIMITED EDITION 007 ORANGE_4.JPG" />
-    <Content Include="Images\ORIGINAL\PATEK PHILIPPE 7987_1.jpg" />
-    <Content Include="Images\ORIGINAL\PATEK PHILIPPE 7987_2.jpg" />
-    <Content Include="Images\ORIGINAL\PATEK PHILIPPE 7987_3.jpg" />
-    <Content Include="Images\ORIGINAL\PATEK PHILIPPE AUTOMATIC 1123 - BLACK_1.jpg" />
-    <Content Include="Images\ORIGINAL\PATEK PHILIPPE AUTOMATIC 1123 - BLACK_2.JPG" />
-    <Content Include="Images\ORIGINAL\PATEK PHILIPPE AUTOMATIC 1123 - BLACK_3.JPG" />
-    <Content Include="Images\ORIGINAL\PATEK PHILIPPE AUTOMATIC 1123 - BLACK_4.JPG" />
-    <Content Include="Images\ORIGINAL\RADO CENTRIX BLACK 9554_1.jpg" />
-    <Content Include="Images\ORIGINAL\RADO CENTRIX BLACK 9554_2.jpg" />
-    <Content Include="Images\ORIGINAL\RADO CENTRIX BLACK 9554_3.jpg" />
-    <Content Include="Images\ORIGINAL\RADO Centrix full black 667_1.jpg" />
-    <Content Include="Images\ORIGINAL\RADO Centrix full black 667_2.jpg" />
-    <Content Include="Images\ORIGINAL\RADO Centrix full black 667_3.jpg" />
-    <Content Include="Images\ORIGINAL\RADO Centrix full black 667_4.jpg" />
-    <Content Include="Images\ORIGINAL\Rado Centrix Gold 7655_1.jpg" />
-    <Content Include="Images\ORIGINAL\Rado Centrix Gold 7655_2.jpg" />
-    <Content Include="Images\ORIGINAL\Rado Centrix Gold 7655_3.jpg" />
-    <Content Include="Images\ORIGINAL\RADO CENTRIX JUBILE GOLDEN_1.jpg" />
-    <Content Include="Images\ORIGINAL\RADO CENTRIX JUBILE GOLDEN_2.jpg" />
-    <Content Include="Images\ORIGINAL\RADO CENTRIX JUBILE GOLDEN_3.jpg" />
-    <Content Include="Images\ORIGINAL\Rado Florence yellow plated Gents Watch_1.JPG" />
-    <Content Include="Images\ORIGINAL\Rado Florence yellow plated with Black dial Gents Watch_1.JPG" />
-    <Content Include="Images\ORIGINAL\Rado Florence yellow plated with Black dial Gents Watch_2.JPG" />
-    <Content Include="Images\ORIGINAL\Rado Florence yellow plated with Black dial Gents Watch_3.JPG" />
-    <Content Include="Images\ORIGINAL\Rado Florence yellow plated with Black dial Gents Watch_4.JPG" />
-    <Content Include="Images\ORIGINAL\Rado Florence yellow plated with Black dial Gents Watch_6.jpg" />
-    <Content Include="Images\ORIGINAL\Rado Florence yellow plated with Black dial Gents Watch_7.JPG" />
-    <Content Include="Images\ORIGINAL\Rado Florence yellow plated with Black dial Gents Watch_8.jpg" />
-    <Content Include="Images\ORIGINAL\Rado Florence yellow plated with Black dial Gents Watch_9.jpg" />
-    <Content Include="Images\ORIGINAL\RAD_031.jpg" />
-    <Content Include="Images\ORIGINAL\RAD_032.jpg" />
-    <Content Include="Images\ORIGINAL\RAD_033.jpg" />
-    <Content Include="Images\ORIGINAL\RAD_034.jpg" />
-    <Content Include="Images\ORIGINAL\Rolex 8864 Full Gold Stainless Steel Strap Daytona Luxury_1.jpg" />
-    <Content Include="Images\ORIGINAL\Rolex 8864 Full Gold Stainless Steel Strap Daytona Luxury_2.jpg" />
-    <Content Include="Images\ORIGINAL\Rolex 8877 Strap Luxury Watch_1.jpg" />
-    <Content Include="Images\ORIGINAL\Rolex 8877 Strap Luxury Watch_2.jpg" />
-    <Content Include="Images\ORIGINAL\Rolex 8877 Strap Luxury Watch_3.jpg" />
-    <Content Include="Images\ORIGINAL\Rolex 8880 Stainless Steel Strap Luxury Watch_1.jpg" />
-    <Content Include="Images\ORIGINAL\Rolex 8880 Stainless Steel Strap Luxury Watch_2.jpg" />
-    <Content Include="Images\ORIGINAL\Rolex 8880 Stainless Steel Strap Luxury Watch_3.jpg" />
-    <Content Include="Images\ORIGINAL\Rolex 8880 Stainless Steel Strap Luxury Watch_4.jpg" />
-    <Content Include="Images\ORIGINAL\ROLEX COSMOGRAPH DAYTONA.jpg" />
-    <Content Include="Images\ORIGINAL\ROLEX COSMOGRAPH DAYTONA_1.jpg" />
-    <Content Include="Images\ORIGINAL\Rolex DateJust_1.jpg" />
-    <Content Include="Images\ORIGINAL\Rolex DateJust_2.jpg" />
-    <Content Include="Images\ORIGINAL\Rolex DateJust_3.jpg" />
-    <Content Include="Images\ORIGINAL\Rolex Daytona 9166 Rose Gold Case Brown Dial Brown L_1.jpg" />
-    <Content Include="Images\ORIGINAL\Rolex Daytona 9166 Rose Gold Case Brown Dial Brown L_2.jpg" />
-    <Content Include="Images\ORIGINAL\Rolex Daytona 9166 Rose Gold Case Brown Dial Brown L_3.jpg" />
-    <Content Include="Images\ORIGINAL\Rolex Daytona 9166 Rose Gold Case Brown Dial Brown L_4.jpg" />
-    <Content Include="Images\ORIGINAL\Rolex Daytona Full Gold With White Dial_1.jpg" />
-    <Content Include="Images\ORIGINAL\Rolex Daytona Full Gold With White Dial_10.jpg" />
-    <Content Include="Images\ORIGINAL\Rolex Daytona Full Gold With White Dial_11.jpg" />
-    <Content Include="Images\ORIGINAL\Rolex Daytona Full Gold With White Dial_2.jpg" />
-    <Content Include="Images\ORIGINAL\Rolex Daytona Full Gold With White Dial_3.jpg" />
-    <Content Include="Images\ORIGINAL\Rolex Daytona Full Gold With White Dial_4.jpg" />
-    <Content Include="Images\ORIGINAL\Rolex Daytona Full Gold With White Dial_5.jpg" />
-    <Content Include="Images\ORIGINAL\Rolex Daytona Gold 7866_1.jpg" />
-    <Content Include="Images\ORIGINAL\Rolex Daytona Gold 7866_2.jpg" />
-    <Content Include="Images\ORIGINAL\ROLEX DAYTONA GOLD SILVER_1.jpg" />
-    <Content Include="Images\ORIGINAL\ROLEX DAYTONA GOLD SILVER_2.jpg" />
-    <Content Include="Images\ORIGINAL\ROLEX DAYTONA GOLD SILVER_3.jpg" />
-    <Content Include="Images\ORIGINAL\ROLEX DAYTONA GOLD SILVER_4.jpg" />
-    <Content Include="Images\ORIGINAL\ROLEX DAYTONA RAINGOLD 9655_1.jpg" />
-    <Content Include="Images\ORIGINAL\ROLEX DAYTONA RAINGOLD 9655_2.jpg" />
-    <Content Include="Images\ORIGINAL\ROLEX DAYTONA RAINGOLD 9655_3.jpg" />
-    <Content Include="Images\ORIGINAL\ROLEX OYSTER PERPETUAL GOLD SILVER_1.JPG" />
-    <Content Include="Images\ORIGINAL\ROLEX OYSTER PERPETUAL GOLD SILVER_2.JPG" />
-    <Content Include="Images\ORIGINAL\ROLEX OYSTER PERPETUAL GOLD SILVER_3.JPG" />
-    <Content Include="Images\ORIGINAL\ROLEX OYSTER PERPETUAL GOLD SILVER_4.JPG" />
-    <Content Include="Images\ORIGINAL\Rolex Submariner Yellow Gold Black Dial 8987_1.jpg" />
-    <Content Include="Images\ORIGINAL\Rolex Submariner Yellow Gold Black Dial 8987_2.jpg" />
-    <Content Include="Images\ORIGINAL\Rolex Submariner Yellow Gold Black Dial 8987_3.jpg" />
-    <Content Include="Images\ORIGINAL\Rolex Submariner Yellow Gold Black Dial 8987_4.jpg" />
-    <Content Include="Images\ORIGINAL\Rolex Submariner Yellow Gold Blue Dial 6643_1.jpg" />
-    <Content Include="Images\ORIGINAL\Rolex Submariner Yellow Gold Blue Dial 6643_2.jpg" />
-    <Content Include="Images\ORIGINAL\Rolex Submariner Yellow Gold Blue Dial 6643_3.jpg" />
-    <Content Include="Images\ORIGINAL\Rolex Submariner Yellow Gold Blue Dial 6643_4.jpg" />
-    <Content Include="Images\ORIGINAL\ROL_032.jpg" />
-    <Content Include="Images\ORIGINAL\ROL_033.jpg" />
-    <Content Include="Images\ORIGINAL\ROL_038.jpg" />
-    <Content Include="Images\ORIGINAL\ROL_039.jpg" />
-    <Content Include="Images\ORIGINAL\ROL_040.jpg" />
-    <Content Include="Images\ORIGINAL\ROL_041.jpg" />
-    <Content Include="Images\ORIGINAL\ROL_042.jpg" />
-    <Content Include="Images\ORIGINAL\ROL_043.jpg" />
-    <Content Include="Images\ORIGINAL\ROL_044.jpg" />
-    <Content Include="Images\ORIGINAL\ROL_045.jpg" />
-    <Content Include="Images\ORIGINAL\ROL_046.jpg" />
-    <Content Include="Images\ORIGINAL\ROL_047.JPG" />
-    <Content Include="Images\ORIGINAL\ROL_048.jpg" />
-    <Content Include="Images\ORIGINAL\ROL_049.jpg" />
-    <Content Include="Images\ORIGINAL\ROL_050.jpg" />
-    <Content Include="Images\ORIGINAL\ROL_051.jpg" />
-    <Content Include="Images\ORIGINAL\ROL_052.jpg" />
-    <Content Include="Images\ORIGINAL\ROL_053.jpg" />
-    <Content Include="Images\ORIGINAL\slide1.jpg" />
-    <Content Include="Images\ORIGINAL\slide2.jpg" />
-    <Content Include="Images\ORIGINAL\slide6.jpg" />
-    <Content Include="Images\ORIGINAL\slide7.jpg" />
-    <Content Include="Images\ORIGINAL\SONA_013.jpg" />
-    <Content Include="Images\ORIGINAL\SONA_014.jpg" />
-    <Content Include="Images\ORIGINAL\SONA_015.jpg" />
-    <Content Include="Images\ORIGINAL\SONA_016.jpg" />
-    <Content Include="Images\ORIGINAL\SONA_017.jpg" />
-    <Content Include="Images\ORIGINAL\SONA_018.jpg" />
-    <Content Include="Images\ORIGINAL\sug3.jpg" />
-    <Content Include="Images\ORIGINAL\sung2.jpg" />
-    <Content Include="Images\ORIGINAL\Sunglass1.jpg" />
-    <Content Include="Images\ORIGINAL\TAG Carrera Calibre 4322_1.jpg" />
-    <Content Include="Images\ORIGINAL\TAG Carrera Calibre 4322_2.jpg" />
-    <Content Include="Images\ORIGINAL\TAG Carrera Calibre 4322_3.jpg" />
-    <Content Include="Images\ORIGINAL\TAG HEUER MENS GRAND 17 White_1.jpg" />
-    <Content Include="Images\ORIGINAL\TAG HEUER MENS GRAND 17 White_2.jpg" />
-    <Content Include="Images\ORIGINAL\TAG HEUER MENS GRAND 17 White_3.jpg" />
-    <Content Include="Images\ORIGINAL\TAG HEUER MENS GRAND CARRERA CALIBRE 17_1.jpg" />
-    <Content Include="Images\ORIGINAL\TAG HEUER MENS GRAND CARRERA CALIBRE 17_2.jpg" />
-    <Content Include="Images\ORIGINAL\TAG HEUER MENS GRAND CARRERA CALIBRE 17_3.jpg" />
-    <Content Include="Images\ORIGINAL\TAG HEUER MENS GRAND CARRERA CALIBRE 17_4.jpg" />
-    <Content Include="Images\ORIGINAL\TAG HEUER MERCEDES BENZ SWISS CASE SPIN ENGINE BEZEL SPORT RUBBER ORANGE Black_1.jpg" />
-    <Content Include="Images\ORIGINAL\TAG HEUER MERCEDES BENZ SWISS CASE SPIN ENGINE BEZEL SPORT RUBBER ORANGE Black_2.jpg" />
-    <Content Include="Images\ORIGINAL\TAG HEUER MERCEDES BENZ SWISS CASE SPIN ENGINE BEZEL SPORT RUBBER ORANGE Black_3.jpg" />
-    <Content Include="Images\ORIGINAL\TAG HEUER MERCEDES BENZ SWISS CASE SPIN ENGINE BEZEL SPORT RUBBER ORANGE Black_4.jpg" />
-    <Content Include="Images\ORIGINAL\TAG HEUER MERCEDES BENZ SWISS CASE SPIN ENGINE BEZEL SPORT RUBBER ORANGE_1.jpg" />
-    <Content Include="Images\ORIGINAL\TAG HEUER MERCEDES BENZ SWISS CASE SPIN ENGINE BEZEL SPORT RUBBER ORANGE_2.jpg" />
-    <Content Include="Images\ORIGINAL\TAG HEUER MERCEDES BENZ SWISS CASE SPIN ENGINE BEZEL SPORT RUBBER ORANGE_3.jpg" />
-    <Content Include="Images\ORIGINAL\TAG HEUER MERCEDES BENZ SWISS CASE SPIN ENGINE BEZEL SPORT RUBBER ORANGE_4.jpg" />
-    <Content Include="Images\ORIGINAL\Tag Heuer MERCEDES-BENZ SLS GRAND CARRERA_1.JPG" />
-    <Content Include="Images\ORIGINAL\Tag Heuer MERCEDES-BENZ SLS GRAND CARRERA_2.JPG" />
-    <Content Include="Images\ORIGINAL\Tag Heuer MERCEDES-BENZ SLS GRAND CARRERA_3.JPG" />
-    <Content Include="Images\ORIGINAL\TAG HEUER PENDULUM LIMITED EDITION_1.JPG" />
-    <Content Include="Images\ORIGINAL\TAG HEUER PENDULUM LIMITED EDITION_2.JPG" />
-    <Content Include="Images\ORIGINAL\TAG HEUER PENDULUM LIMITED EDITION_3.JPG" />
-    <Content Include="Images\ORIGINAL\TAG HEUER ROSEGOLD DIAL WHITE_1.jpg" />
-    <Content Include="Images\ORIGINAL\TAG HEUER ROSEGOLD DIAL WHITE_2.jpg" />
-    <Content Include="Images\ORIGINAL\TAG HEUER ROSEGOLD DIAL WHITE_3.jpg" />
-    <Content Include="Images\ORIGINAL\Tagheuer grand carrera calibre 17 Silver_1.jpg" />
-    <Content Include="Images\ORIGINAL\Tagheuer grand carrera calibre 17 Silver_2.jpg" />
-    <Content Include="Images\ORIGINAL\Tagheuer grand carrera calibre 17 Silver_3.jpg" />
-    <Content Include="Images\ORIGINAL\Tagheuer grand carrera calibre 17 Silver_4.jpg" />
-    <Content Include="Images\ORIGINAL\TAG_035.jpg" />
-    <Content Include="Images\ORIGINAL\TAG_037.jpg" />
-    <Content Include="Images\ORIGINAL\TIT_001.jpg" />
-    <Content Include="Images\ORIGINAL\TIT_002.jpg" />
-    <Content Include="Images\ORIGINAL\TIT_003.jpg" />
-    <Content Include="Images\ORIGINAL\TIT_004.jpg" />
-    <Content Include="Images\ORIGINAL\TIT_005.jpg" />
-    <Content Include="Images\ORIGINAL\TIT_006.jpg" />
-    <Content Include="Images\ORIGINAL\ULYSEE NARDIN PERPETUAL CALENDAR - BLACK 117_1.JPG" />
-    <Content Include="Images\ORIGINAL\ULYSEE NARDIN PERPETUAL CALENDAR - BLACK 117_2.jpg" />
-    <Content Include="Images\ORIGINAL\ULYSEE NARDIN PERPETUAL CALENDAR - BLACK 117_3.jpg" />
-    <Content Include="Images\ORIGINAL\ULYSEE NARDIN PERPETUAL CALENDAR - BLUE_1.jpg" />
-    <Content Include="Images\ORIGINAL\ULYSEE NARDIN PERPETUAL CALENDAR - BLUE_3.JPG" />
-    <Content Include="Images\ORIGINAL\ULYSEE NARDIN PERPETUAL CALENDAR - BLUE_4.JPG" />
-    <Content Include="Images\ORIGINAL\ULYSEE NARDIN PERPETUAL CALENDAR - BLUE_5.JPG" />
-    <Content Include="Images\ORIGINAL\Velocity_sunglass_1.jpg" />
-    <Content Include="Images\ORIGINAL\Velocity_sunglass_2.jpg" />
-    <Content Include="Images\ORIGINAL\Velocity_sunglass_3.jpg" />
-    <Content Include="Images\ORIGINAL\Velocity_sunglass_4.jpg" />
-    <Content Include="Images\ORIGINAL\WAL_028.jpg" />
-    <Content Include="Images\ORIGINAL\WAL_029.jpg" />
-    <Content Include="Images\ORIGINAL\WAL_030.jpg" />
-    <Content Include="Images\ORIGINAL\XYL_024.jpg" />
-    <Content Include="Images\ORIGINAL\XYL_025.jpg" />
-    <Content Include="Images\ORIGINAL\XYL_026.jpg" />
-    <Content Include="Images\ORIGINAL\XYL_027.jpg" />
+    <Content Include="Images\ORIGINAL\logo.png" />
+    <Content Include="Images\ORIGINAL\page1_03.png" />
+    <Content Include="Images\ORIGINAL\page1_07.png" />
+    <Content Include="Images\ORIGINAL\page1_10.png" />
+    <Content Include="Images\ORIGINAL\page1_12.png" />
+    <Content Include="Images\ORIGINAL\page1_14.png" />
+    <Content Include="Images\ORIGINAL\page1_17.png" />
+    <Content Include="Images\ORIGINAL\page1_23.png" />
+    <Content Include="Images\ORIGINAL\page1_24.png" />
+    <Content Include="Images\ORIGINAL\page1_25.png" />
+    <Content Include="Images\ORIGINAL\page1_27.png" />
+    <Content Include="Images\ORIGINAL\page1_32.png" />
+    <Content Include="Images\ORIGINAL\page1_36.png" />
+    <Content Include="Images\ORIGINAL\page1_39.png" />
+    <Content Include="Images\ORIGINAL\page1_41.png" />
+    <Content Include="Images\ORIGINAL\page1_43.png" />
     <Content Include="Images\page1\logo.png" />
     <Content Include="Images\page1\page1_03.png" />
     <Content Include="Images\page1\page1_07.png" />
@@ -819,234 +726,22 @@
     <Content Include="Images\page3\t01.png" />
     <Content Include="Images\pattern.png" />
     <Content Include="Images\Remove_Cart.png" />
-    <Content Include="Images\RESZIMGS\CARRERA SPACE TAG HEUER 6675 Black_1.jpg" />
-    <Content Include="Images\RESZIMGS\CARRERA SPACE TAG HEUER 6675 Black_2.jpg" />
-    <Content Include="Images\RESZIMGS\CARRERA SPACE TAG HEUER 6675 Black_3.jpg" />
-    <Content Include="Images\RESZIMGS\CARRERA SPACE TAG HEUER 6675 Black_4.jpg" />
-    <Content Include="Images\RESZIMGS\CASIO EDIFICE CHRONOGRAPH EF-558FG GOLD_1.jpg" />
-    <Content Include="Images\RESZIMGS\CASIO EDIFICE CHRONOGRAPH EF-558FG GOLD_2.jpg" />
-    <Content Include="Images\RESZIMGS\CASIO EDIFICE CHRONOGRAPH EF-558FG GOLD_3.jpg" />
-    <Content Include="Images\RESZIMGS\CASIO EDIFICE CHRONOGRAPH EF-558FG GOLD_4.jpg" />
-    <Content Include="Images\RESZIMGS\casio-ef-558d-7avdf-1.jpg" />
-    <Content Include="Images\RESZIMGS\casio-ef-558d-7avdf-2.jpg" />
-    <Content Include="Images\RESZIMGS\casio-ef-558d-7avdf-3.jpg" />
-    <Content Include="Images\RESZIMGS\casio-ef-558d-7avdf-4.jpg" />
-    <Content Include="Images\RESZIMGS\Diesel DZ 6181 Full Black_1.jpg" />
-    <Content Include="Images\RESZIMGS\Diesel DZ 6181 Full Black_2.jpg" />
-    <Content Include="Images\RESZIMGS\Diesel DZ 6181 Full Black_3.jpg" />
-    <Content Include="Images\RESZIMGS\Diesel DZ 6181 Full Black_4.jpg" />
-    <Content Include="Images\RESZIMGS\DIESEL DZ 8367_1.jpg" />
-    <Content Include="Images\RESZIMGS\DIESEL DZ 8367_2.jpg" />
-    <Content Include="Images\RESZIMGS\DIESEL DZ 8367_3.jpg" />
-    <Content Include="Images\RESZIMGS\DIESEL DZ 8367_4.jpg" />
-    <Content Include="Images\RESZIMGS\DZL_034.jpg" />
-    <Content Include="Images\RESZIMGS\DZL_035.jpg" />
-    <Content Include="Images\RESZIMGS\DZL_036.jpg" />
-    <Content Include="Images\RESZIMGS\EMPORIO ARMANI AR 2832_1.jpg" />
-    <Content Include="Images\RESZIMGS\EMPORIO ARMANI AR 2832_2.jpg" />
-    <Content Include="Images\RESZIMGS\EMPORIO ARMANI AR 2832_3.jpg" />
-    <Content Include="Images\RESZIMGS\EMPORIO ARMANI AR 3559 BLUE_1.jpg" />
-    <Content Include="Images\RESZIMGS\EMPORIO ARMANI AR 3559 BLUE_2.JPG" />
-    <Content Include="Images\RESZIMGS\EMPORIO ARMANI AR 3559 BLUE_3.JPG" />
-    <Content Include="Images\RESZIMGS\EMPORIO ARMANI AR 6020 WHITE_1.jpg" />
-    <Content Include="Images\RESZIMGS\EMPORIO ARMANI AR 6020 WHITE_2.jpg" />
-    <Content Include="Images\RESZIMGS\EMPORIO ARMANI AR 6020 WHITE_3.jpg" />
-    <Content Include="Images\RESZIMGS\EMPORIO ARMANI AR 6020 WHITE_4.jpg" />
-    <Content Include="Images\RESZIMGS\EMPORIO ARMANI AR 6901 BROWN_1.jpg" />
-    <Content Include="Images\RESZIMGS\EMPORIO ARMANI AR 6901 BROWN_2.jpg" />
-    <Content Include="Images\RESZIMGS\EMPORIO ARMANI AR 6901 BROWN_3.jpg" />
-    <Content Include="Images\RESZIMGS\EMPORIO ARMANI AR 6901 BROWN_4.jpg" />
-    <Content Include="Images\RESZIMGS\fb3.jpg" />
-    <Content Include="Images\RESZIMGS\fb4.jpg" />
-    <Content Include="Images\RESZIMGS\fb6.jpg" />
-    <Content Include="Images\RESZIMGS\FT_007.jpg" />
-    <Content Include="Images\RESZIMGS\FT_008.jpg" />
-    <Content Include="Images\RESZIMGS\FT_009.jpg" />
-    <Content Include="Images\RESZIMGS\FT_010.jpg" />
-    <Content Include="Images\RESZIMGS\FT_011.jpg" />
-    <Content Include="Images\RESZIMGS\FT_012.jpg" />
-    <Content Include="Images\RESZIMGS\HEL_019.jpg" />
-    <Content Include="Images\RESZIMGS\HEL_020.jpg" />
-    <Content Include="Images\RESZIMGS\HEL_021.jpg" />
-    <Content Include="Images\RESZIMGS\HEL_022.jpg" />
-    <Content Include="Images\RESZIMGS\HEL_023.jpg" />
-    <Content Include="Images\RESZIMGS\HUBLOT CHRONOGRAPH 7890_1.jpg" />
-    <Content Include="Images\RESZIMGS\HUBLOT CHRONOGRAPH 7890_2.jpg" />
-    <Content Include="Images\RESZIMGS\HUBLOT CHRONOGRAPH 7890_3.jpg" />
-    <Content Include="Images\RESZIMGS\MONT BLANC X01D BLUE_1.jpg" />
-    <Content Include="Images\RESZIMGS\MONT BLANC X01D BLUE_2.jpg" />
-    <Content Include="Images\RESZIMGS\MONT BLANC X01D BLUE_3.jpg" />
-    <Content Include="Images\RESZIMGS\OMEGA LIMITED EDITION 007 ORANGE_1.JPG" />
-    <Content Include="Images\RESZIMGS\OMEGA LIMITED EDITION 007 ORANGE_2.JPG" />
-    <Content Include="Images\RESZIMGS\OMEGA LIMITED EDITION 007 ORANGE_3.JPG" />
-    <Content Include="Images\RESZIMGS\OMEGA LIMITED EDITION 007 ORANGE_4.JPG" />
-    <Content Include="Images\RESZIMGS\PATEK PHILIPPE 7987_1.jpg" />
-    <Content Include="Images\RESZIMGS\PATEK PHILIPPE 7987_2.jpg" />
-    <Content Include="Images\RESZIMGS\PATEK PHILIPPE 7987_3.jpg" />
-    <Content Include="Images\RESZIMGS\PATEK PHILIPPE AUTOMATIC 1123 - BLACK_1.jpg" />
-    <Content Include="Images\RESZIMGS\PATEK PHILIPPE AUTOMATIC 1123 - BLACK_2.JPG" />
-    <Content Include="Images\RESZIMGS\PATEK PHILIPPE AUTOMATIC 1123 - BLACK_3.JPG" />
-    <Content Include="Images\RESZIMGS\PATEK PHILIPPE AUTOMATIC 1123 - BLACK_4.JPG" />
-    <Content Include="Images\RESZIMGS\RADO CENTRIX BLACK 9554_1.jpg" />
-    <Content Include="Images\RESZIMGS\RADO CENTRIX BLACK 9554_2.jpg" />
-    <Content Include="Images\RESZIMGS\RADO CENTRIX BLACK 9554_3.jpg" />
-    <Content Include="Images\RESZIMGS\RADO Centrix full black 667_1.jpg" />
-    <Content Include="Images\RESZIMGS\RADO Centrix full black 667_2.jpg" />
-    <Content Include="Images\RESZIMGS\RADO Centrix full black 667_3.jpg" />
-    <Content Include="Images\RESZIMGS\RADO Centrix full black 667_4.jpg" />
-    <Content Include="Images\RESZIMGS\Rado Centrix Gold 7655_1.jpg" />
-    <Content Include="Images\RESZIMGS\Rado Centrix Gold 7655_2.jpg" />
-    <Content Include="Images\RESZIMGS\Rado Centrix Gold 7655_3.jpg" />
-    <Content Include="Images\RESZIMGS\RADO CENTRIX JUBILE GOLDEN_1.jpg" />
-    <Content Include="Images\RESZIMGS\RADO CENTRIX JUBILE GOLDEN_2.jpg" />
-    <Content Include="Images\RESZIMGS\RADO CENTRIX JUBILE GOLDEN_3.jpg" />
-    <Content Include="Images\RESZIMGS\Rado Florence yellow plated Gents Watch_1.JPG" />
-    <Content Include="Images\RESZIMGS\Rado Florence yellow plated with Black dial Gents Watch_1.JPG" />
-    <Content Include="Images\RESZIMGS\Rado Florence yellow plated with Black dial Gents Watch_2.JPG" />
-    <Content Include="Images\RESZIMGS\Rado Florence yellow plated with Black dial Gents Watch_3.JPG" />
-    <Content Include="Images\RESZIMGS\Rado Florence yellow plated with Black dial Gents Watch_4.JPG" />
-    <Content Include="Images\RESZIMGS\Rado Florence yellow plated with Black dial Gents Watch_6.jpg" />
-    <Content Include="Images\RESZIMGS\Rado Florence yellow plated with Black dial Gents Watch_7.JPG" />
-    <Content Include="Images\RESZIMGS\Rado Florence yellow plated with Black dial Gents Watch_8.jpg" />
-    <Content Include="Images\RESZIMGS\Rado Florence yellow plated with Black dial Gents Watch_9.jpg" />
-    <Content Include="Images\RESZIMGS\RAD_031.jpg" />
-    <Content Include="Images\RESZIMGS\RAD_032.jpg" />
-    <Content Include="Images\RESZIMGS\RAD_033.jpg" />
-    <Content Include="Images\RESZIMGS\RAD_034.jpg" />
-    <Content Include="Images\RESZIMGS\Rolex 8864 Full Gold Stainless Steel Strap Daytona Luxury_1.jpg" />
-    <Content Include="Images\RESZIMGS\Rolex 8864 Full Gold Stainless Steel Strap Daytona Luxury_2.jpg" />
-    <Content Include="Images\RESZIMGS\Rolex 8877 Strap Luxury Watch_1.jpg" />
-    <Content Include="Images\RESZIMGS\Rolex 8877 Strap Luxury Watch_2.jpg" />
-    <Content Include="Images\RESZIMGS\Rolex 8877 Strap Luxury Watch_3.jpg" />
-    <Content Include="Images\RESZIMGS\Rolex 8880 Stainless Steel Strap Luxury Watch_1.jpg" />
-    <Content Include="Images\RESZIMGS\Rolex 8880 Stainless Steel Strap Luxury Watch_2.jpg" />
-    <Content Include="Images\RESZIMGS\Rolex 8880 Stainless Steel Strap Luxury Watch_3.jpg" />
-    <Content Include="Images\RESZIMGS\Rolex 8880 Stainless Steel Strap Luxury Watch_4.jpg" />
-    <Content Include="Images\RESZIMGS\ROLEX COSMOGRAPH DAYTONA.jpg" />
-    <Content Include="Images\RESZIMGS\ROLEX COSMOGRAPH DAYTONA_1.jpg" />
-    <Content Include="Images\RESZIMGS\Rolex DateJust_1.jpg" />
-    <Content Include="Images\RESZIMGS\Rolex DateJust_2.jpg" />
-    <Content Include="Images\RESZIMGS\Rolex DateJust_3.jpg" />
-    <Content Include="Images\RESZIMGS\Rolex Daytona 9166 Rose Gold Case Brown Dial Brown L_1.jpg" />
-    <Content Include="Images\RESZIMGS\Rolex Daytona 9166 Rose Gold Case Brown Dial Brown L_2.jpg" />
-    <Content Include="Images\RESZIMGS\Rolex Daytona 9166 Rose Gold Case Brown Dial Brown L_3.jpg" />
-    <Content Include="Images\RESZIMGS\Rolex Daytona 9166 Rose Gold Case Brown Dial Brown L_4.jpg" />
-    <Content Include="Images\RESZIMGS\Rolex Daytona Full Gold With White Dial_1.jpg" />
-    <Content Include="Images\RESZIMGS\Rolex Daytona Full Gold With White Dial_10.jpg" />
-    <Content Include="Images\RESZIMGS\Rolex Daytona Full Gold With White Dial_11.jpg" />
-    <Content Include="Images\RESZIMGS\Rolex Daytona Full Gold With White Dial_2.jpg" />
-    <Content Include="Images\RESZIMGS\Rolex Daytona Full Gold With White Dial_3.jpg" />
-    <Content Include="Images\RESZIMGS\Rolex Daytona Full Gold With White Dial_4.jpg" />
-    <Content Include="Images\RESZIMGS\Rolex Daytona Full Gold With White Dial_5.jpg" />
-    <Content Include="Images\RESZIMGS\Rolex Daytona Gold 7866_1.jpg" />
-    <Content Include="Images\RESZIMGS\Rolex Daytona Gold 7866_2.jpg" />
-    <Content Include="Images\RESZIMGS\ROLEX DAYTONA GOLD SILVER_1.jpg" />
-    <Content Include="Images\RESZIMGS\ROLEX DAYTONA GOLD SILVER_2.jpg" />
-    <Content Include="Images\RESZIMGS\ROLEX DAYTONA GOLD SILVER_3.jpg" />
-    <Content Include="Images\RESZIMGS\ROLEX DAYTONA GOLD SILVER_4.jpg" />
-    <Content Include="Images\RESZIMGS\ROLEX DAYTONA RAINGOLD 9655_1.jpg" />
-    <Content Include="Images\RESZIMGS\ROLEX DAYTONA RAINGOLD 9655_2.jpg" />
-    <Content Include="Images\RESZIMGS\ROLEX DAYTONA RAINGOLD 9655_3.jpg" />
-    <Content Include="Images\RESZIMGS\ROLEX OYSTER PERPETUAL GOLD SILVER_1.JPG" />
-    <Content Include="Images\RESZIMGS\ROLEX OYSTER PERPETUAL GOLD SILVER_2.JPG" />
-    <Content Include="Images\RESZIMGS\ROLEX OYSTER PERPETUAL GOLD SILVER_3.JPG" />
-    <Content Include="Images\RESZIMGS\ROLEX OYSTER PERPETUAL GOLD SILVER_4.JPG" />
-    <Content Include="Images\RESZIMGS\Rolex Submariner Yellow Gold Black Dial 8987_1.jpg" />
-    <Content Include="Images\RESZIMGS\Rolex Submariner Yellow Gold Black Dial 8987_2.jpg" />
-    <Content Include="Images\RESZIMGS\Rolex Submariner Yellow Gold Black Dial 8987_3.jpg" />
-    <Content Include="Images\RESZIMGS\Rolex Submariner Yellow Gold Black Dial 8987_4.jpg" />
-    <Content Include="Images\RESZIMGS\Rolex Submariner Yellow Gold Blue Dial 6643_1.jpg" />
-    <Content Include="Images\RESZIMGS\Rolex Submariner Yellow Gold Blue Dial 6643_2.jpg" />
-    <Content Include="Images\RESZIMGS\Rolex Submariner Yellow Gold Blue Dial 6643_3.jpg" />
-    <Content Include="Images\RESZIMGS\Rolex Submariner Yellow Gold Blue Dial 6643_4.jpg" />
-    <Content Include="Images\RESZIMGS\ROL_032.jpg" />
-    <Content Include="Images\RESZIMGS\ROL_033.jpg" />
-    <Content Include="Images\RESZIMGS\ROL_038.jpg" />
-    <Content Include="Images\RESZIMGS\ROL_039.jpg" />
-    <Content Include="Images\RESZIMGS\ROL_040.jpg" />
-    <Content Include="Images\RESZIMGS\ROL_041.jpg" />
-    <Content Include="Images\RESZIMGS\ROL_042.jpg" />
-    <Content Include="Images\RESZIMGS\ROL_043.jpg" />
-    <Content Include="Images\RESZIMGS\ROL_044.jpg" />
-    <Content Include="Images\RESZIMGS\ROL_045.jpg" />
-    <Content Include="Images\RESZIMGS\ROL_046.jpg" />
-    <Content Include="Images\RESZIMGS\ROL_047.JPG" />
-    <Content Include="Images\RESZIMGS\ROL_048.jpg" />
-    <Content Include="Images\RESZIMGS\ROL_049.jpg" />
-    <Content Include="Images\RESZIMGS\ROL_050.jpg" />
-    <Content Include="Images\RESZIMGS\ROL_051.jpg" />
-    <Content Include="Images\RESZIMGS\ROL_052.jpg" />
-    <Content Include="Images\RESZIMGS\ROL_053.jpg" />
-    <Content Include="Images\RESZIMGS\slide1.jpg" />
-    <Content Include="Images\RESZIMGS\slide2.jpg" />
-    <Content Include="Images\RESZIMGS\slide6.jpg" />
-    <Content Include="Images\RESZIMGS\slide7.jpg" />
-    <Content Include="Images\RESZIMGS\SONA_013.jpg" />
-    <Content Include="Images\RESZIMGS\SONA_014.jpg" />
-    <Content Include="Images\RESZIMGS\SONA_015.jpg" />
-    <Content Include="Images\RESZIMGS\SONA_016.jpg" />
-    <Content Include="Images\RESZIMGS\SONA_017.jpg" />
-    <Content Include="Images\RESZIMGS\SONA_018.jpg" />
-    <Content Include="Images\RESZIMGS\sug3.jpg" />
-    <Content Include="Images\RESZIMGS\sung2.jpg" />
-    <Content Include="Images\RESZIMGS\Sunglass1.jpg" />
-    <Content Include="Images\RESZIMGS\TAG Carrera Calibre 4322_1.jpg" />
-    <Content Include="Images\RESZIMGS\TAG Carrera Calibre 4322_2.jpg" />
-    <Content Include="Images\RESZIMGS\TAG Carrera Calibre 4322_3.jpg" />
-    <Content Include="Images\RESZIMGS\TAG HEUER MENS GRAND 17 White_1.jpg" />
-    <Content Include="Images\RESZIMGS\TAG HEUER MENS GRAND 17 White_2.jpg" />
-    <Content Include="Images\RESZIMGS\TAG HEUER MENS GRAND 17 White_3.jpg" />
-    <Content Include="Images\RESZIMGS\TAG HEUER MENS GRAND CARRERA CALIBRE 17_1.jpg" />
-    <Content Include="Images\RESZIMGS\TAG HEUER MENS GRAND CARRERA CALIBRE 17_2.jpg" />
-    <Content Include="Images\RESZIMGS\TAG HEUER MENS GRAND CARRERA CALIBRE 17_3.jpg" />
-    <Content Include="Images\RESZIMGS\TAG HEUER MENS GRAND CARRERA CALIBRE 17_4.jpg" />
-    <Content Include="Images\RESZIMGS\TAG HEUER MERCEDES BENZ SWISS CASE SPIN ENGINE BEZEL SPORT RUBBER ORANGE Black_1.jpg" />
-    <Content Include="Images\RESZIMGS\TAG HEUER MERCEDES BENZ SWISS CASE SPIN ENGINE BEZEL SPORT RUBBER ORANGE Black_2.jpg" />
-    <Content Include="Images\RESZIMGS\TAG HEUER MERCEDES BENZ SWISS CASE SPIN ENGINE BEZEL SPORT RUBBER ORANGE Black_3.jpg" />
-    <Content Include="Images\RESZIMGS\TAG HEUER MERCEDES BENZ SWISS CASE SPIN ENGINE BEZEL SPORT RUBBER ORANGE Black_4.jpg" />
-    <Content Include="Images\RESZIMGS\TAG HEUER MERCEDES BENZ SWISS CASE SPIN ENGINE BEZEL SPORT RUBBER ORANGE_1.jpg" />
-    <Content Include="Images\RESZIMGS\TAG HEUER MERCEDES BENZ SWISS CASE SPIN ENGINE BEZEL SPORT RUBBER ORANGE_2.jpg" />
-    <Content Include="Images\RESZIMGS\TAG HEUER MERCEDES BENZ SWISS CASE SPIN ENGINE BEZEL SPORT RUBBER ORANGE_3.jpg" />
-    <Content Include="Images\RESZIMGS\TAG HEUER MERCEDES BENZ SWISS CASE SPIN ENGINE BEZEL SPORT RUBBER ORANGE_4.jpg" />
-    <Content Include="Images\RESZIMGS\Tag Heuer MERCEDES-BENZ SLS GRAND CARRERA_1.JPG" />
-    <Content Include="Images\RESZIMGS\Tag Heuer MERCEDES-BENZ SLS GRAND CARRERA_2.JPG" />
-    <Content Include="Images\RESZIMGS\Tag Heuer MERCEDES-BENZ SLS GRAND CARRERA_3.JPG" />
-    <Content Include="Images\RESZIMGS\TAG HEUER PENDULUM LIMITED EDITION_1.JPG" />
-    <Content Include="Images\RESZIMGS\TAG HEUER PENDULUM LIMITED EDITION_2.JPG" />
-    <Content Include="Images\RESZIMGS\TAG HEUER PENDULUM LIMITED EDITION_3.JPG" />
-    <Content Include="Images\RESZIMGS\TAG HEUER ROSEGOLD DIAL WHITE_1.jpg" />
-    <Content Include="Images\RESZIMGS\TAG HEUER ROSEGOLD DIAL WHITE_2.jpg" />
-    <Content Include="Images\RESZIMGS\TAG HEUER ROSEGOLD DIAL WHITE_3.jpg" />
-    <Content Include="Images\RESZIMGS\Tagheuer grand carrera calibre 17 Silver_1.jpg" />
-    <Content Include="Images\RESZIMGS\Tagheuer grand carrera calibre 17 Silver_2.jpg" />
-    <Content Include="Images\RESZIMGS\Tagheuer grand carrera calibre 17 Silver_3.jpg" />
-    <Content Include="Images\RESZIMGS\Tagheuer grand carrera calibre 17 Silver_4.jpg" />
-    <Content Include="Images\RESZIMGS\TAG_035.jpg" />
-    <Content Include="Images\RESZIMGS\TAG_037.jpg" />
-    <Content Include="Images\RESZIMGS\TIT_001.jpg" />
-    <Content Include="Images\RESZIMGS\TIT_002.jpg" />
-    <Content Include="Images\RESZIMGS\TIT_003.jpg" />
-    <Content Include="Images\RESZIMGS\TIT_004.jpg" />
-    <Content Include="Images\RESZIMGS\TIT_005.jpg" />
-    <Content Include="Images\RESZIMGS\TIT_006.jpg" />
-    <Content Include="Images\RESZIMGS\ULYSEE NARDIN PERPETUAL CALENDAR - BLACK 117_1.JPG" />
-    <Content Include="Images\RESZIMGS\ULYSEE NARDIN PERPETUAL CALENDAR - BLACK 117_2.jpg" />
-    <Content Include="Images\RESZIMGS\ULYSEE NARDIN PERPETUAL CALENDAR - BLACK 117_3.jpg" />
-    <Content Include="Images\RESZIMGS\ULYSEE NARDIN PERPETUAL CALENDAR - BLUE_1.jpg" />
-    <Content Include="Images\RESZIMGS\ULYSEE NARDIN PERPETUAL CALENDAR - BLUE_3.JPG" />
-    <Content Include="Images\RESZIMGS\ULYSEE NARDIN PERPETUAL CALENDAR - BLUE_4.JPG" />
-    <Content Include="Images\RESZIMGS\ULYSEE NARDIN PERPETUAL CALENDAR - BLUE_5.JPG" />
-    <Content Include="Images\RESZIMGS\Velocity_sunglass_1.jpg" />
-    <Content Include="Images\RESZIMGS\Velocity_sunglass_2.jpg" />
-    <Content Include="Images\RESZIMGS\Velocity_sunglass_3.jpg" />
-    <Content Include="Images\RESZIMGS\Velocity_sunglass_4.jpg" />
-    <Content Include="Images\RESZIMGS\WAL_028.jpg" />
-    <Content Include="Images\RESZIMGS\WAL_029.jpg" />
-    <Content Include="Images\RESZIMGS\WAL_030.jpg" />
-    <Content Include="Images\RESZIMGS\XYL_024.jpg" />
-    <Content Include="Images\RESZIMGS\XYL_025.jpg" />
-    <Content Include="Images\RESZIMGS\XYL_026.jpg" />
-    <Content Include="Images\RESZIMGS\XYL_027.jpg" />
+    <Content Include="Images\RESZIMGS\logo.png" />
+    <Content Include="Images\RESZIMGS\page1_03.png" />
+    <Content Include="Images\RESZIMGS\page1_07.png" />
+    <Content Include="Images\RESZIMGS\page1_10.png" />
+    <Content Include="Images\RESZIMGS\page1_12.png" />
+    <Content Include="Images\RESZIMGS\page1_14.png" />
+    <Content Include="Images\RESZIMGS\page1_17.png" />
+    <Content Include="Images\RESZIMGS\page1_23.png" />
+    <Content Include="Images\RESZIMGS\page1_24.png" />
+    <Content Include="Images\RESZIMGS\page1_25.png" />
+    <Content Include="Images\RESZIMGS\page1_27.png" />
+    <Content Include="Images\RESZIMGS\page1_32.png" />
+    <Content Include="Images\RESZIMGS\page1_36.png" />
+    <Content Include="Images\RESZIMGS\page1_39.png" />
+    <Content Include="Images\RESZIMGS\page1_41.png" />
+    <Content Include="Images\RESZIMGS\page1_43.png" />
     <Content Include="Images\shopping_cart.png" />
     <Content Include="Scripts\Admin.js" />
     <Content Include="Scripts\box-slider.jquery.js" />
@@ -1244,6 +939,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>

@@ -561,7 +561,7 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="NatchathraModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityContainer Name="NatchathraEntities" p1:LazyLoadingEnabled="true">
+        <EntityContainer Name="NatchathraEntities1" p1:LazyLoadingEnabled="true">
           <EntitySet Name="Brands" EntityType="NatchathraModel.Brand" />
           <EntitySet Name="KEY_Specifications" EntityType="NatchathraModel.KEY_Specifications" />
           <EntitySet Name="Menus" EntityType="NatchathraModel.Menu" />
@@ -1118,7 +1118,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="DB_77377_muphase1ModelStoreContainer" CdmEntityContainer="NatchathraEntities">
+        <EntityContainerMapping StorageEntityContainer="DB_77377_muphase1ModelStoreContainer" CdmEntityContainer="NatchathraEntities1">
           <EntitySetMapping Name="Brands">
             <EntityTypeMapping TypeName="NatchathraModel.Brand">
               <MappingFragment StoreEntitySet="Brand">

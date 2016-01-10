@@ -269,6 +269,24 @@ namespace NatchathraWeb.Models
         public int catid { get; set; }
         
     }
+    public class FeatueredProductDetails
+    {
+        public int Pid { get; set; }
+        public string ProductName { get; set; }
+        public string ProductCode { get; set; }
+        public string ProductDesc { get; set; }
+
+        public Nullable<decimal> Price { get; set; }
+        public string offer { get; set; }
+        public Nullable<decimal> Product_Offer { get; set; }
+        public string Imagepath { get; set; }
+        public virtual ICollection<EditImageItem> BannerList { get; set; }
+        public Nullable<decimal> DiscountPrice { get; set; }
+        public int brandid { get; set; }
+        public int subcatid { get; set; }
+        public int catid { get; set; }
+
+    }
     public class ViewofferDetails
     {
         public int Pid { get; set; }

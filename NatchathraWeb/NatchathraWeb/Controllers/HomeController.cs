@@ -38,6 +38,7 @@ namespace NatchathraWeb.Controllers
 
             int HomPageimgCnt = Convert.ToInt32(System.Configuration.ConfigurationManager.AppSettings["HomPageimgCnt"]);
             IEnumerable<MnuSubcatProductDetails> catlist = null;
+            IEnumerable<FeatueredProductDetails> FeatueredProduct = null;
             if (catid == 0)
             {
                 var subcatItems = from G in db.menuTrees                              
@@ -75,6 +76,27 @@ namespace NatchathraWeb.Controllers
                                subcatid=p.Sub_Category_id,
                                DiscountPrice = p.offer_value_type_id == 1 ? (p.PDT_Price - (p.PDT_offer * p.PDT_Price) / 100) : p.PDT_Price - p.PDT_offer,
                            });
+
+                FeatueredProduct = (from p in db.PRODUCTs
+                           join grp in img on p.Pid equals grp.Pid
+                           join I in db.PDT_IMAGE_PATH on p.Pid equals I.PDT_ID
+                           join o in db.OFFER_VALUE_TYPE on p.offer_value_type_id equals o.OFR_VAl_Type_Id
+                           where p.IsActive == true && I.First_Flag == true                           
+                           orderby p.Pid descending
+                           select new FeatueredProductDetails
+                           {
+                               Pid = p.Pid,
+                               ProductCode = p.PDT_CODE,
+                               ProductName = p.PDT_Name,
+                               ProductDesc = p.PDT_Description,
+                               Imagepath = I.Image_Path,
+                               Price = p.PDT_Price,
+                               Product_Offer = p.PDT_offer,
+                               offer = o.Ofr_Value_type,
+                               subcatid = p.Sub_Category_id,
+                               DiscountPrice = p.offer_value_type_id == 1 ? (p.PDT_Price - (p.PDT_offer * p.PDT_Price) / 100) : p.PDT_Price - p.PDT_offer,
+                           });
+                ViewBag.FeatueredPrdoucts = FeatueredProduct.ToList();
             }
             else
             {
